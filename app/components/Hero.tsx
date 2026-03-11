@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const jsonResponse = {
   verified: true,
@@ -39,6 +40,15 @@ export default function Hero() {
 
   return (
     <section className="bg-[#0a1628] min-h-screen flex items-center relative overflow-hidden">
+      {/* Nav */}
+      <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+        <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-9 w-auto" />
+        <div className="flex items-center gap-6">
+          <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
+          <a href="#api" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
+          <a href="/signup" className="text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Started</a>
+        </div>
+      </nav>
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0a1628] via-[#0f1d32] to-[#0a1628]" />
       <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-600/5 rounded-full blur-3xl" />

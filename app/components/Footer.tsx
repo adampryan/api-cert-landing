@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
   const links = [
     { name: 'Docs', href: '/docs' },
