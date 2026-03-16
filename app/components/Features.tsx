@@ -1,46 +1,46 @@
 export default function Features() {
   const features = [
     {
-      icon: '✓',
-      iconBg: 'bg-green-100',
-      iconColor: 'text-green-600',
-      title: 'All 50 States',
-      description: 'Every state nursing and provider board covered. Plus DC, Puerto Rico, and US territories.',
-    },
-    {
-      icon: '⚡',
-      iconBg: 'bg-yellow-100',
-      iconColor: 'text-yellow-600',
-      title: 'Sub-100ms',
-      description: 'Queries cached locally, not scraped live. Lightning-fast responses for real-time workflows.',
+      icon: '🏥',
+      iconBg: 'bg-blue-100',
+      iconColor: 'text-blue-600',
+      title: 'All Provider Types, One Call',
+      description: 'RN, LPN, NP, PA, MD, and DO — verify any healthcare provider across all 50 states with a single API endpoint.',
     },
     {
       icon: '🛡',
-      iconBg: 'bg-blue-100',
-      iconColor: 'text-blue-600',
-      title: 'Exclusion Checks',
-      description: 'OIG LEIE, SAM.gov, and CMS Preclusion List checked automatically with every query.',
-    },
-    {
-      icon: '📦',
-      iconBg: 'bg-purple-100',
-      iconColor: 'text-purple-600',
-      title: 'Bulk Verification',
-      description: 'Upload a CSV or send up to 100 licenses in a single API call. Perfect for onboarding.',
-    },
-    {
-      icon: '🔄',
-      iconBg: 'bg-cyan-100',
-      iconColor: 'text-cyan-600',
-      title: 'Daily Updates',
-      description: 'Fresh data from official government sources every 24 hours. Never work with stale data.',
+      iconBg: 'bg-green-100',
+      iconColor: 'text-green-600',
+      title: 'Built-In Exclusion Screening',
+      description: 'OIG LEIE, SAM.gov, and CMS Preclusion List checked automatically. No separate lookups, no extra cost.',
     },
     {
       icon: '🔑',
       iconBg: 'bg-orange-100',
       iconColor: 'text-orange-600',
-      title: 'Simple Auth',
-      description: 'One API key, standard REST, JSON responses. Integrate in minutes, not days.',
+      title: 'Developer-First, Self-Service',
+      description: 'Get a free API key instantly. Standard REST, JSON responses, Swagger docs. Integrate in minutes, not weeks.',
+    },
+    {
+      icon: '⚡',
+      iconBg: 'bg-yellow-100',
+      iconColor: 'text-yellow-600',
+      title: 'Sub-100ms Responses',
+      description: 'Pre-indexed data, not live scraping. Fast enough for real-time credentialing workflows and intake forms.',
+    },
+    {
+      icon: '📦',
+      iconBg: 'bg-purple-100',
+      iconColor: 'text-purple-600',
+      title: 'Bulk CSV Verification',
+      description: 'Upload a CSV or send up to 100 providers in a single API call. Perfect for onboarding and re-credentialing.',
+    },
+    {
+      icon: '✓',
+      iconBg: 'bg-cyan-100',
+      iconColor: 'text-cyan-600',
+      title: 'All 50 States & Expanding',
+      description: 'Every state board covered, plus DC and territories. Fresh data from official government sources every 24 hours.',
     },
   ];
 
@@ -49,10 +49,10 @@ export default function Features() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Everything You Need
+            Replace Four Systems With One
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Built for healthcare compliance teams who need accurate, fast license verification
+            License verification, exclusion screening, and compliance checks — unified for credentialing teams and developers
           </p>
         </div>
 

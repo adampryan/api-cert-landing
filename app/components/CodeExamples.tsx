@@ -53,18 +53,21 @@ console.log(\`Verified: \${data.verified}\`);
 console.log(\`Status: \${data.status}\`);`,
 };
 
-const responseExample = `{
+const responseExample = `// Exclusion checks included automatically
+// — no separate OIG/SAM lookup needed
+{
   "verified": true,
-  "license_type": "RN",
-  "state": "MA",
-  "full_name": "SARAH J. CHEN",
-  "license_number": "RN298741",
+  "provider_type": "MD",
+  "state": "TX",
+  "full_name": "JAMES R. MARTINEZ",
+  "license_number": "MD-184920",
   "status": "ACTIVE",
-  "expiration_date": "2027-06-30",
+  "expiration_date": "2028-03-15",
+  "disciplinary_flag": false,
   "oig_excluded": false,
   "sam_excluded": false,
-  "disciplinary_flag": false,
-  "latency_ms": 4
+  "cms_precluded": false,
+  "latency_ms": 6
 }`;
 
 type TabKey = 'curl' | 'python' | 'node';
@@ -83,10 +86,10 @@ export default function CodeExamples() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
-            Simple Integration
+            One Call, Complete Credentialing
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Start verifying licenses with just a few lines of code
+            License verification and exclusion screening in a single API request — no more juggling multiple systems
           </p>
         </div>
 
