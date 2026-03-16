@@ -185,13 +185,72 @@ export default function DocsPage() {
 
           {/* Main Content */}
           <main className="py-8 pb-24 min-w-0">
-            {/* Hero */}
-            <div className="mb-12">
-              <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">API Documentation</h1>
-              <p className="text-lg text-slate-400 max-w-2xl">
-                Verify healthcare licenses across all 50 states with a single API call.
-                RN, LPN, NP, PA, MD, and DO — powered by official government data.
-              </p>
+            {/* Hero Header */}
+            <div className="mb-12 relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-[#0f1d35] via-[#0a1628] to-[#0d1f3c]">
+              {/* Background decoration */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-[#2563EB]/5 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03]"
+                  style={{
+                    backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+                    backgroundSize: '24px 24px',
+                  }}
+                />
+              </div>
+
+              <div className="relative px-8 py-10 sm:px-10 sm:py-12">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20">
+                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                        <span className="text-xs font-medium text-[#2563EB]">v1.0 — All Systems Operational</span>
+                      </div>
+                    </div>
+                    <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
+                      API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-cyan-400">Documentation</span>
+                    </h1>
+                    <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                      Verify healthcare licenses across all 50 states with a single API call.
+                      RN, LPN, NP, PA, MD, and DO — powered by official government data.
+                    </p>
+                  </div>
+
+                  {/* Quick stats */}
+                  <div className="flex flex-row sm:flex-col gap-4 sm:gap-3 flex-shrink-0">
+                    {[
+                      { label: 'Response Time', value: '<100ms', icon: '⚡' },
+                      { label: 'License Records', value: '5.3M+', icon: '🗄️' },
+                      { label: 'States Covered', value: 'All 50', icon: '🇺🇸' },
+                    ].map((stat) => (
+                      <div key={stat.label} className="flex items-center gap-3 bg-slate-800/50 border border-slate-700/50 rounded-lg px-4 py-2.5">
+                        <span className="text-lg">{stat.icon}</span>
+                        <div>
+                          <div className="text-white font-semibold text-sm">{stat.value}</div>
+                          <div className="text-slate-500 text-xs">{stat.label}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quick links */}
+                <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-slate-700/50">
+                  <a href="#register" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2563EB] text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>
+                    Get Your Free API Key
+                  </a>
+                  <a href="#code-examples" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:text-white border border-slate-700 transition-colors">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                    Code Examples
+                  </a>
+                  <a href="https://api-cert-api.onrender.com/docs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:text-white border border-slate-700 transition-colors">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    Interactive Swagger
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Getting Started */}
