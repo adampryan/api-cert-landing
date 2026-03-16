@@ -45,7 +45,7 @@ export default function Hero() {
         <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-9 w-auto" />
         <div className="flex items-center gap-6">
           <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
-          <a href="#api" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
+          <a href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
           <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Free Key</a>
         </div>
       </nav>
