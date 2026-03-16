@@ -12,7 +12,7 @@ export default function Pricing() {
         'Community support',
       ],
       cta: 'Get Free API Key',
-      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Free%20Key%20Request',
+      href: '/docs#register',
       featured: false,
     },
     {
@@ -28,7 +28,7 @@ export default function Pricing() {
         'Standard SLA',
       ],
       cta: 'Start Free Trial',
-      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Starter%20Plan',
+      href: '/docs#register',
       featured: false,
     },
     {
@@ -44,7 +44,7 @@ export default function Pricing() {
         '99.9% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Growth%20Plan',
+      href: '/docs#register',
       featured: true,
     },
     {
@@ -61,7 +61,7 @@ export default function Pricing() {
         '99.95% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Agency%20Plan',
+      href: '/docs#register',
       featured: false,
     },
   ];
