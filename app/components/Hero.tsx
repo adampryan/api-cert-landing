@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="flex items-center gap-6">
           <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
           <a href="#api" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
-          <a href="/signup" className="text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Started</a>
+          <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Get Free Key</a>
         </div>
       </nav>
       {/* Background gradient effects */}
@@ -68,16 +68,16 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="#pricing"
+                href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request&body=Hi%20Adam%2C%0A%0AI%27d%20like%20to%20try%20API-Cert.%20Please%20send%20me%20a%20free%20API%20key.%0A%0AThanks!"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#2563EB] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 text-lg"
               >
-                Start Free Trial
+                Get Free API Key
               </a>
               <a
-                href="/docs"
+                href="#api"
                 className="inline-flex items-center justify-center px-8 py-4 border border-slate-500 text-slate-300 font-semibold rounded-lg hover:bg-slate-800 hover:border-slate-400 transition-colors duration-200 text-lg"
               >
-                View Docs
+                View Examples
               </a>
             </div>
           </div>

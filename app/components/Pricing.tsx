@@ -1,6 +1,21 @@
 export default function Pricing() {
   const plans = [
     {
+      name: 'Free',
+      price: '$0',
+      period: '',
+      description: 'Try it out',
+      features: [
+        '50 verifications/month',
+        '10 requests/minute',
+        'All 50 states',
+        'Community support',
+      ],
+      cta: 'Get Free API Key',
+      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Free%20Key%20Request',
+      featured: false,
+    },
+    {
       name: 'Starter',
       price: '$99',
       period: '/mo',
@@ -9,10 +24,11 @@ export default function Pricing() {
         '500 verifications/month',
         '60 requests/minute',
         'Email support',
+        'Bulk CSV upload',
         'Standard SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/signup',
+      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Starter%20Plan',
       featured: false,
     },
     {
@@ -28,7 +44,7 @@ export default function Pricing() {
         '99.9% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/signup',
+      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Growth%20Plan',
       featured: true,
     },
     {
@@ -45,7 +61,7 @@ export default function Pricing() {
         '99.95% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/signup',
+      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Agency%20Plan',
       featured: false,
     },
   ];
@@ -62,7 +78,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -139,7 +155,7 @@ export default function Pricing() {
               <span>SSO & SAML</span>
             </div>
             <a
-              href="/signup"
+              href="mailto:adam@oneweeklabs.com?subject=API-Cert%20Enterprise%20Inquiry"
               className="inline-flex items-center justify-center px-8 py-3 border border-slate-500 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors"
             >
               Contact Sales
