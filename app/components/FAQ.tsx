@@ -39,31 +39,31 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-white" id="faq">
+    <section className="py-24 bg-[#FAFBFC]" id="faq">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             Everything you need to know about API-Cert
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="divide-y divide-slate-200">
+          <div className="divide-y divide-[#E5E7EB]">
             {faqs.map((faq, index) => (
-              <div key={index} className="py-4">
+              <div key={index} className="py-5">
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="flex w-full items-center justify-between text-left"
                 >
-                  <span className="text-lg font-medium text-slate-900 pr-8">
+                  <span className="text-lg font-medium text-[#111827] pr-8">
                     {faq.question}
                   </span>
                   <span className="flex-shrink-0">
                     <svg
-                      className={`w-5 h-5 text-slate-500 transition-transform duration-200 ${
+                      className={`w-5 h-5 text-[#059669] transition-transform duration-200 ${
                         openIndex === index ? 'rotate-180' : ''
                       }`}
                       fill="none"
@@ -84,17 +84,17 @@ export default function FAQ() {
                     openIndex === index ? 'max-h-96 pt-4' : 'max-h-0'
                   }`}
                 >
-                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-slate-600 mb-4">Still have questions?</p>
+            <p className="text-gray-500 mb-4">Still have questions?</p>
             <a
               href="/signup"
-              className="inline-flex items-center text-[#2563EB] font-medium hover:underline"
+              className="inline-flex items-center text-[#059669] font-medium hover:underline"
             >
               Contact our team
               <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -82,13 +82,13 @@ export default function CodeExamples() {
   ];
 
   return (
-    <section className="py-20 bg-white" id="api">
+    <section className="py-24 bg-white" id="api">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-4">
             One Call, Complete Credentialing
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
             License verification and exclusion screening in a single API request — no more juggling multiple systems
           </p>
         </div>
@@ -97,17 +97,17 @@ export default function CodeExamples() {
           <div className="grid lg:grid-cols-2 gap-6">
             {/* Request */}
             <div>
-              <div className="bg-[#0d1117] rounded-lg border border-slate-700 overflow-hidden">
+              <div className="bg-[#1F2937] rounded-2xl border border-gray-700/30 overflow-hidden shadow-lg">
                 {/* Tabs */}
-                <div className="flex border-b border-slate-700 bg-[#161b22]">
+                <div className="flex border-b border-gray-700/30 bg-[#111827]">
                   {tabs.map((tab) => (
                     <button
                       key={tab.key}
                       onClick={() => setActiveTab(tab.key)}
                       className={`px-4 py-3 text-sm font-medium transition-colors ${
                         activeTab === tab.key
-                          ? 'text-white bg-[#0d1117] border-b-2 border-[#2563EB]'
-                          : 'text-slate-400 hover:text-slate-200'
+                          ? 'text-white bg-[#1F2937] border-b-2 border-[#059669]'
+                          : 'text-gray-500 hover:text-gray-300'
                       }`}
                     >
                       {tab.label}
@@ -116,36 +116,36 @@ export default function CodeExamples() {
                 </div>
 
                 {/* Code */}
-                <div className="p-4 overflow-x-auto">
-                  <pre className="text-sm text-slate-300 font-mono whitespace-pre-wrap">
+                <div className="p-5 overflow-x-auto">
+                  <pre className="text-sm text-gray-400 font-mono whitespace-pre-wrap">
                     {codeExamples[activeTab]}
                   </pre>
                 </div>
               </div>
-              <p className="text-center text-slate-500 text-sm mt-3">Request</p>
+              <p className="text-center text-gray-400 text-sm mt-3">Request</p>
             </div>
 
             {/* Response */}
             <div>
-              <div className="bg-[#0d1117] rounded-lg border border-slate-700 overflow-hidden">
-                <div className="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700">
-                  <span className="text-slate-400 text-sm font-medium">Response</span>
-                  <span className="ml-auto text-green-400 text-xs font-mono">200 OK</span>
+              <div className="bg-[#1F2937] rounded-2xl border border-gray-700/30 overflow-hidden shadow-lg">
+                <div className="flex items-center px-4 py-3 bg-[#111827] border-b border-gray-700/30">
+                  <span className="text-gray-500 text-sm font-medium">Response</span>
+                  <span className="ml-auto text-emerald-400 text-xs font-mono">200 OK</span>
                 </div>
-                <div className="p-4 overflow-x-auto">
-                  <pre className="text-sm text-slate-300 font-mono whitespace-pre">
+                <div className="p-5 overflow-x-auto">
+                  <pre className="text-sm text-gray-400 font-mono whitespace-pre">
                     {responseExample}
                   </pre>
                 </div>
               </div>
-              <p className="text-center text-slate-500 text-sm mt-3">JSON Response</p>
+              <p className="text-center text-gray-400 text-sm mt-3">JSON Response</p>
             </div>
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <a
               href="/docs"
-              className="inline-flex items-center text-[#2563EB] font-medium hover:underline"
+              className="inline-flex items-center text-[#059669] font-medium hover:underline"
             >
               View full API documentation
               <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
