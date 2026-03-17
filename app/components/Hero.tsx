@@ -52,6 +52,11 @@ export default function Hero() {
       </nav>
       {/* Background gradient effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#111827] via-[#0f1d32] to-[#111827]" />
+      {/* Grid overlay */}
+      <div className="absolute inset-0 opacity-[0.07]" style={{
+        backgroundImage: `linear-gradient(rgba(148,163,184,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.5) 1px, transparent 1px)`,
+        backgroundSize: '40px 40px',
+      }} />
       <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-emerald-600/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-emerald-600/5 rounded-full blur-3xl" />
 
