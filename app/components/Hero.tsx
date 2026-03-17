@@ -6,9 +6,9 @@ import Image from 'next/image';
 const jsonResponse = {
   verified: true,
   provider_type: "MD",
-  state: "TX",
-  full_name: "JAMES R. MARTINEZ",
-  license_number: "MD-184920",
+  state: "MA",
+  full_name: "SARAH K. CHEN",
+  license_number: "MD-227415",
   status: "ACTIVE",
   expiration_date: "2028-03-15",
   disciplinary_flag: false,
@@ -60,13 +60,13 @@ export default function Hero() {
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              One API. Every Provider Type.{' '}
-              <span className="text-[#2563EB]">Complete Compliance.</span>
+              The Fastest Way to Verify Provider Credentials{' '}
+              <span className="text-[#2563EB]">in New England.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-              Stop juggling Nursys, state medical boards, OIG, and SAM.gov.
-              API-Cert unifies license verification and exclusion screening for
-              RN, LPN, NP, PA, MD, and DO providers — one call, one response.
+              Official state board data for Massachusetts, Rhode Island, and Connecticut — refreshed weekly.
+              All provider types. Exclusion screening included.
+              Expanding nationwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a

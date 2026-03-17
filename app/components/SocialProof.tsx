@@ -1,7 +1,7 @@
 export default function SocialProof() {
   const stats = [
-    { value: '6', label: 'License Types' },
-    { value: '50', label: 'States Covered' },
+    { value: '14', label: 'States Live' },
+    { value: 'Weekly', label: 'Data Refresh' },
     { value: '3', label: 'Exclusion Lists' },
     { value: '<100ms', label: 'Response Time' },
   ];
@@ -11,7 +11,7 @@ export default function SocialProof() {
     { name: 'OIG LEIE', description: 'Exclusion Database' },
     { name: 'SAM.gov', description: 'Federal Exclusions' },
     { name: 'CMS', description: 'Preclusion List' },
-    { name: 'State Boards', description: '50 State Registries' },
+    { name: 'State Boards', description: 'Official Registries' },
   ];
 
   return (

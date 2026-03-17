@@ -5,7 +5,7 @@ export default function Features() {
       iconBg: 'bg-blue-100',
       iconColor: 'text-blue-600',
       title: 'All Provider Types, One Call',
-      description: 'RN, LPN, NP, PA, MD, and DO — verify any healthcare provider across all 50 states with a single API endpoint.',
+      description: 'RN, LPN, NP, PA, MD, and DO — verify any healthcare provider with a single API endpoint. Deepest coverage in New England, expanding nationally.',
     },
     {
       icon: '🛡',
@@ -36,11 +36,11 @@ export default function Features() {
       description: 'Upload a CSV or send up to 100 providers in a single API call. Perfect for onboarding and re-credentialing.',
     },
     {
-      icon: '✓',
+      icon: '📍',
       iconBg: 'bg-cyan-100',
       iconColor: 'text-cyan-600',
-      title: 'All 50 States & Expanding',
-      description: 'Every state board covered, plus DC and territories. Fresh data from official government sources every 24 hours.',
+      title: 'Built in Massachusetts',
+      description: 'Built in Somerset, MA by a healthcare data analyst. 14 states live today, with new states added weekly. Real data, real coverage, growing every week.',
     },
   ];
 
