@@ -2,106 +2,117 @@
 
 import { useState } from 'react';
 
-const faqs = [
+const categories = [
   {
-    question: 'What license types do you cover?',
-    answer:
-      'We verify RN (Registered Nurse), LPN (Licensed Practical Nurse), NP (Nurse Practitioner), PA (Physician Assistant), MD (Medical Doctor), and DO (Doctor of Osteopathic Medicine) licenses. Additional license types are being added regularly.',
+    title: 'Coverage & Data',
+    questions: [
+      {
+        q: 'What license types do you cover?',
+        a: 'We verify RN, LPN, NP, PA, MD, and DO licenses. Additional license types are being added regularly.',
+      },
+      {
+        q: 'How fresh is the data?',
+        a: 'Our database is updated weekly through automated ingestion from official state board registries and federal databases.',
+      },
+      {
+        q: 'Do you cover all 50 states?',
+        a: 'We currently have deep board-level data for 14 states with a focus on New England (MA, RI, CT). NPI and exclusion screening covers all 50 states. New states are added weekly.',
+      },
+    ],
   },
   {
-    question: 'How fresh is the data?',
-    answer:
-      'Our database is updated daily through automated ingestion from official state board registries and federal databases. This ensures you always have access to the most current license status information.',
+    title: 'Compliance & Security',
+    questions: [
+      {
+        q: 'Is this HIPAA compliant?',
+        a: 'We verify publicly available license information only. No Protected Health Information (PHI) is transmitted or stored. License verification data is public record.',
+      },
+      {
+        q: 'What exclusion lists do you check?',
+        a: 'Every verification automatically checks OIG LEIE, SAM.gov, and CMS Preclusion List — no extra cost or separate API calls needed.',
+      },
+    ],
   },
   {
-    question: 'Do you cover all 50 states?',
-    answer:
-      'Yes. We cover all 50 US states, plus Washington DC, Puerto Rico, Guam, US Virgin Islands, and other US territories. Every state nursing and provider board is included.',
-  },
-  {
-    question: 'Is this HIPAA compliant?',
-    answer:
-      'We verify publicly available license information only. No Protected Health Information (PHI) is transmitted or stored. License verification data is public record and does not fall under HIPAA regulations.',
-  },
-  {
-    question: 'Can I verify in bulk?',
-    answer:
-      'Yes. You can upload a CSV file through our dashboard or send up to 100 license verification requests in a single API call. This is perfect for onboarding multiple providers or periodic re-verification.',
-  },
-  {
-    question: "What if a license isn't found?",
-    answer:
-      'If we cannot find a match in the state registry, we return a "not_found" status along with the query latency. We also attempt a secondary lookup through NPPES as a fallback for provider identification.',
+    title: 'Using the API',
+    questions: [
+      {
+        q: 'Can I verify in bulk?',
+        a: 'Yes. Upload a CSV or send up to 100 providers in a single API call. Perfect for onboarding and re-credentialing.',
+      },
+      {
+        q: "What if a license isn't found?",
+        a: 'We return a "not_found" status along with query latency. We also attempt a secondary lookup through NPPES as a fallback.',
+      },
+    ],
   },
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openKey, setOpenKey] = useState<string | null>('0-0');
 
   return (
-    <section className="py-24 bg-[#FAFBFC]" id="faq">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 lg:py-32 bg-surface" id="faq">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#111827] mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-            Everything you need to know about API-Cert
-          </p>
+          <p className="text-emerald-brand font-mono text-sm uppercase tracking-widest mb-3">FAQ</p>
+          <h2 className="text-3xl lg:text-4xl font-bold text-charcoal">Frequently Asked Questions</h2>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="divide-y divide-[#E5E7EB]">
-            {faqs.map((faq, index) => (
-              <div key={index} className="py-5">
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="flex w-full items-center justify-between text-left"
-                >
-                  <span className="text-lg font-medium text-[#111827] pr-8">
-                    {faq.question}
-                  </span>
-                  <span className="flex-shrink-0">
-                    <svg
-                      className={`w-5 h-5 text-[#059669] transition-transform duration-200 ${
-                        openIndex === index ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-200 ${
-                    openIndex === index ? 'max-h-96 pt-4' : 'max-h-0'
-                  }`}
-                >
-                  <p className="text-gray-500 leading-relaxed">{faq.answer}</p>
-                </div>
+        <div className="space-y-10">
+          {categories.map((cat, ci) => (
+            <div key={ci}>
+              <p className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-4">{cat.title}</p>
+              <div className="border-t border-border">
+                {cat.questions.map((item, qi) => {
+                  const key = `${ci}-${qi}`;
+                  const isOpen = openKey === key;
+                  return (
+                    <div key={key} className="border-b border-border">
+                      <button
+                        onClick={() => setOpenKey(isOpen ? null : key)}
+                        className="flex w-full items-center justify-between py-5 text-left group"
+                      >
+                        <span className="text-base font-medium text-charcoal pr-8 group-hover:text-emerald-brand transition-colors">
+                          {item.q}
+                        </span>
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full border border-border flex items-center justify-center text-gray-400 group-hover:border-emerald-brand group-hover:text-emerald-brand transition-colors">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                            {isOpen ? (
+                              <path d="M5 12h14" />
+                            ) : (
+                              <>
+                                <path d="M12 5v14" />
+                                <path d="M5 12h14" />
+                              </>
+                            )}
+                          </svg>
+                        </span>
+                      </button>
+                      <div className={`faq-content ${isOpen ? 'open' : ''}`}>
+                        <div>
+                          <p className="text-gray-500 leading-relaxed pb-5">{item.a}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-gray-500 mb-4">Still have questions?</p>
-            <a
-              href="/signup"
-              className="inline-flex items-center text-[#059669] font-medium hover:underline"
-            >
-              Contact our team
-              <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+        <div className="mt-12 text-center">
+          <p className="text-gray-500 mb-3">Still have questions?</p>
+          <a
+            href="mailto:adam@oneweeklabs.com?subject=API-Cert%20Question"
+            className="inline-flex items-center gap-1 text-emerald-brand font-medium hover:underline"
+          >
+            Contact our team
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

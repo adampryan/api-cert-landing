@@ -47,20 +47,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* JSON animation keyframes */
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
+/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -68,8 +59,37 @@ html {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(0); }
+  50% { transform: perspective(1000px) rotateY(-8deg) rotateX(4deg) translateY(-8px); }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .animation-delay-200 {
@@ -82,4 +102,106 @@ html {
 
 .animation-delay-600 {
   animation-delay: 600ms;
+}
+
+/* Intersection observer reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 100ms; }
+.reveal-delay-2 { transition-delay: 200ms; }
+.reveal-delay-3 { transition-delay: 300ms; }
+.reveal-delay-4 { transition-delay: 400ms; }
+.reveal-delay-5 { transition-delay: 500ms; }
+.reveal-delay-6 { transition-delay: 600ms; }
+
+/* Hero grid pattern */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Terminal dots */
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Code syntax colors */
+.syntax-key { color: #7dd3fc; }
+.syntax-string { color: #86efac; }
+.syntax-number { color: #fbbf24; }
+.syntax-bool { color: #c084fc; }
+.syntax-comment { color: #64748b; }
+.syntax-method { color: #f472b6; }
+.syntax-url { color: #67e8f9; }
+
+/* Pricing table */
+.pricing-featured-col {
+  background: linear-gradient(180deg, rgba(5, 150, 105, 0.08) 0%, transparent 40%);
+}
+
+/* Section divider */
+.section-divider {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%);
+  padding-bottom: 48px;
+}
+
+.section-divider-reverse {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 48px));
+  padding-bottom: 48px;
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* FAQ accordion */
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-content.open {
+  grid-template-rows: 1fr;
+}
+
+.faq-content > div {
+  overflow: hidden;
+}
+
+/* Float animation for hero card */
+.hero-float {
+  animation: float 6s ease-in-out infinite;
+  transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
 }

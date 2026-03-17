@@ -1,44 +1,73 @@
-import Image from 'next/image';
+const columns = [
+  {
+    title: 'Product',
+    links: [
+      { name: 'Features', href: '/#features' },
+      { name: 'Pricing', href: '/#pricing' },
+      { name: 'API Docs', href: '/docs' },
+      { name: 'How It Works', href: '/#how-it-works' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { name: 'Documentation', href: '/docs' },
+      { name: 'API Status', href: '/status' },
+      { name: 'FAQ', href: '/#faq' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { name: 'About', href: 'mailto:adam@oneweeklabs.com?subject=About%20API-Cert' },
+      { name: 'Contact', href: 'mailto:adam@oneweeklabs.com' },
+      { name: 'OneWeek Labs', href: 'https://oneweeklabs.com' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+    ],
+  },
+];
 
 export default function Footer() {
-  const links = [
-    { name: 'Docs', href: '/docs' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '/signup' },
-    { name: 'Status', href: '/status' },
-  ];
-
   return (
-    <footer className="bg-[#111827] py-12">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Logo and company */}
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 bg-[#059669] rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm">AC</span>
-              </div>
-              <span className="text-white font-semibold text-lg">api-cert.com</span>
+    <footer className="bg-charcoal">
+      {/* Emerald accent line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-emerald-brand to-transparent" />
+
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16 mb-12">
+          {columns.map((col) => (
+            <div key={col.title}>
+              <p className="text-xs font-mono text-gray-400 uppercase tracking-widest mb-4">{col.title}</p>
+              <ul className="space-y-3">
+                {col.links.map((link) => (
+                  <li key={link.name}>
+                    <a href={link.href} className="text-sm text-gray-500 hover:text-white transition-colors">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-gray-500 text-sm">Built by OneWeek Labs</p>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-lg bg-emerald-brand flex items-center justify-center">
+              <span className="text-white font-bold text-xs">AC</span>
+            </div>
+            <span className="text-gray-400 text-sm">api-cert.com</span>
           </div>
-
-          {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-500 hover:text-[#059669] transition-colors text-sm"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* Copyright */}
           <p className="text-gray-600 text-sm">
-            &copy; 2026 API-Cert. All rights reserved.
+            &copy; 2026 API-Cert. Built by OneWeek Labs.
           </p>
         </div>
       </div>
