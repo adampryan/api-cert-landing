@@ -1,144 +1,169 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const jsonResponse = {
+  verified: true,
+  provider_type: "MD",
+  state: "MA",
+  full_name: "SARAH K. CHEN",
+  license_number: "MD-227415",
+  status: "ACTIVE",
+  expiration_date: "2028-03-15",
+  disciplinary_flag: false,
+  oig_excluded: false,
+  sam_excluded: false,
+  cms_precluded: false,
+  latency_ms: 6
+};
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
+  const [displayedLines, setDisplayedLines] = useState<string[]>([]);
+  const [isTyping, setIsTyping] = useState(true);
+
+  const jsonLines = JSON.stringify(jsonResponse, null, 2).split('\n');
 
   useEffect(() => {
-    setMounted(true);
+    let currentLine = 0;
+    const interval = setInterval(() => {
+      if (currentLine < jsonLines.length) {
+        setDisplayedLines(prev => [...prev, jsonLines[currentLine]]);
+        currentLine++;
+      } else {
+        setIsTyping(false);
+        clearInterval(interval);
+      }
+    }, 80);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-charcoal overflow-hidden hero-grid">
-      {/* Gradient orbs */}
-      <div className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] rounded-full bg-emerald-brand/20 blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full bg-teal-brand/10 blur-[96px] pointer-events-none" />
-
+    <section className="bg-[#111827] min-h-screen flex items-center relative overflow-hidden">
       {/* Nav */}
-      <nav className="relative z-10 max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-emerald-brand flex items-center justify-center">
-            <span className="text-white font-bold text-sm">AC</span>
-          </div>
-          <span className="text-white font-semibold text-lg">api-cert</span>
-        </div>
+      <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+        <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-9 w-auto" />
         <div className="flex items-center gap-6">
-          <a href="/#pricing" className="text-gray-400 hover:text-white transition-colors text-sm">Pricing</a>
-          <a href="/docs" className="text-gray-400 hover:text-white transition-colors text-sm">Docs</a>
-          <a
-            href="/docs#register"
-            className="bg-amber-brand hover:bg-amber-brand/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-          >
-            Get Free Key
-          </a>
+          <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
+          <a href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
+          <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-sm bg-[#059669] text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">Get Free Key</a>
         </div>
       </nav>
+      {/* Background gradient effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#111827] via-[#0f1d32] to-[#111827]" />
+      <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-emerald-600/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-emerald-600/5 rounded-full blur-3xl" />
 
-      {/* Hero content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-24 lg:pt-24 lg:pb-32">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — Copy */}
-          <div className={`${mounted ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <p className="text-emerald-brand font-mono text-sm mb-6 tracking-wide uppercase">Healthcare Credentialing API</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
-              <span className="font-light">Credential Verification</span>
-              <br />
-              <span className="font-bold">That Actually Works.</span>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left column - Text content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+              The Fastest Way to Verify Provider Credentials{' '}
+              <span className="text-[#059669]">in New England.</span>
             </h1>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-lg mb-8">
-              One API call. Real-time license status, NPI data, and exclusion screening across New England — powered by official state board data.
+            <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
+              Official state board data for Massachusetts, Rhode Island, and Connecticut — refreshed weekly.
+              All provider types. Exclusion screening included.
+              Expanding nationwide.
             </p>
-            <div className="flex flex-wrap gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="/docs#register"
-                className="bg-amber-brand hover:bg-amber-brand/90 text-white px-6 py-3 rounded-lg font-semibold transition-colors text-base"
+                href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request&body=Hi%20Adam%2C%0A%0AI%27d%20like%20to%20try%20API-Cert.%20Please%20send%20me%20a%20free%20API%20key.%0A%0AThanks!"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#D97706] text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 text-lg"
               >
-                Start Free
+                Get Free API Key
               </a>
               <a
-                href="/docs"
-                className="border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors text-base"
+                href="#api"
+                className="inline-flex items-center justify-center px-8 py-4 border border-slate-500 text-slate-300 font-semibold rounded-lg hover:bg-slate-800 hover:border-slate-400 transition-colors duration-200 text-lg"
               >
-                See the Docs
+                View Examples
               </a>
-            </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-500">
-              <span>&#10003; No credit card</span>
-              <span>&#10003; 50 free verifications</span>
-              <span>&#10003; API key in 30 seconds</span>
             </div>
           </div>
 
-          {/* Right — Dashboard mockup */}
-          <div className={`relative ${mounted ? 'animate-fade-in-up animation-delay-200' : 'opacity-0'}`}>
-            <div className="hero-float">
-              {/* Verification result card */}
-              <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-md mx-auto">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-mono text-gray-400 uppercase tracking-wide">Verification Result</span>
-                  <span className="text-xs font-mono text-emerald-brand">42ms</span>
-                </div>
-                <div className="flex items-center gap-4 mb-5">
-                  <div className="w-12 h-12 rounded-full bg-emerald-light flex items-center justify-center text-emerald-brand font-bold text-lg">
-                    SJ
-                  </div>
-                  <div>
-                    <p className="font-semibold text-charcoal">Sarah Johnson, RN</p>
-                    <p className="text-sm text-gray-500">NPI 1234567890</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3 mb-5">
-                  <div className="bg-surface rounded-lg px-3 py-2">
-                    <p className="text-xs text-gray-500 mb-1">License Status</p>
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-brand">
-                      <span className="w-2 h-2 rounded-full bg-emerald-brand" />
-                      ACTIVE
-                    </span>
-                  </div>
-                  <div className="bg-surface rounded-lg px-3 py-2">
-                    <p className="text-xs text-gray-500 mb-1">State</p>
-                    <p className="text-sm font-semibold text-charcoal">Massachusetts</p>
-                  </div>
-                  <div className="bg-surface rounded-lg px-3 py-2">
-                    <p className="text-xs text-gray-500 mb-1">Expiration</p>
-                    <p className="text-sm font-semibold text-charcoal">03/2027</p>
-                  </div>
-                  <div className="bg-surface rounded-lg px-3 py-2">
-                    <p className="text-xs text-gray-500 mb-1">License #</p>
-                    <p className="text-sm font-semibold text-charcoal">RN-284751</p>
-                  </div>
-                </div>
-                {/* Exclusion checks */}
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-xs text-gray-400 uppercase tracking-wide mb-2">Exclusion Screening</p>
-                  <div className="flex gap-4">
-                    {['OIG', 'SAM', 'CMS'].map((name) => (
-                      <span key={name} className="flex items-center gap-1.5 text-sm text-emerald-brand font-medium">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                        {name}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+          {/* Right column - Animated JSON block */}
+          <div className="relative">
+            <div className="bg-[#0d1117] rounded-lg border border-slate-700 shadow-2xl overflow-hidden">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-[#161b22] border-b border-slate-700">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="ml-3 text-slate-400 text-sm font-mono">api-cert response</span>
               </div>
 
-              {/* Terminal snippet */}
-              <div className="mt-4 bg-charcoal-light rounded-xl p-4 max-w-md mx-auto border border-gray-700/50">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="terminal-dot bg-red-500/80" />
-                  <span className="terminal-dot bg-yellow-500/80" />
-                  <span className="terminal-dot bg-emerald-brand/80" />
-                </div>
-                <pre className="text-xs font-mono text-gray-400 overflow-x-auto">
-                  <code>
-                    <span className="syntax-method">curl</span>{' '}<span className="syntax-url">api-cert.com/v1/verify</span>{' \\\n'}
-                    {'  '}<span className="syntax-key">-H</span>{' '}<span className="syntax-string">&quot;X-API-Key: sk_live_...&quot;</span>{' \\\n'}
-                    {'  '}<span className="syntax-key">-d</span>{' '}<span className="syntax-string">&apos;&#123;&quot;license_number&quot;: &quot;RN-284751&quot;,</span>{'\n'}
-                    {'       '}<span className="syntax-string">&quot;state&quot;: &quot;MA&quot;&#125;&apos;</span>
-                  </code>
+              {/* JSON content */}
+              <div className="p-6 font-mono text-sm sm:text-base overflow-x-auto">
+                <pre className="text-slate-300">
+                  {displayedLines.filter((line): line is string => typeof line === 'string').map((line, index) => (
+                    <div key={index} className="leading-relaxed">
+                      {line.includes('"verified": true') && (
+                        <span>
+                          {line.replace('true', '')}
+                          <span className="text-green-400">true</span>
+                          {line.endsWith(',') ? '' : ''}
+                        </span>
+                      )}
+                      {line.includes('"status": "ACTIVE"') && (
+                        <span>
+                          {line.replace('"ACTIVE"', '')}
+                          <span className="text-green-400">&quot;ACTIVE&quot;</span>
+                        </span>
+                      )}
+                      {line.includes('"oig_excluded": false') && (
+                        <span className="bg-green-400/10 -mx-2 px-2 rounded">
+                          {line.replace('false', '')}
+                          <span className="text-green-400 font-bold">false</span>
+                        </span>
+                      )}
+                      {line.includes('"sam_excluded": false') && (
+                        <span className="bg-green-400/10 -mx-2 px-2 rounded">
+                          {line.replace('false', '')}
+                          <span className="text-green-400 font-bold">false</span>
+                        </span>
+                      )}
+                      {line.includes('"cms_precluded": false') && (
+                        <span className="bg-green-400/10 -mx-2 px-2 rounded">
+                          {line.replace('false', '')}
+                          <span className="text-green-400 font-bold">false</span>
+                        </span>
+                      )}
+                      {line.includes('"disciplinary_flag": false') && (
+                        <span>
+                          {line.replace('false', '')}
+                          <span className="text-green-400">false</span>
+                        </span>
+                      )}
+                      {line.includes('"latency_ms": 6') && (
+                        <span>
+                          {line.replace('6', '')}
+                          <span className="text-amber-400">6</span>
+                        </span>
+                      )}
+                      {!line.includes('"verified"') &&
+                       !line.includes('"status"') &&
+                       !line.includes('"oig_excluded"') &&
+                       !line.includes('"sam_excluded"') &&
+                       !line.includes('"cms_precluded"') &&
+                       !line.includes('"disciplinary_flag"') &&
+                       !line.includes('"latency_ms"') && (
+                        <span>{line}</span>
+                      )}
+                    </div>
+                  ))}
+                  {isTyping && (
+                    <span className="inline-block w-2 h-5 bg-slate-400 animate-pulse ml-1" />
+                  )}
                 </pre>
               </div>
+            </div>
+
+            {/* Latency badge */}
+            <div className="absolute -bottom-4 -right-4 bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
+              <span className="text-green-400 font-mono text-sm">6ms response</span>
             </div>
           </div>
         </div>
