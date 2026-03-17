@@ -18,7 +18,7 @@ const steps = [
   {
     num: 3,
     title: 'Get Everything Back',
-    desc: 'License status, NPI match, exclusion screening — one response, under 100ms.',
+    desc: 'License status, NPI match, exclusion screening — one response, sub-second.',
     code: '{ "status": "ACTIVE",\n  "exclusions": {\n    "oig": false, "sam": false\n  }}',
   },
 ];

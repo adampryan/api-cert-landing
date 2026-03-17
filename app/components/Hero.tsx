@@ -47,7 +47,7 @@ export default function Hero() {
         <div className="flex items-center gap-6">
           <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
           <a href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
-          <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-sm bg-[#059669] text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">Get Free Key</a>
+          <a href="/docs#register" className="text-sm bg-[#059669] text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">Get Free Key</a>
         </div>
       </nav>
       {/* Background gradient effects */}
@@ -75,7 +75,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request&body=Hi%20Adam%2C%0A%0AI%27d%20like%20to%20try%20API-Cert.%20Please%20send%20me%20a%20free%20API%20key.%0A%0AThanks!"
+                href="/docs#register"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#D97706] text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 text-lg"
               >
                 Get Free API Key

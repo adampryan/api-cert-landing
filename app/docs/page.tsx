@@ -220,7 +220,7 @@ export default function DocsPage() {
                   {/* Quick stats */}
                   <div className="flex flex-row sm:flex-col gap-4 sm:gap-3 flex-shrink-0">
                     {[
-                      { label: 'Response Time', value: '<100ms', icon: '⚡' },
+                      { label: 'Response Time', value: '<1s avg', icon: '⚡' },
                       { label: 'License Records', value: '5.3M+', icon: '🗄️' },
                       { label: 'States Covered', value: 'All 50', icon: '🇺🇸' },
                     ].map((stat) => (

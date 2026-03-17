@@ -49,7 +49,7 @@ const features = [
   },
   {
     icon: '⚡',
-    title: 'Sub-100ms Responses',
+    title: 'Sub-Second Responses',
     description: 'Pre-indexed data, not live scraping. Fast enough for real-time credentialing workflows and intake forms.',
     span: '',
   },
