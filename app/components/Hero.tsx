@@ -65,26 +65,25 @@ export default function Hero() {
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              The Fastest Way to Verify Provider Credentials{' '}
-              <span className="text-[#059669]">in New England.</span>
+              Healthcare Credentialing,{' '}
+              <span className="text-[#059669]">Automated.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-              Official state board data for Massachusetts, Rhode Island, and Connecticut — refreshed weekly.
-              All provider types. Exclusion screening included.
-              Expanding nationwide.
+              9 primary-source checks in seconds. AI-powered outreach for the rest. 
+              One dashboard to manage it all.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="/docs#register"
+                href="/portal/login"
                 className="inline-flex items-center justify-center px-8 py-4 bg-[#D97706] text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors duration-200 text-lg"
               >
-                Get Free API Key
+                Start Free Trial
               </a>
               <a
-                href="#api"
+                href="/docs"
                 className="inline-flex items-center justify-center px-8 py-4 border border-slate-500 text-slate-300 font-semibold rounded-lg hover:bg-slate-800 hover:border-slate-400 transition-colors duration-200 text-lg"
               >
-                View Examples
+                View API Docs
               </a>
             </div>
           </div>

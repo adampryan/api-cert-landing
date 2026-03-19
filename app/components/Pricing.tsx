@@ -1,67 +1,69 @@
 export default function Pricing() {
   const plans = [
     {
-      name: 'Free',
-      price: '$0',
-      period: '',
-      description: 'Try it out',
-      features: [
-        '50 verifications/month',
-        '10 requests/minute',
-        'All 50 states',
-        'Community support',
-      ],
-      cta: 'Get Free API Key',
-      href: '/docs#register',
-      featured: false,
-    },
-    {
-      name: 'Starter',
+      name: 'Verify',
       price: '$99',
       period: '/mo',
-      description: 'For small agencies',
+      description: 'API access + portal lookup',
       features: [
         '500 verifications/month',
-        '60 requests/minute',
+        'API access + portal',
+        'All automated checks',
         'Email support',
-        'Bulk CSV upload',
         'Standard SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/docs#register',
+      href: '/portal/login',
       featured: false,
     },
     {
-      name: 'Growth',
+      name: 'Track',
       price: '$299',
       period: '/mo',
       description: 'Most Popular',
       features: [
-        '2,000 verifications/month',
-        '120 requests/minute',
-        'Priority email support',
-        'Bulk CSV upload',
-        '99.9% uptime SLA',
+        'Verify plan features',
+        '50 active files',
+        'Workflow manager',
+        'AI outreach drafts',
+        'Priority support',
       ],
       cta: 'Start Free Trial',
-      href: '/docs#register',
+      href: '/portal/login',
       featured: true,
     },
     {
-      name: 'Agency',
-      price: '$799',
+      name: 'Manage',
+      price: '$599',
       period: '/mo',
-      description: 'For large staffing firms',
+      description: 'For larger teams',
       features: [
-        '10,000 verifications/month',
-        '300 requests/minute',
-        'Phone & email support',
-        'Bulk CSV upload',
-        'Webhook notifications',
-        '99.95% uptime SLA',
+        'Track plan features',
+        '200 active files',
+        'Committee packets',
+        'Team features',
+        'Advanced reporting',
+        '99.9% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/docs#register',
+      href: '/portal/login',
+      featured: false,
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
+      description: 'Unlimited scale',
+      features: [
+        'Unlimited files',
+        'Custom integrations',
+        'White-label option',
+        'Dedicated support',
+        'Custom SLA',
+        'SSO & SAML',
+      ],
+      cta: 'Contact Sales',
+      href: 'mailto:adam@oneweeklabs.com?subject=API-Cert%20Enterprise',
       featured: false,
     },
   ];
@@ -141,25 +143,16 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Enterprise */}
-        <div className="mt-12 max-w-3xl mx-auto">
-          <div className="bg-[#0a1628] rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-            <p className="text-slate-300 mb-4">
-              Unlimited verifications, custom SLA, and white-glove onboarding
+        {/* Free Trial Notice */}
+        <div className="mt-12 max-w-3xl mx-auto text-center">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8">
+            <h3 className="text-xl font-semibold text-emerald-900 mb-2">Start with a 14-day free trial</h3>
+            <p className="text-emerald-700 mb-4">
+              Try any plan free for 14 days. No credit card required. Cancel anytime.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400 mb-6">
-              <span>Unlimited volume</span>
-              <span>Custom rate limits</span>
-              <span>Dedicated support</span>
-              <span>SSO & SAML</span>
+            <div className="text-sm text-emerald-600">
+              All plans include the same verification features. Higher tiers add workflow management and team features.
             </div>
-            <a
-              href="mailto:adam@oneweeklabs.com?subject=API-Cert%20Enterprise%20Inquiry"
-              className="inline-flex items-center justify-center px-8 py-3 border border-slate-500 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors"
-            >
-              Contact Sales
-            </a>
           </div>
         </div>
       </div>
