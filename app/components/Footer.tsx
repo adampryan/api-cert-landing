@@ -12,6 +12,7 @@ const columns = [
   {
     title: 'Resources',
     links: [
+      { name: 'Blog', href: '/blog' },
       { name: 'Documentation', href: '/docs' },
       { name: 'API Status', href: '/status' },
       { name: 'FAQ', href: '/#faq' },
@@ -30,6 +31,7 @@ const columns = [
     links: [
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
+      { name: 'Compliance & Security', href: '/compliance' },
     ],
   },
 ];

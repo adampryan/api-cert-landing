@@ -45,6 +45,7 @@ export default function Hero() {
       <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
         <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-9 w-auto" />
         <div className="flex items-center gap-6">
+          <a href="/blog" className="text-sm text-slate-300 hover:text-white transition-colors">Blog</a>
           <a href="/roi" className="text-sm text-slate-300 hover:text-white transition-colors">ROI Calculator</a>
           <a href="#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</a>
           <a href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</a>
