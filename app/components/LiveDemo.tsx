@@ -22,6 +22,33 @@ interface VerifyResponse {
   source_name: string;
   data_freshness: string;
   retrieved_at: string;
+  verified?: boolean;
+}
+
+interface SearchResult {
+  full_name: string;
+  first_name: string | null;
+  last_name: string;
+  license_number: string | null;
+  license_type: string;
+  state: string;
+  status: string | null;
+  expiration_date: string | null;
+  license_type_detail: string | null;
+}
+
+interface ListResponse {
+  request_id: string;
+  match_count: number;
+  results: SearchResult[];
+  message: string | null;
+  latency_ms: number;
+}
+
+type DemoResponse = VerifyResponse | ListResponse;
+
+function isListResponse(data: DemoResponse): data is ListResponse {
+  return 'results' in data && Array.isArray((data as ListResponse).results);
 }
 
 const states = [
@@ -46,9 +73,12 @@ export default function LiveDemo() {
     state: 'FL',
     license_type: 'RN',
     last_name: 'Williams',
+    first_name: '',
   });
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<VerifyResponse | null>(null);
+  const [detailLoading, setDetailLoading] = useState(false);
+  const [result, setResult] = useState<DemoResponse | null>(null);
+  const [detailResult, setDetailResult] = useState<VerifyResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -56,15 +86,18 @@ export default function LiveDemo() {
     setLoading(true);
     setError(null);
     setResult(null);
+    setDetailResult(null);
 
     try {
-      const params = new URLSearchParams(formData);
-      const response = await fetch(`https://api.api-cert.com/v1/demo/verify?${params}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const params = new URLSearchParams({
+        state: formData.state,
+        license_type: formData.license_type,
+        last_name: formData.last_name,
       });
+      if (formData.first_name.trim()) {
+        params.set('first_name', formData.first_name.trim());
+      }
+      const response = await fetch(`https://api.api-cert.com/v1/demo/verify?${params}`);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -77,6 +110,43 @@ export default function LiveDemo() {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSelectProvider = async (provider: SearchResult) => {
+    setDetailLoading(true);
+    setDetailResult(null);
+
+    try {
+      const params = new URLSearchParams({
+        state: provider.state,
+        license_type: provider.license_type,
+        last_name: provider.last_name,
+      });
+      if (provider.license_number) {
+        params.set('license_number', provider.license_number);
+      }
+      if (provider.first_name) {
+        params.set('first_name', provider.first_name);
+      }
+      const response = await fetch(`https://api.api-cert.com/v1/demo/verify?${params}`);
+
+      if (!response.ok) {
+        throw new Error('Failed to load provider details');
+      }
+
+      const data = await response.json();
+      // If we still get a list (unlikely with license_number), take the first
+      if (isListResponse(data)) {
+        // Shouldn't happen with license_number, but handle gracefully
+        setDetailResult(null);
+      } else {
+        setDetailResult(data);
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
+    } finally {
+      setDetailLoading(false);
     }
   };
 
@@ -95,6 +165,170 @@ export default function LiveDemo() {
     return value ? 'text-red-600' : 'text-green-600';
   };
 
+  const getStatusBadge = (status: string | null) => {
+    if (!status) return null;
+    const colors: Record<string, string> = {
+      ACTIVE: 'bg-green-100 text-green-800',
+      EXPIRED: 'bg-red-100 text-red-800',
+      INACTIVE: 'bg-gray-100 text-gray-800',
+      SUSPENDED: 'bg-orange-100 text-orange-800',
+      REVOKED: 'bg-red-100 text-red-800',
+      CONDITIONAL: 'bg-yellow-100 text-yellow-800',
+    };
+    return (
+      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${colors[status] || 'bg-gray-100 text-gray-800'}`}>
+        {status}
+      </span>
+    );
+  };
+
+  const renderDetailCard = (detail: VerifyResponse) => (
+    <div className="space-y-6">
+      {/* Back button if we came from a list */}
+      {result && isListResponse(result) && (
+        <button
+          onClick={() => setDetailResult(null)}
+          className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center gap-1"
+        >
+          ← Back to results
+        </button>
+      )}
+
+      {/* Provider Info */}
+      <div className="bg-gray-50 rounded-lg p-4">
+        <h3 className="font-semibold text-gray-900 mb-2">Provider Information</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <span className="text-gray-600">Name:</span>
+            <span className="ml-2 font-medium">{detail.full_name}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">License:</span>
+            <span className="ml-2 font-medium">{detail.license_number || 'N/A'}</span>
+          </div>
+          <div>
+            <span className="text-gray-600">Expiry:</span>
+            <span className="ml-2 font-medium">{detail.expiration_date || 'N/A'}</span>
+          </div>
+        </div>
+        <div className="mt-2 text-xs text-gray-500">
+          Verified in {detail.latency_ms}ms • Source: {detail.source_name}
+        </div>
+      </div>
+
+      {/* 9-Point Verification Results */}
+      <div>
+        <h3 className="font-semibold text-gray-900 mb-4">9-Point Verification Results</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive' },
+            { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid' },
+            { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded' },
+            { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded' },
+            { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded' },
+            { name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? false : null, passText: 'Active', failText: 'Inactive' },
+            { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out' },
+            { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged' },
+            { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found' },
+          ].map((check, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between p-3 border border-gray-200 rounded-lg"
+            >
+              <div>
+                <div className="font-medium text-gray-900 text-sm">{check.name}</div>
+                <div className="text-xs text-gray-600">
+                  {getCheckText(check.value, check.passText, check.failText)}
+                </div>
+              </div>
+              <div className={`text-xl ${getStatusColor(check.value)}`}>
+                {getCheckIcon(check.value)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="text-center p-6 bg-blue-50 rounded-lg">
+        <h4 className="text-lg font-semibold text-gray-900 mb-2">Like what you see?</h4>
+        <p className="text-gray-600 mb-4">
+          Get unlimited access to our verification API. Free tier includes 25 verifications per month.
+        </p>
+        <a
+          href="https://api.api-cert.com/portal/signup"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+        >
+          Sign Up Free →
+        </a>
+      </div>
+    </div>
+  );
+
+  const renderListResults = (data: ListResponse) => (
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-gray-600">
+          {data.message || `Found ${data.match_count} matching providers`}
+        </p>
+        <span className="text-xs text-gray-400">{data.latency_ms}ms</span>
+      </div>
+
+      <div className="border border-gray-200 rounded-lg overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th className="text-left px-4 py-3 font-medium text-gray-700">Name</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-700">License #</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-700">Status</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-700">Expires</th>
+                <th className="px-4 py-3"></th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {data.results.map((provider, index) => (
+                <tr
+                  key={index}
+                  className="hover:bg-blue-50 cursor-pointer transition-colors"
+                  onClick={() => handleSelectProvider(provider)}
+                >
+                  <td className="px-4 py-3 font-medium text-gray-900">{provider.full_name}</td>
+                  <td className="px-4 py-3 text-gray-600 font-mono text-xs">{provider.license_number || '—'}</td>
+                  <td className="px-4 py-3">{getStatusBadge(provider.status)}</td>
+                  <td className="px-4 py-3 text-gray-600">{provider.expiration_date || '—'}</td>
+                  <td className="px-4 py-3 text-right">
+                    <span className="text-blue-600 text-xs font-medium">View →</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {data.match_count > 25 && (
+        <p className="text-xs text-gray-500 text-center">
+          Showing 25 of {data.match_count} results. Add a first name to narrow your search.
+        </p>
+      )}
+
+      {/* CTA */}
+      <div className="text-center p-6 bg-blue-50 rounded-lg">
+        <h4 className="text-lg font-semibold text-gray-900 mb-2">Need full API access?</h4>
+        <p className="text-gray-600 mb-4">
+          Search, verify, and monitor providers programmatically. Free tier includes 25 verifications per month.
+        </p>
+        <a
+          href="https://api.api-cert.com/portal/signup"
+          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+        >
+          Sign Up Free →
+        </a>
+      </div>
+    </div>
+  );
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +345,7 @@ export default function LiveDemo() {
           <div className="bg-white rounded-2xl shadow-xl p-8">
             {/* Demo Form */}
             <form onSubmit={handleSubmit} className="mb-8">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     State
@@ -155,7 +389,21 @@ export default function LiveDemo() {
                     value={formData.last_name}
                     onChange={(e) => setFormData({ ...formData, last_name: e.target.value })}
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Required"
                     required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    First Name
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.first_name}
+                    onChange={(e) => setFormData({ ...formData, first_name: e.target.value })}
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Optional"
                   />
                 </div>
 
@@ -165,7 +413,7 @@ export default function LiveDemo() {
                     disabled={loading}
                     className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-300 text-white font-medium py-2 px-4 rounded-lg transition-colors"
                   >
-                    {loading ? 'Verifying...' : 'Verify'}
+                    {loading ? 'Searching...' : 'Search'}
                   </button>
                 </div>
               </div>
@@ -178,132 +426,22 @@ export default function LiveDemo() {
               </div>
             )}
 
-            {/* Results Display */}
-            {result && (
-              <div className="space-y-6">
-                {/* Provider Info */}
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2">Provider Information</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-                    <div>
-                      <span className="text-gray-600">Name:</span>
-                      <span className="ml-2 font-medium">{result.full_name}</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">License:</span>
-                      <span className="ml-2 font-medium">{result.license_number || 'N/A'}</span>
-                    </div>
-                    <div>
-                      <span className="text-gray-600">Expiry:</span>
-                      <span className="ml-2 font-medium">{result.expiration_date || 'N/A'}</span>
-                    </div>
-                  </div>
-                  <div className="mt-2 text-xs text-gray-500">
-                    Verified in {result.latency_ms}ms • Source: {result.source_name}
-                  </div>
-                </div>
-
-                {/* 9-Point Verification Results */}
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-4">9-Point Verification Results</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {[
-                      {
-                        name: 'License Status',
-                        value: result.status === 'ACTIVE',
-                        displayValue: result.status,
-                        passText: 'Active',
-                        failText: 'Inactive',
-                      },
-                      {
-                        name: 'License Expiration',
-                        value: result.status === 'ACTIVE',
-                        displayValue: result.expiration_date,
-                        passText: 'Valid',
-                        failText: 'Expired/Invalid',
-                      },
-                      {
-                        name: 'OIG Exclusion',
-                        value: result.oig_excluded,
-                        displayValue: result.oig_excluded,
-                        passText: 'Not Excluded',
-                        failText: 'Excluded',
-                      },
-                      {
-                        name: 'SAM Exclusion',
-                        value: result.sam_excluded,
-                        displayValue: result.sam_excluded,
-                        passText: 'Not Excluded',
-                        failText: 'Excluded',
-                      },
-                      {
-                        name: 'CMS Preclusion',
-                        value: result.cms_precluded,
-                        displayValue: result.cms_precluded,
-                        passText: 'Not Precluded',
-                        failText: 'Precluded',
-                      },
-                      {
-                        name: 'DEA Registration',
-                        value: result.dea_status === 'ACTIVE' ? false : null,
-                        displayValue: result.dea_number || 'Pending',
-                        passText: 'Active',
-                        failText: 'Inactive',
-                      },
-                      {
-                        name: 'Medicare Opt-Out',
-                        value: result.medicare_optout,
-                        displayValue: result.medicare_optout,
-                        passText: 'Participating',
-                        failText: 'Opted Out',
-                      },
-                      {
-                        name: 'OFAC/SDN Check',
-                        value: result.ofac_flagged,
-                        displayValue: result.ofac_flagged,
-                        passText: 'Clear',
-                        failText: 'Flagged',
-                      },
-                      {
-                        name: 'Disciplinary Action',
-                        value: result.disciplinary_flag,
-                        displayValue: result.disciplinary_flag,
-                        passText: 'No Action',
-                        failText: 'Action Found',
-                      },
-                    ].map((check, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-3 border border-gray-200 rounded-lg"
-                      >
-                        <div>
-                          <div className="font-medium text-gray-900 text-sm">{check.name}</div>
-                          <div className="text-xs text-gray-600">
-                            {getCheckText(check.value, check.passText, check.failText)}
-                          </div>
-                        </div>
-                        <div className={`text-xl ${getStatusColor(check.value)}`}>
-                          {getCheckIcon(check.value)}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="text-center p-6 bg-blue-50 rounded-lg">
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">Like what you see?</h4>
-                  <p className="text-gray-600 mb-4">
-                    Get unlimited access to our verification API. Free tier includes 25 verifications per month.
-                  </p>
-                  <a
-                    href="https://api.api-cert.com/portal/signup"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
-                  >
-                    Sign Up Free →
-                  </a>
-                </div>
+            {/* Loading for detail view */}
+            {detailLoading && (
+              <div className="text-center py-8">
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <p className="mt-2 text-sm text-gray-500">Loading provider details...</p>
               </div>
+            )}
+
+            {/* Detail view (clicked from list) */}
+            {detailResult && !detailLoading && renderDetailCard(detailResult)}
+
+            {/* Results Display */}
+            {result && !detailResult && !detailLoading && (
+              isListResponse(result)
+                ? renderListResults(result)
+                : renderDetailCard(result)
             )}
           </div>
         </div>
