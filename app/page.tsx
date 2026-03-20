@@ -1,5 +1,6 @@
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
+import LiveDemo from './components/LiveDemo';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import CodeExamples from './components/CodeExamples';
@@ -12,6 +13,7 @@ export default function Home() {
     <main>
       <Hero />
       <SocialProof />
+      <LiveDemo />
       <HowItWorks />
       <Features />
       <CodeExamples />

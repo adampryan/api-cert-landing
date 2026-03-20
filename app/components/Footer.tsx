@@ -4,6 +4,7 @@ const columns = [
     links: [
       { name: 'Features', href: '/#features' },
       { name: 'Pricing', href: '/#pricing' },
+      { name: 'ROI Calculator', href: '/roi' },
       { name: 'API Docs', href: '/docs' },
       { name: 'How It Works', href: '/#how-it-works' },
     ],
