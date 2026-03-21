@@ -213,8 +213,8 @@ export default function DocsPage() {
                       API <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-brand to-cyan-400">Documentation</span>
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
-                      Verify healthcare licenses across all 50 states with a single API call.
-                      RN, LPN, NP, PA, MD, and DO — powered by official government data.
+                      Verify healthcare licenses across 13 states with direct board data, plus NPI and exclusion screening nationwide.
+                      RN, LPN, NP, PA, MD, and DO — powered by official government sources.
                     </p>
                   </div>
 
@@ -223,7 +223,7 @@ export default function DocsPage() {
                     {[
                       { label: 'Response Time', value: '<1s avg', icon: '⚡' },
                       { label: 'License Records', value: '5.3M+', icon: '🗄️' },
-                      { label: 'States Covered', value: 'All 50', icon: '🇺🇸' },
+                      { label: 'States w/ Board Data', value: '13', icon: '🇺🇸' },
                     ].map((stat) => (
                       <div key={stat.label} className="flex items-center gap-3 bg-slate-800/50 border border-slate-700/50 rounded-lg px-4 py-2.5">
                         <span className="text-lg">{stat.icon}</span>

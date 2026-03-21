@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "API-Cert | Healthcare License Verification API",
-  description: "Verify RN, LPN, NP, PA, MD, and DO licenses across all 50 states with sub-second responses. Official government data sources, updated daily.",
+  description: "Verify RN, LPN, NP, PA, MD, and DO licenses with sub-second responses. Direct state board data in 13 states, NPI and exclusion screening nationwide.",
   keywords: "healthcare license verification, RN verification, nursing license API, medical license check, NPPES, OIG exclusion check",
 };
 

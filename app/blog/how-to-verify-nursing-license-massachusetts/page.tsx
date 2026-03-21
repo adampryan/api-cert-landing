@@ -166,7 +166,7 @@ export default function MassachusettsNursingLicenseVerification() {
         </p>
 
         <ul>
-          <li><strong>All 50 states:</strong> Unified API covers every state board including Massachusetts</li>
+          <li><strong>13 states with primary source data:</strong> Direct state board integration including Massachusetts, with NPI and exclusion screening nationwide</li>
           <li><strong>6 primary sources:</strong> Simultaneously checks state boards, OIG, SAM, OFAC, and other critical databases</li>
           <li><strong>Sub-second responses:</strong> Get comprehensive results in under 20ms</li>
           <li><strong>Name matching:</strong> Advanced algorithms handle name variations automatically</li>

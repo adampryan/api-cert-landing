@@ -25,7 +25,7 @@ const complianceSections: ComplianceSection[] = [
     items: [
       {
         name: "State Professional Licensing Boards",
-        description: "Official licensing authorities for all 50 states, DC, and US territories",
+        description: "Direct integration with 13 state licensing boards, with NPPES fallback for remaining states",
         status: 'live',
         details: [
           "Real-time integration with state board APIs where available",
