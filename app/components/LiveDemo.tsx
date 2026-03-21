@@ -150,19 +150,24 @@ export default function LiveDemo() {
     }
   };
 
-  const getCheckIcon = (value: boolean | null) => {
+  // For exclusion-style checks: false = pass (not excluded), true = fail (excluded)
+  // Use `invert: true` on checks where true = good (like License Status = ACTIVE)
+  const getCheckIcon = (value: boolean | null, invert = false) => {
     if (value === null) return '⏳';
-    return value ? '❌' : '✅';
+    const pass = invert ? value : !value;
+    return pass ? '✅' : '❌';
   };
 
-  const getCheckText = (value: boolean | null, passText: string, failText: string) => {
+  const getCheckText = (value: boolean | null, passText: string, failText: string, invert = false) => {
     if (value === null) return 'Pending';
-    return value ? failText : passText;
+    const pass = invert ? value : !value;
+    return pass ? passText : failText;
   };
 
-  const getStatusColor = (value: boolean | null) => {
+  const getStatusColor = (value: boolean | null, invert = false) => {
     if (value === null) return 'text-yellow-600';
-    return value ? 'text-red-600' : 'text-green-600';
+    const pass = invert ? value : !value;
+    return pass ? 'text-green-600' : 'text-red-600';
   };
 
   const getStatusBadge = (status: string | null) => {
@@ -221,15 +226,15 @@ export default function LiveDemo() {
         <h3 className="font-semibold text-gray-900 mb-4">9-Point Verification Results</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {[
-            { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive' },
-            { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid' },
-            { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded' },
-            { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded' },
-            { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded' },
-            { name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? false : null, passText: 'Active', failText: 'Inactive' },
-            { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out' },
-            { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged' },
-            { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found' },
+            { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive', invert: true },
+            { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid', invert: true },
+            { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
+            { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
+            { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded', invert: false },
+            { name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? true : null, passText: 'Active', failText: 'Inactive', invert: true },
+            { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out', invert: false },
+            { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged', invert: false },
+            { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found', invert: false },
           ].map((check, index) => (
             <div
               key={index}
@@ -238,11 +243,11 @@ export default function LiveDemo() {
               <div>
                 <div className="font-medium text-gray-900 text-sm">{check.name}</div>
                 <div className="text-xs text-gray-600">
-                  {getCheckText(check.value, check.passText, check.failText)}
+                  {getCheckText(check.value, check.passText, check.failText, check.invert)}
                 </div>
               </div>
-              <div className={`text-xl ${getStatusColor(check.value)}`}>
-                {getCheckIcon(check.value)}
+              <div className={`text-xl ${getStatusColor(check.value, check.invert)}`}>
+                {getCheckIcon(check.value, check.invert)}
               </div>
             </div>
           ))}
