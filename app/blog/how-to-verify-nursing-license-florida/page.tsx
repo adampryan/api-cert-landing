@@ -221,8 +221,8 @@ export default function FloridaNursingLicenseVerification() {
 
         <ul>
           <li><strong>Real-time Florida integration:</strong> Direct connection to Florida Health Source data</li>
-          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board, OIG, SAM, and 6 other primary sources</li>
-          <li><strong>Lightning fast:</strong> Complete 9-point verification in under 20 milliseconds</li>
+          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board, OIG, SAM, OFAC, and other critical databases</li>
+          <li><strong>Lightning fast:</strong> Complete 6-point verification in under 20 milliseconds</li>
           <li><strong>Intelligent matching:</strong> Handles name variations, maiden names, and nicknames automatically</li>
           <li><strong>Always current:</strong> Fresh data synced directly from source systems</li>
         </ul>
@@ -242,7 +242,6 @@ export default function FloridaNursingLicenseVerification() {
   "compact_eligible": true,
   "oig_excluded": false,
   "sam_excluded": false,
-  "cms_precluded": false,
   "latency_ms": 8
 }`}
           </pre>
@@ -265,7 +264,7 @@ export default function FloridaNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any provider in 9 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Verify any nursing license in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

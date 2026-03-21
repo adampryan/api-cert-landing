@@ -234,7 +234,7 @@ export default function ROICalculator() {
                 </svg>
               </div>
               <h4 className="font-semibold text-lg text-gray-900 mb-2">Instant Results</h4>
-              <p className="text-gray-600">Complete 9-point verification in under 1 second vs. days of manual work</p>
+              <p className="text-gray-600">Complete multi-point verification in under 1 second vs. days of manual work</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -8,7 +8,7 @@ const features = [
   {
     icon: '⚡',
     title: 'Instant Verification',
-    description: '9 primary-source checks complete in seconds: license status, OIG, SAM, CMS preclusion, disciplinary actions, and more.',
+    description: 'Up to 9 primary-source checks complete in seconds: license status, OIG, SAM, OFAC, DEA, disciplinary actions, and more.',
     span: 'lg:col-span-2', // double-wide
     extra: (
       <div className="flex flex-wrap gap-2 mt-4">

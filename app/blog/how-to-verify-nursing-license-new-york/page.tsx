@@ -206,7 +206,6 @@ export default function NewYorkNursingLicenseVerification() {
           <li><strong>National Practitioner Data Bank:</strong> Mandatory for eligible healthcare organizations</li>
           <li><strong>CMS PECOS:</strong> Verify Medicare provider enrollment</li>
           <li><strong>NPPES NPI Registry:</strong> Confirm National Provider Identifier</li>
-          <li><strong>DEA Registration:</strong> For prescriptive authority verification</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Common New York Verification Challenges</h2>
@@ -242,7 +241,7 @@ export default function NewYorkNursingLicenseVerification() {
 
         <ul>
           <li><strong>Direct New York integration:</strong> Real-time access to OP.NYSED data</li>
-          <li><strong>Multi-database verification:</strong> Simultaneously checks state license plus 8 federal sources</li>
+          <li><strong>Multi-database verification:</strong> Simultaneously checks state license plus 5 federal sources</li>
           <li><strong>Ultra-fast responses:</strong> Complete verification in under 20 milliseconds</li>
           <li><strong>Smart name matching:</strong> Handles name variations and changes automatically</li>
           <li><strong>Current data:</strong> Always up-to-date information from official sources</li>
@@ -264,7 +263,6 @@ export default function NewYorkNursingLicenseVerification() {
   "compact_eligible": false,
   "oig_excluded": false,
   "sam_excluded": false,
-  "cms_precluded": false,
   "latency_ms": 11
 }`}
           </pre>
@@ -302,7 +300,7 @@ export default function NewYorkNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any provider in 9 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Verify any nursing license in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

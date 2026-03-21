@@ -171,7 +171,7 @@ export default function TexasNursingLicenseVerification() {
         <ul>
           <li><strong>National Practitioner Data Bank:</strong> Hospital-eligible organizations must query for adverse actions</li>
           <li><strong>CMS Provider Enrollment:</strong> Verify Medicare/Medicaid participation status</li>
-          <li><strong>DEA Registration:</strong> For nurses authorized to handle controlled substances</li>
+
           <li><strong>NPPES (NPI Registry):</strong> Verify National Provider Identifier information</li>
         </ul>
 
@@ -208,7 +208,7 @@ export default function TexasNursingLicenseVerification() {
 
         <ul>
           <li><strong>Real-time Texas integration:</strong> Direct access to Texas Board of Nursing data</li>
-          <li><strong>Multi-source verification:</strong> Simultaneously checks state board plus 8 federal databases</li>
+          <li><strong>Multi-source verification:</strong> Simultaneously checks state board plus 5 federal databases</li>
           <li><strong>Sub-second response times:</strong> Complete verification in under 20 milliseconds</li>
           <li><strong>Advanced name matching:</strong> Automatically handles name variations and aliases</li>
           <li><strong>Live data:</strong> Always current information from source systems</li>
@@ -230,7 +230,6 @@ export default function TexasNursingLicenseVerification() {
   "compact_eligible": true,
   "oig_excluded": false,
   "sam_excluded": false, 
-  "cms_precluded": false,
   "latency_ms": 14
 }`}
           </pre>
@@ -268,7 +267,7 @@ export default function TexasNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any provider in 9 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Verify any nursing license in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

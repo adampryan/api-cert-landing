@@ -205,7 +205,7 @@ export default function CaliforniaNursingLicenseVerification() {
           <li><strong>National Practitioner Data Bank:</strong> Required queries for eligible healthcare entities</li>
           <li><strong>CMS PECOS:</strong> Provider Enrollment, Chain and Ownership System</li>
           <li><strong>NPPES NPI Registry:</strong> National Provider Identifier verification</li>
-          <li><strong>DEA Registration:</strong> Drug Enforcement Administration registration for controlled substances</li>
+
           <li><strong>Social Security Death Master File:</strong> Verify the provider is not deceased</li>
         </ul>
 
@@ -263,8 +263,8 @@ export default function CaliforniaNursingLicenseVerification() {
 
         <ul>
           <li><strong>Real-time California integration:</strong> Direct connection to RN.ca.gov and bvnpt.ca.gov data</li>
-          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board plus 8 federal databases</li>
-          <li><strong>Lightning performance:</strong> Complete 9-point verification in under 20 milliseconds</li>
+          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board plus 5 federal databases</li>
+          <li><strong>Lightning performance:</strong> Complete 6-point verification in under 20 milliseconds</li>
           <li><strong>Intelligent name matching:</strong> Handles cultural names, aliases, and variations automatically</li>
           <li><strong>Always current data:</strong> Real-time sync with official source systems</li>
           <li><strong>Compact state detection:</strong> Automatically identifies and verifies NLC status</li>
@@ -286,7 +286,6 @@ export default function CaliforniaNursingLicenseVerification() {
   "compact_eligible": true,
   "oig_excluded": false,
   "sam_excluded": false,
-  "cms_precluded": false,
   "nppes_verified": true,
   "latency_ms": 16
 }`}
@@ -347,7 +346,7 @@ export default function CaliforniaNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any provider in 9 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Verify any provider in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

@@ -12,7 +12,7 @@ const steps = [
   {
     num: 2,
     title: 'Instant Verification',
-    desc: '9 automated checks complete in seconds: license status, exclusions, disciplinary actions.',
+    desc: 'Up to 9 automated checks complete in seconds: license status, exclusions, DEA, disciplinary actions, and more.',
     code: '✓ License: ACTIVE\n✓ OIG: Clear\n✓ SAM: Clear\n✓ CMS: Clear\n✓ Disciplinary: Clean',
   },
   {

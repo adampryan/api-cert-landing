@@ -114,7 +114,6 @@ export default function MassachusettsNursingLicenseVerification() {
         <ul>
           <li><strong>National Practitioner Data Bank (NPDB):</strong> Hospital-eligible organizations can query for adverse actions</li>
           <li><strong>CMS Provider Enrollment:</strong> Verify Medicare/Medicaid enrollment status if applicable</li>
-          <li><strong>Drug Enforcement Administration (DEA):</strong> Check DEA registration for providers who prescribe controlled substances</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Common Pitfalls to Avoid</h2>
@@ -150,7 +149,7 @@ export default function MassachusettsNursingLicenseVerification() {
 
         <ul>
           <li><strong>All 50 states:</strong> Unified API covers every state board including Massachusetts</li>
-          <li><strong>9 primary sources:</strong> Simultaneously checks state boards, OIG, SAM, CMS, and other critical databases</li>
+          <li><strong>6 primary sources:</strong> Simultaneously checks state boards, OIG, SAM, OFAC, and other critical databases</li>
           <li><strong>Sub-second responses:</strong> Get comprehensive results in under 20ms</li>
           <li><strong>Name matching:</strong> Advanced algorithms handle name variations automatically</li>
           <li><strong>Fresh data:</strong> Direct integration with source systems ensures up-to-date information</li>
@@ -170,7 +169,6 @@ export default function MassachusettsNursingLicenseVerification() {
   "disciplinary_flag": false,
   "oig_excluded": false,
   "sam_excluded": false,
-  "cms_precluded": false,
   "latency_ms": 12
 }`}
           </pre>
@@ -183,7 +181,7 @@ export default function MassachusettsNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any provider in 9 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Verify any nursing license in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

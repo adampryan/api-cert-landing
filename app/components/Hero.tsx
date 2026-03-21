@@ -71,7 +71,7 @@ export default function Hero() {
               <span className="text-[#059669]">Automated.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-              9 primary-source checks in seconds. AI-powered outreach for the rest. 
+              Up to 9 primary-source checks in seconds. AI-powered outreach for the rest. 
               One dashboard to manage it all.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
