@@ -224,23 +224,27 @@ export default function LiveDemo() {
       {/* 9-Point Verification Results */}
       <div>
         <h3 className="font-semibold text-gray-900 mb-4">
-          {['MD', 'DO', 'NP', 'PA'].includes(detail.license_type) ? '9' : '8'}-Point Verification Results
+          {['MD', 'DO', 'NP', 'PA'].includes(detail.license_type) ? '9' : '6'}-Point Verification Results
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive', invert: true },
-            { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid', invert: true },
-            { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
-            { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
-            { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded', invert: false },
-            // DEA only applies to prescribers (MD, DO, NP, PA)
-            ...(['MD', 'DO', 'NP', 'PA'].includes(detail.license_type)
-              ? [{ name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? true : null, passText: 'Active', failText: 'Inactive', invert: true }]
-              : []),
-            { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out', invert: false },
-            { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged', invert: false },
-            { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found', invert: false },
-          ].map((check, index) => (
+          {(() => {
+            const isPrescriber = ['MD', 'DO', 'NP', 'PA'].includes(detail.license_type);
+            const checks = [
+              { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive', invert: true },
+              { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid', invert: true },
+              { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
+              { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
+              // CMS Preclusion, DEA, Medicare Opt-Out only for prescribers
+              ...(isPrescriber ? [
+                { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded', invert: false },
+                { name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? true : null, passText: 'Active', failText: 'Inactive', invert: true },
+                { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out', invert: false },
+              ] : []),
+              { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged', invert: false },
+              { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found', invert: false },
+            ];
+            return checks;
+          })().map((check, index) => (
             <div
               key={index}
               className="flex items-center justify-between p-3 border border-gray-200 rounded-lg"
