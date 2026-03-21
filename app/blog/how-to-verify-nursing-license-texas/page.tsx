@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import Footer from '../../components/Footer';
 
 export const metadata: Metadata = {
   title: "How to Verify a Nursing License in Texas | API-Cert",
@@ -10,6 +12,22 @@ export const metadata: Metadata = {
 export default function TexasNursingLicenseVerification() {
   return (
     <main className="min-h-screen">
+      {/* Nav */}
+      <nav className="bg-charcoal sticky top-0 z-50 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link href="/">
+            <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-8 w-auto" />
+          </Link>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/blog" className="text-sm text-slate-300 hover:text-white transition-colors">Blog</Link>
+            <Link href="/roi" className="text-sm text-slate-300 hover:text-white transition-colors">ROI Calculator</Link>
+            <Link href="/#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</Link>
+            <Link href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</Link>
+            <Link href="https://api.api-cert.com/portal/signup" className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors">Sign Up</Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Breadcrumb and header */}
       <section className="bg-surface py-12">
         <div className="max-w-4xl mx-auto px-6">
@@ -305,6 +323,8 @@ export default function TexasNursingLicenseVerification() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </main>
   );
 }

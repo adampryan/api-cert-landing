@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import Footer from '../components/Footer';
 
 export const metadata: Metadata = {
   title: "Compliance & Security | API-Cert",
@@ -146,7 +148,7 @@ function StatusBadge({ status }: { status?: 'live' | 'planned' | 'in-progress' }
   
   const colors = {
     'live': 'bg-green-100 text-green-800',
-    'planned': 'bg-blue-100 text-blue-800',
+    'planned': 'bg-emerald-100 text-emerald-800',
     'in-progress': 'bg-yellow-100 text-yellow-800'
   };
   
@@ -166,6 +168,22 @@ function StatusBadge({ status }: { status?: 'live' | 'planned' | 'in-progress' }
 export default function CompliancePage() {
   return (
     <main className="min-h-screen">
+      {/* Nav */}
+      <nav className="bg-charcoal sticky top-0 z-50 border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link href="/">
+            <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-8 w-auto" />
+          </Link>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/blog" className="text-sm text-slate-300 hover:text-white transition-colors">Blog</Link>
+            <Link href="/roi" className="text-sm text-slate-300 hover:text-white transition-colors">ROI Calculator</Link>
+            <Link href="/#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</Link>
+            <Link href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</Link>
+            <Link href="https://api.api-cert.com/portal/signup" className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors">Sign Up</Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Header */}
       <section className="bg-gradient-to-b from-charcoal via-charcoal-light to-surface py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -294,26 +312,26 @@ export default function CompliancePage() {
         {/* HIPAA Compliance */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-charcoal mb-8">HIPAA & Healthcare Compliance</h2>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-8">
+          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-8">
             <div className="flex items-start gap-4 mb-6">
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-emerald-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">Provider Data, Not Patient Data</h3>
-                <p className="text-blue-700 mb-4">
-                  API-Cert processes professional license and credentialing data, not protected health information (PHI). 
+                <h3 className="text-xl font-semibold text-emerald-800 mb-3">Provider Data, Not Patient Data</h3>
+                <p className="text-emerald-700 mb-4">
+                  API-Cert processes professional license and credentialing data, not protected health information (PHI).
                   We verify providers, not patients. However, we maintain HIPAA-aligned security practices throughout our operations.
                 </p>
               </div>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-blue-800 mb-3">Data We Process</h4>
-                <ul className="space-y-2 text-blue-700">
+                <h4 className="font-semibold text-emerald-800 mb-3">Data We Process</h4>
+                <ul className="space-y-2 text-emerald-700">
                   <li>• Professional license numbers and statuses</li>
                   <li>• Provider names and professional identifiers</li>
                   <li>• License expiration and renewal dates</li>
@@ -321,10 +339,10 @@ export default function CompliancePage() {
                   <li>• Professional certifications and credentials</li>
                 </ul>
               </div>
-              
+
               <div>
-                <h4 className="font-semibold text-blue-800 mb-3">Data We Don't Store</h4>
-                <ul className="space-y-2 text-blue-700">
+                <h4 className="font-semibold text-emerald-800 mb-3">Data We Don't Store</h4>
+                <ul className="space-y-2 text-emerald-700">
                   <li>• Patient health information (PHI)</li>
                   <li>• Treatment records or medical data</li>
                   <li>• Financial or billing information</li>
@@ -480,7 +498,7 @@ export default function CompliancePage() {
         </section>
 
         {/* Contact */}
-        <section className="bg-gray-50 border border-gray-200 rounded-lg p-8">
+        <section className="bg-charcoal/5 border border-gray-200 rounded-lg p-8">
           <h2 className="text-2xl font-bold text-charcoal mb-4">Questions About Compliance?</h2>
           <p className="text-gray-600 mb-6">
             Our compliance and security team is available to answer questions about our practices, 
@@ -502,6 +520,8 @@ export default function CompliancePage() {
           </div>
         </section>
       </div>
+
+      <Footer />
     </main>
   );
 }

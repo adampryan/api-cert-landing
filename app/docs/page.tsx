@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Footer from '../components/Footer';
 
 const sections = [
   { id: 'getting-started', label: 'Getting Started' },
@@ -78,7 +79,7 @@ function ParamTable({ params }: { params: { name: string; type: string; required
         <tbody>
           {params.map((p) => (
             <tr key={p.name} className="border-b border-slate-800">
-              <td className="py-2 pr-4"><code className="text-[#2563EB] text-xs">{p.name}</code></td>
+              <td className="py-2 pr-4"><code className="text-emerald-400 text-xs">{p.name}</code></td>
               <td className="py-2 pr-4 text-slate-400">{p.type}</td>
               <td className="py-2 pr-4">{p.required ? <span className="text-amber-400 text-xs">required</span> : <span className="text-slate-500 text-xs">optional</span>}</td>
               <td className="py-2 text-slate-300">{p.description}</td>
@@ -123,9 +124,9 @@ export default function DocsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a1628]">
+    <div className="min-h-screen bg-charcoal">
       {/* Top Nav */}
-      <nav className="sticky top-0 z-50 bg-[#0a1628]/95 backdrop-blur border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <nav className="sticky top-0 z-50 bg-charcoal/95 backdrop-blur border-b border-slate-800 px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-6">
           <a href="/">
             <Image src="/logo-white.png" alt="API-Cert" width={160} height={40} className="h-8 w-auto" />
@@ -136,8 +137,8 @@ export default function DocsPage() {
         <div className="flex items-center gap-4">
           <a href="/#pricing" className="text-sm text-slate-300 hover:text-white transition-colors hidden sm:inline">Pricing</a>
           <a
-            href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request&body=Hi%20Adam%2C%0A%0AI%27d%20like%20to%20try%20API-Cert.%20Please%20send%20me%20a%20free%20API%20key.%0A%0AThanks!"
-            className="text-sm bg-[#2563EB] text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            href="https://api.api-cert.com/portal/signup"
+            className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors"
           >
             Get Free Key
           </a>
@@ -186,11 +187,11 @@ export default function DocsPage() {
           {/* Main Content */}
           <main className="py-8 pb-24 min-w-0">
             {/* Hero Header */}
-            <div className="mb-12 relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-[#0f1d35] via-[#0a1628] to-[#0d1f3c]">
+            <div className="mb-12 relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-charcoal via-charcoal to-charcoal">
               {/* Background decoration */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#2563EB]/10 rounded-full blur-3xl" />
-                <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-[#2563EB]/5 rounded-full blur-3xl" />
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-emerald-brand/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-emerald-brand/5 rounded-full blur-3xl" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] opacity-[0.03]"
                   style={{
                     backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
@@ -203,13 +204,13 @@ export default function DocsPage() {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#2563EB]/10 border border-[#2563EB]/20">
+                      <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-brand/10 border border-emerald-brand/20">
                         <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                        <span className="text-xs font-medium text-[#2563EB]">v1.0 — All Systems Operational</span>
+                        <span className="text-xs font-medium text-emerald-400">v1.0 — All Systems Operational</span>
                       </div>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
-                      API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-cyan-400">Documentation</span>
+                      API <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-brand to-cyan-400">Documentation</span>
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
                       Verify healthcare licenses across all 50 states with a single API call.
@@ -237,7 +238,7 @@ export default function DocsPage() {
 
                 {/* Quick links */}
                 <div className="flex flex-wrap gap-3 mt-8 pt-6 border-t border-slate-700/50">
-                  <a href="#register" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#2563EB] text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+                  <a href="#register" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-brand text-white text-sm font-medium hover:bg-teal-brand transition-colors">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" /></svg>
                     Get Your Free API Key
                   </a>
@@ -263,7 +264,7 @@ export default function DocsPage() {
             <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 my-4">
               <p className="text-slate-300 text-sm">
                 <span className="text-amber-400 font-medium">Note:</span>{' '}
-                The production domain <code className="text-[#2563EB]">api.api-cert.com</code> currently
+                The production domain <code className="text-emerald-400">api.api-cert.com</code> currently
                 proxies to <code className="text-slate-400">api-cert-api.onrender.com</code>. Both work,
                 but use the canonical domain for production integrations.
               </p>
@@ -271,19 +272,19 @@ export default function DocsPage() {
             <p className="text-slate-300 mb-4">To get started:</p>
             <ol className="list-decimal list-inside text-slate-300 space-y-2 mb-6">
               <li>Register for a free API key (50 verifications/month)</li>
-              <li>Include your key in the <code className="text-[#2563EB]">X-API-Key</code> header</li>
+              <li>Include your key in the <code className="text-emerald-400">X-API-Key</code> header</li>
               <li>Make your first verification request</li>
             </ol>
 
             {/* Authentication */}
             <SectionHeading id="authentication">Authentication</SectionHeading>
             <p className="text-slate-300 mb-4">
-              All authenticated endpoints require an API key passed via the <code className="text-[#2563EB]">X-API-Key</code> header.
+              All authenticated endpoints require an API key passed via the <code className="text-emerald-400">X-API-Key</code> header.
             </p>
             <CodeBlock title="Header">{`X-API-Key: your_api_key_here`}</CodeBlock>
             <p className="text-slate-300 mb-4">
-              To get your key, register with the <code className="text-[#2563EB]">/v1/register</code> endpoint
-              or <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-[#2563EB] hover:underline">email us</a> for
+              To get your key, register with the <code className="text-emerald-400">/v1/register</code> endpoint
+              or <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request" className="text-emerald-400 hover:underline">email us</a> for
               a free key. The key is shown only once upon registration — store it securely.
             </p>
 
@@ -529,7 +530,7 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
             <SectionHeading id="rate-limits">Rate Limits & Pricing</SectionHeading>
             <p className="text-slate-300 mb-6">
               All plans include access to every endpoint. Rate limits are enforced per-minute.
-              When you exceed your quota or rate limit, the API returns <code className="text-[#2563EB]">429 Too Many Requests</code>.
+              When you exceed your quota or rate limit, the API returns <code className="text-emerald-400">429 Too Many Requests</code>.
             </p>
             <div className="overflow-x-auto my-4">
               <table className="w-full text-sm">
@@ -559,15 +560,15 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
               </table>
             </div>
             <p className="text-slate-400 text-sm mt-2">
-              Upgrade programmatically via <code className="text-[#2563EB]">POST /v1/upgrade</code> or{' '}
-              <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20Enterprise" className="text-[#2563EB] hover:underline">contact us</a> for
+              Upgrade programmatically via <code className="text-emerald-400">POST /v1/upgrade</code> or{' '}
+              <a href="mailto:adam@oneweeklabs.com?subject=API-Cert%20Enterprise" className="text-emerald-400 hover:underline">contact us</a> for
               enterprise volume.
             </p>
 
             {/* Status Values */}
             <SectionHeading id="status-values">Status Values</SectionHeading>
             <p className="text-slate-300 mb-6">
-              The <code className="text-[#2563EB]">status</code> field in verification responses
+              The <code className="text-emerald-400">status</code> field in verification responses
               indicates the current state of the license. Possible values:
             </p>
             <div className="space-y-4">
@@ -606,7 +607,7 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
                   <span className="bg-red-600/20 text-red-400 text-xs font-bold px-2.5 py-1 rounded font-mono">401</span>
                   <span className="text-white font-medium">Unauthorized</span>
                 </div>
-                <p className="text-slate-400 text-sm ml-[70px]">Missing or invalid API key. Check your <code className="text-[#2563EB]">X-API-Key</code> header.</p>
+                <p className="text-slate-400 text-sm ml-[70px]">Missing or invalid API key. Check your <code className="text-emerald-400">X-API-Key</code> header.</p>
               </div>
               <div>
                 <div className="flex items-center gap-3 mb-2">
@@ -632,33 +633,33 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
             </p>
             <ul className="space-y-3 text-slate-300">
               <li className="flex items-start gap-3">
-                <span className="text-[#2563EB] mt-1.5 shrink-0">&#8226;</span>
+                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">State Licensing Boards</span> — Official license records from each state&apos;s board of nursing, medical board, or equivalent authority.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2563EB] mt-1.5 shrink-0">&#8226;</span>
+                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">NPPES (NPI Registry)</span> — National Plan and Provider Enumeration System for NPI number cross-referencing.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2563EB] mt-1.5 shrink-0">&#8226;</span>
+                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">OIG LEIE</span> — Office of Inspector General&apos;s List of Excluded Individuals/Entities.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2563EB] mt-1.5 shrink-0">&#8226;</span>
+                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">SAM.gov</span> — System for Award Management exclusion records.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#2563EB] mt-1.5 shrink-0">&#8226;</span>
+                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">CMS Preclusion List</span> — Centers for Medicare & Medicaid Services preclusion database.</span>
               </li>
             </ul>
             <p className="text-slate-400 text-sm mt-4">
-              Data is refreshed daily. Use the <code className="text-[#2563EB]">GET /v1/states</code> endpoint
+              Data is refreshed daily. Use the <code className="text-emerald-400">GET /v1/states</code> endpoint
               to see per-state data source details and last update timestamps.
             </p>
 
             {/* CTA */}
-            <div className="mt-20 bg-gradient-to-r from-[#2563EB]/10 to-[#2563EB]/5 border border-[#2563EB]/30 rounded-2xl p-8 text-center">
+            <div className="mt-20 bg-gradient-to-r from-emerald-brand/10 to-emerald-brand/5 border border-emerald-brand/30 rounded-2xl p-8 text-center">
               <h2 className="text-2xl font-bold text-white mb-3">Ready to get started?</h2>
               <p className="text-slate-400 mb-6 max-w-lg mx-auto">
                 Get your free API key and start verifying healthcare licenses in minutes.
@@ -667,7 +668,7 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="mailto:adam@oneweeklabs.com?subject=API-Cert%20API%20Key%20Request&body=Hi%20Adam%2C%0A%0AI%27d%20like%20to%20try%20API-Cert.%20Please%20send%20me%20a%20free%20API%20key.%0A%0AThanks!"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#2563EB] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-lg"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-emerald-brand text-white font-semibold rounded-lg hover:bg-teal-brand transition-colors text-lg"
                 >
                   Get Your Free API Key
                 </a>
@@ -683,17 +684,7 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800 py-8 mt-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">&copy; 2026 API-Cert. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="/" className="text-slate-400 hover:text-white text-sm transition-colors">Home</a>
-            <a href="/#pricing" className="text-slate-400 hover:text-white text-sm transition-colors">Pricing</a>
-            <a href="mailto:adam@oneweeklabs.com" className="text-slate-400 hover:text-white text-sm transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
