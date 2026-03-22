@@ -14,7 +14,7 @@ const columns = [
     links: [
       { name: 'Blog', href: '/blog' },
       { name: 'Documentation', href: '/docs' },
-      { name: 'API Status', href: '/status' },
+      { name: 'API Status', href: 'https://api.api-cert.com/health' },
       { name: 'FAQ', href: '/#faq' },
     ],
   },
