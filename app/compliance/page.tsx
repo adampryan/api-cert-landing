@@ -25,10 +25,10 @@ const complianceSections: ComplianceSection[] = [
     items: [
       {
         name: "State Professional Licensing Boards",
-        description: "Direct integration with 14 state licensing boards, with NPPES baseline for all 50 states",
+        description: "Direct integration with 13 state licensing boards, with NPPES baseline for all 50 states",
         status: 'live',
         details: [
-          "Direct board data: FL, MA, NJ, CT, IL, WA, CO, TX, DE, AL, MD, AK, RI, CA",
+          "Direct board data: AK, AL, CO, CT, DE, FL, IL, MA, MD, NJ, RI, TX, WA",
           "Automated sync from official state data portals and APIs",
           "NPPES/NPI baseline coverage for all remaining states",
           "Covers MD, DO, NP, PA, RN, LPN, and other healthcare licenses"

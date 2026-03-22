@@ -16,7 +16,7 @@ const categories = [
       },
       {
         q: 'Do you cover all 50 states?',
-        a: 'We currently have deep board-level data for 14 states with a focus on New England (MA, RI, CT). NPI and exclusion screening covers all 50 states. New states are added weekly.',
+        a: 'We currently have direct board-level data for 13 states (AK, AL, CO, CT, DE, FL, IL, MA, MD, NJ, RI, TX, WA). NPI and exclusion screening covers all 50 states. New states are added regularly.',
       },
     ],
   },

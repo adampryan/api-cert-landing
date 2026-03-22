@@ -29,17 +29,19 @@ interface StatesResponse {
 }
 
 const DIRECT_SOURCES: Record<string, string> = {
+  ak_dcced: 'Alaska DCCED',
+  al_bulk: 'Alabama Board of Nursing',
   socrata_co: 'Colorado DORA',
   socrata_ct: 'Connecticut eLicense',
   socrata_de: 'Delaware DPR',
-  socrata_il: 'Illinois IDFPR',
-  socrata_tx: 'Texas Open Data',
-  socrata_wa: 'Washington DOH',
   fl_mqa: 'Florida MQA',
+  socrata_il: 'Illinois IDFPR',
   ma_dph: 'Massachusetts DPH',
-  md_mbp: 'Maryland MBP',
+  md_mbp: 'Maryland Board of Physicians',
   nj_mylicense: 'New Jersey MyLicense',
   ri_bulk: 'Rhode Island DOH',
+  socrata_tx: 'Texas Open Data',
+  socrata_wa: 'Washington DOH',
 };
 
 export default function StatusPage() {
