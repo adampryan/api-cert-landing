@@ -25,13 +25,13 @@ const complianceSections: ComplianceSection[] = [
     items: [
       {
         name: "State Professional Licensing Boards",
-        description: "Direct integration with 13 state licensing boards, with NPPES fallback for remaining states",
+        description: "Direct integration with 14 state licensing boards, with NPPES baseline for all 50 states",
         status: 'live',
         details: [
-          "Real-time integration with state board APIs where available",
-          "Daily sync from official state websites",
-          "Manual verification for states without digital access",
-          "Covers RN, LPN/LVN, NP, PA, MD, DO, and other healthcare licenses"
+          "Direct board data: FL, MA, NJ, CT, IL, WA, CO, TX, DE, AL, MD, AK, RI, CA",
+          "Automated sync from official state data portals and APIs",
+          "NPPES/NPI baseline coverage for all remaining states",
+          "Covers MD, DO, NP, PA, RN, LPN, and other healthcare licenses"
         ]
       },
       {
@@ -47,57 +47,68 @@ const complianceSections: ComplianceSection[] = [
       },
       {
         name: "SAM.gov Exclusions Database",
-        description: "System for Award Management federal contracting exclusions",
+        description: "System for Award Management — federal debarment, sanctions, and exclusions",
         status: 'live',
         details: [
-          "Daily updates from SAM.gov API",
+          "Updates from SAM.gov data extracts",
           "Covers federal contracting and grant exclusions",
           "Suspension and debarment records",
           "Entity and individual-level screening"
         ]
       },
       {
-        name: "CMS Provider Data",
-        description: "Centers for Medicare & Medicaid Services provider information",
+        name: "CMS Preclusion List",
+        description: "Providers precluded from Medicare Advantage and Part D programs",
         status: 'live',
         details: [
-          "NPPES National Provider Identifier (NPI) registry",
-          "Medicare provider enrollment status",
-          "Provider revalidation dates",
-          "Specialty and taxonomy codes"
+          "Identifies providers barred from receiving payment under MA/Part D",
+          "Applies to prescribers who order, refer, or prescribe under Medicare",
+          "Updated with each CMS release cycle",
+          "Critical for organizations participating in Medicare programs"
         ]
       },
       {
-        name: "DEA Practitioner Database",
-        description: "Drug Enforcement Administration controlled substance registration",
+        name: "Medicare Opt-Out List",
+        description: "Providers who have opted out of the Medicare program",
         status: 'live',
         details: [
-          "Active DEA registration verification",
-          "Schedule authority verification",
-          "Registration expiration monitoring",
-          "Multi-state DEA registration tracking"
+          "Identifies providers who signed private contracts with beneficiaries",
+          "Opted-out providers cannot bill Medicare for any services",
+          "Relevant for credentialing teams evaluating payer participation",
+          "Updated from CMS quarterly releases"
+        ]
+      },
+      {
+        name: "NPPES / NPI Registry",
+        description: "National Plan and Provider Enumeration System — provider identity and taxonomy",
+        status: 'live',
+        details: [
+          "NPI validation and provider identity verification",
+          "Taxonomy codes for specialty and provider type classification",
+          "Practice location and organizational affiliations",
+          "Baseline coverage for all 50 states and territories"
+        ]
+      },
+      {
+        name: "DEA Registration",
+        description: "Drug Enforcement Administration controlled substance authority",
+        status: 'live',
+        details: [
+          "Verification of active DEA registration for prescribers",
+          "Applies to MD, DO, NP, PA, and other prescribing providers",
+          "Multi-state DEA registration tracking",
+          "Registration expiration monitoring"
         ]
       },
       {
         name: "OFAC Specially Designated Nationals (SDN)",
-        description: "Treasury Department sanctions and blocked persons list",
+        description: "U.S. Treasury Department sanctions and blocked persons list",
         status: 'live',
         details: [
-          "Real-time screening against SDN list",
-          "Comprehensive name and alias matching",
-          "Address and identifier verification",
-          "Sanctions compliance monitoring"
-        ]
-      },
-      {
-        name: "Social Security Death Master File (SSDMF)",
-        description: "Verification that providers are not deceased",
-        status: 'live',
-        details: [
-          "Monthly updates from authorized data sources",
-          "SSN-based death verification",
-          "Date of death information where available",
-          "Fraud prevention and identity verification"
+          "Screening against the SDN list for sanctions compliance",
+          "Fuzzy name matching to catch variations and aliases",
+          "Required for organizations with federal compliance obligations",
+          "Updated with each OFAC release"
         ]
       }
     ]
@@ -126,10 +137,10 @@ const securityMeasures = [
   {
     category: "Infrastructure Security",
     measures: [
-      "AWS cloud infrastructure with SOC 2 compliance",
-      "Multi-region deployment for redundancy",
-      "Regular security patching and updates",
-      "DDoS protection and threat monitoring"
+      "Hosted on Render (managed cloud) with Cloudflare CDN and edge protection",
+      "PostgreSQL with encrypted connections and automated backups",
+      "Regular security patching and dependency updates",
+      "Cloudflare DDoS protection and WAF"
     ]
   },
   {
@@ -400,61 +411,20 @@ export default function CompliancePage() {
           </div>
         </section>
 
-        {/* Uptime & Monitoring */}
+        {/* System Status Link */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-charcoal mb-8">Uptime & System Health</h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-white border border-border rounded-lg p-6 text-center">
-              <p className="text-3xl font-bold text-emerald-brand mb-2">99.9%</p>
-              <p className="text-gray-600">Uptime SLA</p>
-              <p className="text-sm text-gray-500 mt-2">Monthly average over trailing 12 months</p>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6 text-center">
-              <p className="text-3xl font-bold text-emerald-brand mb-2">&lt;20ms</p>
-              <p className="text-gray-600">Average Response Time</p>
-              <p className="text-sm text-gray-500 mt-2">95th percentile globally</p>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6 text-center">
-              <p className="text-3xl font-bold text-emerald-brand mb-2">24/7</p>
-              <p className="text-gray-600">Monitoring</p>
-              <p className="text-sm text-gray-500 mt-2">Automated alerts and incident response</p>
-            </div>
-          </div>
-          
           <div className="bg-white border border-border rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-charcoal mb-4">Health Monitoring</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex items-center justify-between">
               <div>
-                <h4 className="font-medium text-charcoal mb-3">Real-time Monitoring</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• API endpoint availability and response times</li>
-                  <li>• Database performance and connection health</li>
-                  <li>• Data source connectivity and sync status</li>
-                  <li>• Error rates and failure pattern detection</li>
-                </ul>
+                <h3 className="text-lg font-semibold text-charcoal mb-1">System Status & Uptime</h3>
+                <p className="text-gray-600">Real-time API health, state coverage, and data source status.</p>
               </div>
-              
-              <div>
-                <h4 className="font-medium text-charcoal mb-3">Proactive Maintenance</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Scheduled maintenance windows (low-traffic periods)</li>
-                  <li>• Performance optimization and capacity planning</li>
-                  <li>• Security patching and system updates</li>
-                  <li>• Disaster recovery testing and validation</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-lg">
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
-                <span className="font-medium text-emerald-800">System Status: All systems operational</span>
-              </div>
-              <p className="text-sm text-emerald-700 mt-2">
-                Check real-time status at <Link href="/status" className="underline hover:no-underline">api-cert.com/status</Link>
-              </p>
+              <Link
+                href="/status"
+                className="inline-flex items-center px-5 py-2.5 bg-emerald-brand text-white font-medium rounded-lg hover:bg-emerald-600 transition-colors text-sm"
+              >
+                View Status Page →
+              </Link>
             </div>
           </div>
         </section>
