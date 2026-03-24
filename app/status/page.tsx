@@ -43,6 +43,7 @@ const DIRECT_SOURCES: Record<string, string> = {
   socrata_tx: 'Texas Open Data',
   socrata_wa: 'Washington DOH',
   nh_bulk: 'New Hampshire OPLC',
+  vt_opr: 'Vermont OPR',
   me_bulk: 'Maine Board of Nursing',
   ma_borim: 'Massachusetts Board of Registration in Medicine',
 };
