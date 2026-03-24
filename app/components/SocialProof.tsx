@@ -35,7 +35,7 @@ function AnimatedNumber({ target, suffix = '', prefix = '' }: { target: number; 
   return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
-const dataSources = ['NPPES', 'OIG LEIE', 'SAM.gov', 'CMS', 'MA Board', 'RI Board', 'CT Board', 'State Boards'];
+const dataSources = ['NPPES', 'OIG LEIE', 'SAM.gov', 'CMS', 'MA Board', 'RI Board', 'CT Board', 'NH OPLC', 'ME Board of Nursing', 'State Boards'];
 
 // Live stats with realistic seed numbers
 const baseVerifications = 12847;
@@ -48,7 +48,7 @@ const currentVerifications = baseVerifications + (daysSinceStart * dailyAverage)
 const metrics = [
   { value: Math.floor(currentVerifications / 1000), prefix: '', suffix: 'K+', label: 'Verifications Performed' },
   { value: 50, prefix: 'All ', suffix: '', label: 'States Covered' },
-  { value: 9, prefix: '', suffix: '', label: 'Primary Source Checks' },
+  { value: 20, prefix: '', suffix: '+', label: 'Primary Source Checks' },
   { value: 20, prefix: '<', suffix: 'ms', label: 'Average Response' },
 ];
 

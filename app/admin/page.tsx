@@ -96,16 +96,30 @@ export default function AdminDashboard() {
       // Fetch states data
       const statesResponse = await fetch('https://api.api-cert.com/v1/states');
       if (statesResponse.ok) {
-        const states = await statesResponse.json();
-        setStatesData(states);
+        const statesJson = await statesResponse.json();
+        const statesArray = (statesJson.states || []).map((s: any) => ({
+          code: s.state_code,
+          name: s.state_name,
+          hasDirectBoard: s.data_tier >= 2,
+          lastSyncTime: s.last_synced_at,
+          recordCount: s.record_count || 0,
+        }));
+        setStatesData(statesArray);
       }
 
       // Fetch ingestion status
       try {
         const ingestionResponse = await fetch('https://api.api-cert.com/v1/ingestion/status');
         if (ingestionResponse.ok) {
-          const ingestion = await ingestionResponse.json();
-          setIngestionData(ingestion);
+          const ingestionJson = await ingestionResponse.json();
+          const runsArray = (ingestionJson.last_runs || []).map((r: any) => ({
+            source: r.source + (r.state ? ` (${r.state})` : ''),
+            lastRun: r.completed_at || r.started_at,
+            status: r.status,
+            recordCount: r.records_upserted || r.records_fetched || 0,
+            nextRun: ingestionJson.next_scheduled || undefined,
+          }));
+          setIngestionData(runsArray);
         }
       } catch (err) {
         // Ingestion endpoint might not exist yet

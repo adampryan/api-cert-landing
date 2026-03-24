@@ -42,6 +42,9 @@ const DIRECT_SOURCES: Record<string, string> = {
   ri_bulk: 'Rhode Island DOH',
   socrata_tx: 'Texas Open Data',
   socrata_wa: 'Washington DOH',
+  nh_bulk: 'New Hampshire OPLC',
+  me_bulk: 'Maine Board of Nursing',
+  ma_borim: 'Massachusetts Board of Registration in Medicine',
 };
 
 export default function StatusPage() {
