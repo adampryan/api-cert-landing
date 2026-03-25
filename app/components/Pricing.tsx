@@ -143,6 +143,42 @@ export default function Pricing() {
           ))}
         </div>
 
+        {/* NPDB Add-Ons */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-slate-900 mb-2">Add-Ons</h3>
+            <p className="text-slate-600">Enhance any plan with NPDB malpractice screening</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-6 border-2 border-amber-200 shadow-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">ADD-ON</span>
+                <h4 className="text-lg font-semibold text-slate-900">NPDB One-Time Query</h4>
+              </div>
+              <div className="mb-3">
+                <span className="text-3xl font-bold text-slate-900">$5</span>
+                <span className="text-slate-500">/query</span>
+              </div>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Run a one-time malpractice history check against the National Practitioner Data Bank.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border-2 border-amber-200 shadow-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-full">ADD-ON</span>
+                <h4 className="text-lg font-semibold text-slate-900">NPDB Continuous Monitoring</h4>
+              </div>
+              <div className="mb-3">
+                <span className="text-3xl font-bold text-slate-900">$3</span>
+                <span className="text-slate-500">/provider/mo</span>
+              </div>
+              <p className="text-slate-600 text-sm leading-relaxed">
+                Real-time alerts when new malpractice reports, adverse actions, or exclusions are filed against your providers.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Free Trial Notice */}
         <div className="mt-12 max-w-3xl mx-auto text-center">
           <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8">

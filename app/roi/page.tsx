@@ -239,8 +239,8 @@ export default function ROICalculator() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-lg text-gray-900 mb-2">Up to 9 Automated Checks</h4>
-              <p className="text-gray-600">License status, OIG/SAM exclusions, DEA, Medicare opt-out, OFAC, and more</p>
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">9 Automated Checks + Optional NPDB</h4>
+              <p className="text-gray-600">License status, OIG/SAM exclusions, DEA, Medicare opt-out, OFAC, and NPDB add-on</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
