@@ -187,7 +187,7 @@ export default function Pricing() {
               Try any plan free for 14 days. No credit card required. Cancel anytime.
             </p>
             <div className="text-sm text-emerald-600">
-              All plans include the same verification features. Higher tiers add workflow management and team features.
+              All plans include 9 automated verification checks. Add NPDB for complete malpractice coverage.
             </div>
           </div>
         </div>
