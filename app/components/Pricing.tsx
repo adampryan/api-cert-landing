@@ -13,7 +13,7 @@ export default function Pricing() {
         'Standard SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/portal/login',
+      href: 'https://api.api-cert.com/portal/signup',
       featured: false,
     },
     {
@@ -29,7 +29,7 @@ export default function Pricing() {
         'Priority support',
       ],
       cta: 'Start Free Trial',
-      href: '/portal/login',
+      href: 'https://api.api-cert.com/portal/signup',
       featured: true,
     },
     {
@@ -46,7 +46,7 @@ export default function Pricing() {
         '99.9% uptime SLA',
       ],
       cta: 'Start Free Trial',
-      href: '/portal/login',
+      href: 'https://api.api-cert.com/portal/signup',
       featured: false,
     },
     {
