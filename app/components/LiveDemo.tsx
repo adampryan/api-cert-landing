@@ -229,30 +229,21 @@ export default function LiveDemo() {
           </div>
         </div>
         <div className="mt-2 text-xs text-gray-500">
-          Verified in {detail.latency_ms}ms • Source: {detail.source_name}
+          Source: {detail.source_name} • Data as of: {detail.data_freshness}
         </div>
       </div>
 
-      {/* 9-Point Verification Results */}
+      {/* Verification Results */}
       <div>
         <h3 className="font-semibold text-gray-900 mb-4">
-          {['MD', 'DO', 'NP', 'PA'].includes(detail.license_type) ? '9' : '6'}-Point Verification Results
+          Board-File Results
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {(() => {
-            const isPrescriber = ['MD', 'DO', 'NP', 'PA'].includes(detail.license_type);
             const checks = [
               { name: 'License Status', value: detail.status === 'ACTIVE', passText: 'Active', failText: 'Inactive', invert: true },
               { name: 'License Expiration', value: detail.status === 'ACTIVE', passText: 'Valid', failText: 'Expired/Invalid', invert: true },
               { name: 'OIG Exclusion', value: detail.oig_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
-              { name: 'SAM Exclusion', value: detail.sam_excluded, passText: 'Not Excluded', failText: 'Excluded', invert: false },
-              // CMS Preclusion, DEA, Medicare Opt-Out only for prescribers
-              ...(isPrescriber ? [
-                { name: 'CMS Preclusion', value: detail.cms_precluded, passText: 'Not Precluded', failText: 'Precluded', invert: false },
-                { name: 'DEA Registration', value: detail.dea_status === 'ACTIVE' ? true : null, passText: 'Active', failText: 'Inactive', invert: true },
-                { name: 'Medicare Opt-Out', value: detail.medicare_optout, passText: 'Participating', failText: 'Opted Out', invert: false },
-              ] : []),
-              { name: 'OFAC/SDN Check', value: detail.ofac_flagged, passText: 'Clear', failText: 'Flagged', invert: false },
               { name: 'Disciplinary Action', value: detail.disciplinary_flag, passText: 'No Action', failText: 'Action Found', invert: false },
             ];
             return checks;
@@ -297,7 +288,7 @@ export default function LiveDemo() {
         <p className="text-sm text-gray-600">
           {data.message || `Found ${data.match_count} matching providers`}
         </p>
-        <span className="text-xs text-gray-400">{data.latency_ms}ms</span>
+        <span className="text-xs text-gray-400">Board file results</span>
       </div>
 
       <div className="border border-gray-200 rounded-lg overflow-hidden">
@@ -363,7 +354,7 @@ export default function LiveDemo() {
             Try It Right Now — No Signup Required
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See our multi-point verification system in action. Real data, real-time results.
+            See what a state board&apos;s published file says about a license, and the date that file carried. Results reflect scheduled board-file loads, not live lookups.
           </p>
         </div>
 

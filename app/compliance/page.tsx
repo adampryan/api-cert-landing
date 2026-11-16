@@ -25,13 +25,14 @@ const complianceSections: ComplianceSection[] = [
     items: [
       {
         name: "State Professional Licensing Boards",
-        description: "Direct integration with 13 state licensing boards, with NPPES baseline for all 50 states",
+        description: "Board-direct coverage for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15 states, reported with the date each board file or page carried",
         status: 'live',
         details: [
-          "Direct board data: AK, AL, CO, CT, DE, FL, IL, MA, MD, NJ, RI, TX, WA",
-          "Automated sync from official state data portals and APIs",
-          "NPPES/NPI baseline coverage for all remaining states",
-          "Covers MD, DO, NP, PA, RN, LPN, and other healthcare licenses"
+          "Physician board-direct (MD/DO/PA), 16 states: AK, AL, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV",
+          "Nurse board-direct (RN/LPN/NP), 15 states: AK, AL, CO, CT, DE, FL, IL, MA, ME, NH, NJ, RI, TX, VT, WA",
+          "Both professions board-direct in 14 states",
+          "Board files and pages are loaded on a schedule; each result reports the date the file carried",
+          "Anything a board file can\'t answer is routed to your staff to verify at the board, or to the board for written confirmation"
         ]
       },
       {
@@ -39,76 +40,21 @@ const complianceSections: ComplianceSection[] = [
         description: "HHS Office of Inspector General exclusions from federal healthcare programs",
         status: 'live',
         details: [
-          "Monthly updates from official OIG data feed",
+          "Loaded from the official OIG monthly file",
           "Covers Medicare, Medicaid, and other federal program exclusions",
           "Historical exclusion data maintained",
-          "Automatic matching against provider names and identifiers"
-        ]
-      },
-      {
-        name: "SAM.gov Exclusions Database",
-        description: "System for Award Management — federal debarment, sanctions, and exclusions",
-        status: 'live',
-        details: [
-          "Updates from SAM.gov data extracts",
-          "Covers federal contracting and grant exclusions",
-          "Suspension and debarment records",
-          "Entity and individual-level screening"
-        ]
-      },
-      {
-        name: "CMS Preclusion List",
-        description: "Providers precluded from Medicare Advantage and Part D programs",
-        status: 'live',
-        details: [
-          "Identifies providers barred from receiving payment under MA/Part D",
-          "Applies to prescribers who order, refer, or prescribe under Medicare",
-          "Updated with each CMS release cycle",
-          "Critical for organizations participating in Medicare programs"
-        ]
-      },
-      {
-        name: "Medicare Opt-Out List",
-        description: "Providers who have opted out of the Medicare program",
-        status: 'live',
-        details: [
-          "Identifies providers who signed private contracts with beneficiaries",
-          "Opted-out providers cannot bill Medicare for any services",
-          "Relevant for credentialing teams evaluating payer participation",
-          "Updated from CMS quarterly releases"
+          "Matching against provider names and identifiers"
         ]
       },
       {
         name: "NPPES / NPI Registry",
-        description: "National Plan and Provider Enumeration System — provider identity and taxonomy",
+        description: "National Plan and Provider Enumeration System. A nationwide baseline listing only; being in the NPI registry is not a license verification",
         status: 'live',
         details: [
-          "NPI validation and provider identity verification",
+          "NPI listing check (identity baseline, not a verification)",
           "Taxonomy codes for specialty and provider type classification",
           "Practice location and organizational affiliations",
-          "Baseline coverage for all 50 states and territories"
-        ]
-      },
-      {
-        name: "DEA Registration",
-        description: "Drug Enforcement Administration controlled substance authority",
-        status: 'live',
-        details: [
-          "Verification of active DEA registration for prescribers",
-          "Applies to MD, DO, NP, PA, and other prescribing providers",
-          "Multi-state DEA registration tracking",
-          "Registration expiration monitoring"
-        ]
-      },
-      {
-        name: "OFAC Specially Designated Nationals (SDN)",
-        description: "U.S. Treasury Department sanctions and blocked persons list",
-        status: 'live',
-        details: [
-          "Screening against the SDN list for sanctions compliance",
-          "Fuzzy name matching to catch variations and aliases",
-          "Required for organizations with federal compliance obligations",
-          "Updated with each OFAC release"
+          "Nationwide listing; board-direct verification is limited to the states above"
         ]
       }
     ]
@@ -147,7 +93,7 @@ const securityMeasures = [
     category: "Monitoring & Logging",
     measures: [
       "Comprehensive audit logs for all API calls",
-      "Real-time security monitoring and alerting",
+      "Security monitoring and alerting",
       "Anomaly detection for unusual access patterns",
       "Incident response procedures and escalation"
     ]
@@ -202,7 +148,7 @@ export default function CompliancePage() {
             Compliance & <span className="text-emerald-brand">Security</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Enterprise-grade security, comprehensive data sources, and HIPAA-aligned practices for healthcare credentialing at scale.
+            Security practices and data sources for healthcare license verification, with HIPAA-aligned handling.
           </p>
         </div>
       </section>
@@ -212,8 +158,8 @@ export default function CompliancePage() {
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-charcoal mb-8">Authoritative Data Sources</h2>
           <p className="text-lg text-gray-600 mb-8">
-            API-Cert aggregates data from official government sources to provide comprehensive provider verification.
-            Every check is backed by authoritative, primary-source data.
+            API-Cert reports what official government sources published and the date each file carried.
+            It is a verification operations tool: what a board file can&apos;t answer is routed to your staff or to the board.
           </p>
           
           <div className="space-y-8">
@@ -252,9 +198,9 @@ export default function CompliancePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="text-lg font-semibold text-charcoal mb-3">State Licensing Boards</h3>
-              <p className="text-2xl font-bold text-emerald-brand mb-2">Daily</p>
+              <p className="text-2xl font-bold text-emerald-brand mb-2">Scheduled</p>
               <p className="text-sm text-gray-600">
-                Automated sync every 24 hours with manual verification for critical updates
+                Board files and pages are loaded on a schedule, not live. Each result reports the date the file carried.
               </p>
             </div>
             
@@ -267,34 +213,10 @@ export default function CompliancePage() {
             </div>
             
             <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-charcoal mb-3">SAM.gov Exclusions</h3>
-              <p className="text-2xl font-bold text-emerald-brand mb-2">Daily</p>
-              <p className="text-sm text-gray-600">
-                Real-time API integration with daily batch reconciliation
-              </p>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6">
               <h3 className="text-lg font-semibold text-charcoal mb-3">NPPES NPI Registry</h3>
               <p className="text-2xl font-bold text-emerald-brand mb-2">Weekly</p>
               <p className="text-sm text-gray-600">
                 Full data refresh every Sunday with incremental daily updates
-              </p>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-charcoal mb-3">DEA Registrations</h3>
-              <p className="text-2xl font-bold text-emerald-brand mb-2">Weekly</p>
-              <p className="text-sm text-gray-600">
-                Bi-weekly updates with emergency sync for urgent verifications
-              </p>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-charcoal mb-3">OFAC SDN List</h3>
-              <p className="text-2xl font-bold text-emerald-brand mb-2">Real-time</p>
-              <p className="text-sm text-gray-600">
-                Immediate updates via Treasury Department's real-time feed
               </p>
             </div>
           </div>
@@ -417,7 +339,7 @@ export default function CompliancePage() {
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-charcoal mb-1">System Status & Uptime</h3>
-                <p className="text-gray-600">Real-time API health, state coverage, and data source status.</p>
+                <p className="text-gray-600">API health, state coverage, and data source status.</p>
               </div>
               <Link
                 href="/status"
@@ -446,22 +368,6 @@ export default function CompliancePage() {
                 <li>• Annual certification and ongoing compliance</li>
                 <li>• Enterprise customer requirement fulfillment</li>
                 <li>• Trust Services Criteria compliance</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white border border-border rounded-lg p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <h3 className="text-lg font-semibold text-charcoal">NCQA CVO Certification</h3>
-                <StatusBadge status="planned" />
-              </div>
-              <p className="text-gray-600 mb-4">
-                National Committee for Quality Assurance Credentials Verification Organization certification.
-              </p>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Healthcare industry-specific accreditation</li>
-                <li>• Primary source verification validation</li>
-                <li>• Quality assurance process certification</li>
-                <li>• Healthcare organization trust and adoption</li>
               </ul>
             </div>
           </div>

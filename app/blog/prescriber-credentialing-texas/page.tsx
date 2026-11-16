@@ -226,7 +226,7 @@ export default function TexasPresciberCredentialing() {
         <ul>
           <li><strong>Provider data collection:</strong> Centralized credentialing information management</li>
           <li><strong>Insurance network participation:</strong> Required for many health plan networks</li>
-          <li><strong>Automated updates:</strong> Real-time provider information updates</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
           <li><strong>Multi-state coordination:</strong> Facilitates credentialing across state lines</li>
         </ul>
 
@@ -326,16 +326,15 @@ export default function TexasPresciberCredentialing() {
         </p>
 
         <ul>
-          <li><strong>Multi-board Texas integration:</strong> Real-time data from Texas Medical Board, Board of Nursing, and PA Board</li>
+          <li><strong>Texas board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
           <li><strong>Automated multi-state verification:</strong> Simultaneous checking across all border states and common practice locations</li>
-          <li><strong>Enhanced DEA verification:</strong> Multi-location tracking and border region compliance</li>
-          <li><strong>Complete federal screening:</strong> Simultaneous OIG, SAM, and OFAC database verification</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry validation:</strong> Multi-location practice verification and organizational affiliations</li>
           <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
           <li><strong>CAQH integration:</strong> ProView data verification and status checking</li>
           <li><strong>Interstate compact monitoring:</strong> Automatic compact eligibility and participation status</li>
           <li><strong>Border practice compliance:</strong> Special authorization and international practice verification</li>
-          <li><strong>Sub-second response:</strong> Complete multi-state verification in under 700 milliseconds</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive audit trail:</strong> Full documentation for complex credentialing requirements</li>
         </ul>
 
@@ -362,28 +361,13 @@ export default function TexasPresciberCredentialing() {
     }
   ],
   "disciplinary_flag": false,
-  "dea_registrations": [
-    {
-      "number": "BM9876543",
-      "address": "Houston, TX",
-      "expiration_date": "2026-10-31"
-    },
-    {
-      "number": "BM9876544", 
-      "address": "El Paso, TX",
-      "expiration_date": "2026-10-31"
-    }
-  ],
-  "dea_schedules": "II-V",
   "board_certified": true,
   "specialty": "Family Medicine",
   "caqh_status": "ACTIVE",
   "interstate_compact": "ELIGIBLE",
   "npi": "9876543210",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "ofac_flagged": false,
-  "latency_ms": 642
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
@@ -426,8 +410,7 @@ export default function TexasPresciberCredentialing() {
           <li><strong>Multi-board license monitoring:</strong> Track renewals across Texas Medical Board, Board of Nursing, and PA Board</li>
           <li><strong>Border state verification:</strong> Verify licenses in all adjacent states where providers practice</li>
           <li><strong>Interstate compact compliance:</strong> Monitor compact participation for applicable provider types</li>
-          <li><strong>DEA multi-location tracking:</strong> Monitor all DEA registrations across multiple practice sites</li>
-          <li><strong>Ongoing federal exclusion screening:</strong> Monthly OIG, SAM, and OFAC monitoring</li>
+          <li><strong>Ongoing federal exclusion screening:</strong> Monthly OIG LEIE monitoring</li>
           <li><strong>CAQH ProView integration:</strong> Leverage CAQH for streamlined credentialing data management</li>
           <li><strong>Telemedicine compliance:</strong> Verify licenses in all states where remote care is provided</li>
           <li><strong>Specialty board tracking:</strong> Monitor certification maintenance across multiple specialties</li>
@@ -446,7 +429,7 @@ export default function TexasPresciberCredentialing() {
         </p>
 
         <p>
-          Most importantly, automated systems ensure no state license, DEA registration, or specialty certification is overlooked, providing consistent comprehensive verification that meets the enhanced standards required by Texas health systems and regulatory requirements.
+          Most importantly, a consistent process ensures no state license is overlooked, supporting the enhanced standards required by Texas health systems and regulatory requirements.
         </p>
 
         <p className="text-lg font-medium mt-6">

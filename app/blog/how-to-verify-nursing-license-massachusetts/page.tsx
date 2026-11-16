@@ -162,15 +162,15 @@ export default function MassachusettsNursingLicenseVerification() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Automation with API-Cert</h2>
 
         <p>
-          Manual license verification is time-consuming and error-prone. For organizations processing multiple verifications, API-Cert automates the entire process:
+          Manual license verification is time-consuming and error-prone. For organizations processing multiple verifications, API-Cert reports what the board&apos;s published file said and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>13 states with primary source data:</strong> Direct state board integration including Massachusetts, with NPI and exclusion screening nationwide</li>
-          <li><strong>6 primary sources:</strong> Simultaneously checks state boards, OIG, SAM, OFAC, and other critical databases</li>
-          <li><strong>Sub-second responses:</strong> Get comprehensive results in under 20ms</li>
+          <li><strong>Board-direct coverage:</strong> Massachusetts is board-direct for both physicians and nurses. Overall: physicians in 16 states, nurses in 15. The NPI registry is a nationwide baseline listing, not a verification</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Name matching:</strong> Advanced algorithms handle name variations automatically</li>
-          <li><strong>Fresh data:</strong> Direct integration with source systems ensures up-to-date information</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -186,8 +186,7 @@ export default function MassachusettsNursingLicenseVerification() {
   "expiration_date": "2028-03-31",
   "disciplinary_flag": false,
   "oig_excluded": false,
-  "sam_excluded": false,
-  "latency_ms": 12
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>

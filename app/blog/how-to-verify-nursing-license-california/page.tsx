@@ -276,15 +276,15 @@ export default function CaliforniaNursingLicenseVerification() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Automated Verification with API-Cert</h2>
 
         <p>
-          Manual verification through RN.ca.gov works for occasional checks but becomes inefficient for large-scale operations. API-Cert automates the entire credentialing process:
+          Manual verification through RN.ca.gov works for occasional checks but becomes inefficient for large-scale operations. API-Cert reports what the board&apos;s published file said and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>Real-time California integration:</strong> Direct connection to RN.ca.gov and bvnpt.ca.gov data</li>
-          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board plus 5 federal databases</li>
-          <li><strong>Lightning performance:</strong> Complete 6-point verification in under 20 milliseconds</li>
+          <li><strong>California licenses:</strong> California is not a board-direct state. API-Cert reports the NPI registry listing only, and routes the license check to your staff or the board</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Intelligent name matching:</strong> Handles cultural names, aliases, and variations automatically</li>
-          <li><strong>Always current data:</strong> Real-time sync with official source systems</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
           <li><strong>Compact state detection:</strong> Automatically identifies and verifies NLC status</li>
           <li><strong>Audit trail:</strong> Complete documentation for compliance and record-keeping</li>
         </ul>
@@ -303,9 +303,8 @@ export default function CaliforniaNursingLicenseVerification() {
   "disciplinary_flag": false,
   "compact_eligible": true,
   "oig_excluded": false,
-  "sam_excluded": false,
   "nppes_verified": true,
-  "latency_ms": 16
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>

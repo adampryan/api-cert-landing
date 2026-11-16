@@ -35,21 +35,14 @@ function AnimatedNumber({ target, suffix = '', prefix = '' }: { target: number; 
   return <span ref={ref}>{prefix}{count}{suffix}</span>;
 }
 
-const dataSources = ['NPPES', 'OIG LEIE', 'SAM.gov', 'CMS', 'MA Board', 'RI Board', 'CT Board', 'NH OPLC', 'ME Board of Nursing', 'State Boards'];
+const dataSources = ['NPPES (baseline listing)', 'OIG LEIE', 'MA Board', 'RI Board', 'CT Board', 'NH OPLC', 'ME Board of Nursing', 'State Boards'];
 
-// Live stats with realistic seed numbers
-const baseVerifications = 12847;
-const startTime = new Date('2024-01-01').getTime();
-const now = new Date().getTime();
-const daysSinceStart = Math.floor((now - startTime) / (24 * 60 * 60 * 1000));
-const dailyAverage = 145; // realistic daily verification count
-const currentVerifications = baseVerifications + (daysSinceStart * dailyAverage) + Math.floor(Math.random() * 50);
+// Coverage counts come from the live registry
 
 const metrics = [
-  { value: Math.floor(currentVerifications / 1000), prefix: '', suffix: 'K+', label: 'Verifications Performed' },
-  { value: 50, prefix: 'All ', suffix: '', label: 'States Covered' },
-  { value: 20, prefix: '', suffix: '+', label: 'Primary Source Checks' },
-  { value: 20, prefix: '<', suffix: 'ms', label: 'Average Response' },
+  { value: 16, prefix: '', suffix: '', label: 'States, Physician Board-Direct' },
+  { value: 15, prefix: '', suffix: '', label: 'States, Nurse Board-Direct' },
+  { value: 14, prefix: '', suffix: '', label: 'States, Both Professions' },
 ];
 
 export default function SocialProof() {
@@ -57,7 +50,7 @@ export default function SocialProof() {
     <section className="relative bg-surface py-20">
       {/* Data sources marquee */}
       <div className="border-b border-border pb-8 mb-12">
-        <p className="text-center text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">Trusted Data Sources</p>
+        <p className="text-center text-xs font-mono text-gray-400 uppercase tracking-widest mb-6">Data Sources</p>
         <div className="overflow-hidden max-w-5xl mx-auto">
           <div className="marquee-track">
             {[...dataSources, ...dataSources].map((source, i) => (
@@ -72,7 +65,7 @@ export default function SocialProof() {
 
       {/* Metric cards */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {metrics.map((m, i) => (
             <div
               key={i}

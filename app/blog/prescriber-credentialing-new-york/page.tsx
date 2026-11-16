@@ -303,15 +303,13 @@ export default function NewYorkPresciberCredentialing() {
         </p>
 
         <ul>
-          <li><strong>NYSED integration:</strong> Real-time data from New York State Education Department professional licensing</li>
-          <li><strong>Enhanced DEA verification:</strong> Registration status, schedules, and New York-specific controlled substance authority</li>
+          <li><strong>NYSED:</strong> New York is not a board-direct state; license checks are routed to your staff to verify at NYSED</li>
           <li><strong>I-STOP system verification:</strong> Prescription monitoring program registration and compliance status</li>
-          <li><strong>Complete federal screening:</strong> Simultaneous OIG, SAM, and OFAC database verification</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry validation:</strong> Provider demographics, taxonomy codes, and practice affiliations</li>
           <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
           <li><strong>Collaborative agreement tracking:</strong> NP and PA practice agreement verification</li>
-          <li><strong>NYC health department integration:</strong> Additional New York City requirements when applicable</li>
-          <li><strong>Sub-second response:</strong> Complete verification in under 500 milliseconds</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive audit trail:</strong> Full documentation for regulatory compliance and accreditation</li>
         </ul>
 
@@ -327,18 +325,13 @@ export default function NewYorkPresciberCredentialing() {
   "status": "REGISTERED",
   "expiration_date": "2027-07-31",
   "disciplinary_flag": false,
-  "dea_number": "MR5678901",
-  "dea_expiration": "2026-11-30",
-  "dea_schedules": "III-V",
   "board_certified": true,
   "specialty": "Adult Gerontology NP",
   "istop_registered": true,
   "collaborative_agreement": "CURRENT",
   "npi": "5678901234",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "ofac_flagged": false,
-  "latency_ms": 456
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
@@ -381,10 +374,9 @@ export default function NewYorkPresciberCredentialing() {
           <li><strong>Track triennial registration cycles:</strong> Monitor 3-year renewal periods for all New York licenses</li>
           <li><strong>Verify I-STOP compliance:</strong> Confirm prescription monitoring program registration for controlled substance prescribers</li>
           <li><strong>Monitor collaborative agreements:</strong> Track NP and PA practice agreement renewals and updates</li>
-          <li><strong>Monthly federal exclusion screening:</strong> Ongoing OIG, SAM, and OFAC monitoring</li>
+          <li><strong>Monthly federal exclusion screening:</strong> Ongoing OIG LEIE monitoring</li>
           <li><strong>NYC requirement verification:</strong> Additional checks for providers practicing in New York City</li>
           <li><strong>Specialty board tracking:</strong> Monitor certification maintenance and renewal requirements</li>
-          <li><strong>DEA registration monitoring:</strong> Track controlled substance authority and renewal cycles</li>
           <li><strong>NYSED disciplinary monitoring:</strong> Regular checks for license status changes and disciplinary actions</li>
           <li><strong>Automated renewal alerts:</strong> Implement systems to track multiple renewal cycles and requirements</li>
         </ul>

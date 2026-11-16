@@ -12,11 +12,11 @@ const categories = [
       },
       {
         q: 'How fresh is the data?',
-        a: 'Our database is updated weekly through automated ingestion from official state board registries and federal databases.',
+        a: 'We load state board files and pages on a schedule, not live. Every result carries the date the board file or page carried, so you can see exactly how current it is.',
       },
       {
-        q: 'Do you cover all 50 states?',
-        a: 'We currently have direct board-level data for 13 states (AK, AL, CO, CT, DE, FL, IL, MA, MD, NJ, RI, TX, WA). NPI and exclusion screening covers all 50 states. New states are added regularly.',
+        q: 'Which states do you cover?',
+        a: 'Board-direct physician coverage (MD/DO/PA) is 16 states: AK, AL, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV. Board-direct nurse coverage (RN/LPN/NP) is 15 states: AK, AL, CO, CT, DE, FL, IL, MA, ME, NH, NJ, RI, TX, VT, WA. The national NPPES/NPI registry is a nationwide baseline listing only; being in it is not a verification. Anything we can\'t answer from a board file is routed to your staff to verify at the board, or to the board for written confirmation.',
       },
     ],
   },
@@ -29,7 +29,7 @@ const categories = [
       },
       {
         q: 'What exclusion lists do you check?',
-        a: 'Every verification automatically checks OIG LEIE, SAM.gov, and CMS Preclusion List — no extra cost or separate API calls needed.',
+        a: 'We screen against the OIG LEIE exclusion list. We do not currently offer SAM.gov, CMS Preclusion List, or DEA checks.',
       },
     ],
   },
@@ -42,7 +42,7 @@ const categories = [
       },
       {
         q: "What if a license isn't found?",
-        a: 'We return a "not_found" status along with query latency. We also attempt a secondary lookup through NPPES as a fallback.',
+        a: 'We return a "not_found" status. We also check the NPPES/NPI registry as a baseline listing, which tells you the provider exists there but is not a license verification. Not-found results are routed to your staff or the board for confirmation.',
       },
     ],
   },

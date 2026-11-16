@@ -7,12 +7,12 @@ const providerTypes = ['RN', 'LPN', 'NP', 'PA', 'MD', 'DO'];
 const features = [
   {
     icon: '⚡',
-    title: 'Instant Verification',
-    description: '9 automated checks + optional NPDB complete in seconds: license status, OIG, SAM, OFAC, DEA, disciplinary actions, and more.',
+    title: 'Board-File Verification',
+    description: 'Reports what a state licensing board\'s published file or page said about a license, and the date it carried. Board-direct for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15, plus OIG LEIE exclusion screening. The NPI registry is a baseline listing only, not a verification.',
     span: 'lg:col-span-2', // double-wide
     extra: (
       <div className="flex flex-wrap gap-2 mt-4">
-        {['License Status', 'OIG Exclusion', 'SAM Exclusion', 'CMS Preclusion', 'Disciplinary'].map((check) => (
+        {['License Status', 'OIG Exclusion', 'Disciplinary'].map((check) => (
           <span
             key={check}
             className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-light text-emerald-brand"
@@ -50,13 +50,13 @@ const features = [
   {
     icon: '📄',
     title: 'Committee Packets',
-    description: 'One-click NCQA-compliant reports for credentialing committees. All verifications summarized in professional PDF format.',
+    description: 'One-click committee packets. Verifications and their source dates summarized in a PDF for your credentialing committee.',
     span: '',
   },
   {
     icon: '🔍',
-    title: 'Continuous Monitoring',
-    description: 'Real-time alerts when license status changes, exclusions appear, or credentials expire. Stay compliant automatically.',
+    title: 'Scheduled Re-checks',
+    description: 'Board files are loaded on a schedule, and the date each file carried is reported with the result. Re-checks flag license status changes, exclusions, and upcoming expirations as new files arrive.',
     span: '',
   },
   {

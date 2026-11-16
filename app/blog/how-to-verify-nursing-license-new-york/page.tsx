@@ -254,15 +254,15 @@ export default function NewYorkNursingLicenseVerification() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Streamlined Verification with API-Cert</h2>
 
         <p>
-          Manual verification through OP.NYSED.gov provides essential information but becomes inefficient for large-scale credentialing operations. API-Cert automates the entire process:
+          Manual verification through OP.NYSED.gov provides essential information but becomes inefficient for large-scale credentialing operations. API-Cert reports what the board&apos;s published file said and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>Direct New York integration:</strong> Real-time access to OP.NYSED data</li>
-          <li><strong>Multi-database verification:</strong> Simultaneously checks state license plus 5 federal sources</li>
-          <li><strong>Ultra-fast responses:</strong> Complete verification in under 20 milliseconds</li>
+          <li><strong>New York licenses:</strong> New York is not a board-direct state. API-Cert reports the NPI registry listing only, and routes the license check to your staff or the board</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Smart name matching:</strong> Handles name variations and changes automatically</li>
-          <li><strong>Current data:</strong> Always up-to-date information from official sources</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
           <li><strong>Comprehensive results:</strong> Single API call returns complete credentialing picture</li>
         </ul>
 
@@ -280,8 +280,7 @@ export default function NewYorkNursingLicenseVerification() {
   "disciplinary_flag": false,
   "compact_eligible": false,
   "oig_excluded": false,
-  "sam_excluded": false,
-  "latency_ms": 11
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>

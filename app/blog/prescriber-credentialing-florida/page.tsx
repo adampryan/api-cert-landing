@@ -294,18 +294,17 @@ export default function FloridaPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Florida Verification</h2>
 
         <p>
-          API-Cert provides comprehensive Florida prescriber verification with real-time integration across all required databases:
+          API-Cert reports what Florida board files say, with the date each carried, and routes the rest to your staff or the board:
         </p>
 
         <ul>
-          <li><strong>Florida board integration:</strong> Real-time data from Board of Medicine, Board of Osteopathic Medicine, and Board of Nursing</li>
-          <li><strong>Enhanced DEA verification:</strong> Registration status, schedules, expiration dates, and practice locations</li>
-          <li><strong>Complete federal screening:</strong> Simultaneous OIG, SAM, and OFAC database verification</li>
+          <li><strong>Florida board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry validation:</strong> Provider demographics, taxonomy codes, and practice information</li>
           <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
           <li><strong>PDMP registration status:</strong> Florida prescription monitoring program compliance</li>
           <li><strong>Intelligent name matching:</strong> Handles aliases, maiden names, and cultural variations</li>
-          <li><strong>Sub-second response:</strong> Complete verification in under 400 milliseconds</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive documentation:</strong> Full audit trail for regulatory compliance</li>
         </ul>
 
@@ -321,17 +320,12 @@ export default function FloridaPresciberCredentialing() {
   "status": "ACTIVE",
   "expiration_date": "2027-03-31",
   "disciplinary_flag": false,
-  "dea_number": "BM7654321",
-  "dea_expiration": "2026-08-31",
-  "dea_schedules": "II-V",
   "board_certified": true,
   "specialty": "Family Medicine",
   "npi": "9876543210",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "ofac_flagged": false,
   "pdmp_registered": true,
-  "latency_ms": 342
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
@@ -376,7 +370,7 @@ export default function FloridaPresciberCredentialing() {
           <li><strong>Opioid prescriber oversight:</strong> Enhanced verification for pain management providers</li>
           <li><strong>Emergency authorization tracking:</strong> Monitor temporary credentials during disasters</li>
           <li><strong>Multi-state verification:</strong> Check home state licenses for locum tenens providers</li>
-          <li><strong>Automated monitoring:</strong> Consider real-time systems for high-volume operations</li>
+          <li><strong>Automated monitoring:</strong> Consider automation for high-volume operations</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Conclusion</h2>
@@ -394,7 +388,7 @@ export default function FloridaPresciberCredentialing() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Automate your Florida prescriber credentialing with real-time verification. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start free trial at api-cert.com</Link>.
+          Track your Florida prescriber credentialing with dated board-file results. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start free trial at api-cert.com</Link>.
         </p>
       </article>
 

@@ -213,8 +213,8 @@ export default function DocsPage() {
                       API <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-brand to-cyan-400">Documentation</span>
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
-                      Verify healthcare licenses across 13 states with direct board data, plus NPI and exclusion screening nationwide.
-                      RN, LPN, NP, PA, MD, and DO — powered by official government sources.
+                      Board-direct coverage for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15, plus OIG exclusion screening. The NPI registry is a nationwide baseline listing, not a verification.
+                      RN, LPN, NP, PA, MD, and DO — reported from official government sources with the date each file carried.
                     </p>
                   </div>
 
@@ -257,7 +257,7 @@ export default function DocsPage() {
             {/* Getting Started */}
             <SectionHeading id="getting-started">Getting Started</SectionHeading>
             <p className="text-slate-300 mb-4">
-              The API-Cert API lets you verify healthcare professional licenses in real-time.
+              The API-Cert API reports what state board files say about healthcare professional licenses, with the date each file carried.
               All requests are made to the following base URL:
             </p>
             <CodeBlock title="Base URL">{`https://api.api-cert.com`}</CodeBlock>
@@ -350,11 +350,9 @@ export default function DocsPage() {
   "expiration_date": "2027-06-30",
   "issue_date": "2019-08-15",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "cms_precluded": false,
   "disciplinary_flag": false,
   "npi_number": "1234567890",
-  "latency_ms": 4
+  "data_freshness": "2026-11-09"
 }`}</CodeBlock>
 
             {/* POST /v1/verify/bulk */}
@@ -638,23 +636,15 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
-                <span><span className="text-white font-medium">NPPES (NPI Registry)</span> — National Plan and Provider Enumeration System for NPI number cross-referencing.</span>
+                <span><span className="text-white font-medium">NPPES (NPI Registry)</span> — National Plan and Provider Enumeration System. A baseline listing for NPI cross-referencing, not a license verification.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
                 <span><span className="text-white font-medium">OIG LEIE</span> — Office of Inspector General&apos;s List of Excluded Individuals/Entities.</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
-                <span><span className="text-white font-medium">SAM.gov</span> — System for Award Management exclusion records.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-emerald-400 mt-1.5 shrink-0">&#8226;</span>
-                <span><span className="text-white font-medium">CMS Preclusion List</span> — Centers for Medicare & Medicaid Services preclusion database.</span>
-              </li>
             </ul>
             <p className="text-slate-400 text-sm mt-4">
-              Data is refreshed daily. Use the <code className="text-emerald-400">GET /v1/states</code> endpoint
+              Board files are loaded on a schedule, not live; each result reports the date the file carried. Use the <code className="text-emerald-400">GET /v1/states</code> endpoint
               to see per-state data source details and last update timestamps.
             </p>
 

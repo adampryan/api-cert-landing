@@ -234,15 +234,15 @@ export default function FloridaNursingLicenseVerification() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Streamline with API-Cert</h2>
 
         <p>
-          Manual verification through Florida Health Source works for occasional checks, but becomes inefficient for organizations processing hundreds of verifications. API-Cert automates the entire process:
+          Manual verification through Florida Health Source works for occasional checks, but becomes inefficient for organizations processing hundreds of verifications. API-Cert reports what the board&apos;s published file said and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>Real-time Florida integration:</strong> Direct connection to Florida Health Source data</li>
-          <li><strong>Comprehensive screening:</strong> Simultaneously checks state board, OIG, SAM, OFAC, and other critical databases</li>
-          <li><strong>Lightning fast:</strong> Complete 6-point verification in under 20 milliseconds</li>
+          <li><strong>Florida board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Intelligent matching:</strong> Handles name variations, maiden names, and nicknames automatically</li>
-          <li><strong>Always current:</strong> Fresh data synced directly from source systems</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -259,8 +259,7 @@ export default function FloridaNursingLicenseVerification() {
   "disciplinary_flag": false,
   "compact_eligible": true,
   "oig_excluded": false,
-  "sam_excluded": false,
-  "latency_ms": 8
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>

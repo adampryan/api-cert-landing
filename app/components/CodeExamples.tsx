@@ -69,9 +69,8 @@ console.log(\`Status: \${data.status}\`);`,
   "expiration_date": "2028-03-15",
   "disciplinary_flag": false,
   "oig_excluded": false,
-  "sam_excluded": false,
-  "cms_precluded": false,
-  "latency_ms": 6
+  "source_name": "MA Board of Registration in Nursing",
+  "data_freshness": "2026-11-09"
 }`,
 };
 

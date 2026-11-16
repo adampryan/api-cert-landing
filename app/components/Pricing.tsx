@@ -8,7 +8,7 @@ export default function Pricing() {
       features: [
         '500 verifications/month',
         'API access + portal',
-        'All automated checks',
+        'Board-file license checks + OIG screening',
         'Email support',
         'Standard SLA',
       ],
@@ -173,7 +173,7 @@ export default function Pricing() {
                 <span className="text-slate-500">/provider/mo</span>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Real-time alerts when new malpractice reports, adverse actions, or exclusions are filed against your providers.
+                Ongoing NPDB monitoring for new malpractice reports and adverse actions against your providers.
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function Pricing() {
               Try any plan free for 14 days. No credit card required. Cancel anytime.
             </p>
             <div className="text-sm text-emerald-600">
-              All plans include 9 automated verification checks. Add NPDB for complete malpractice coverage.
+              All plans include board-file license checks and OIG LEIE screening. Add NPDB for malpractice history.
             </div>
           </div>
         </div>

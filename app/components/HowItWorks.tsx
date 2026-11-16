@@ -11,9 +11,9 @@ const steps = [
   },
   {
     num: 2,
-    title: 'Instant Verification',
-    desc: '9 automated checks + optional NPDB complete in seconds: license status, exclusions, DEA, disciplinary actions, and more.',
-    code: '✓ License: ACTIVE\n✓ OIG: Clear\n✓ SAM: Clear\n✓ CMS: Clear\n✓ Disciplinary: Clean',
+    title: 'Board-File Verification',
+    desc: 'We report what the state board\'s published file said about the license, with the date it carried, plus OIG exclusion screening. Anything a board file can\'t answer goes to your staff or the board.',
+    code: '✓ License: ACTIVE\n✓ OIG: Clear\n✓ Disciplinary: Clean\n• Board file dated 2026-11-09',
   },
   {
     num: 3,
@@ -30,8 +30,8 @@ const steps = [
   {
     num: 5,
     title: 'Generate Packet',
-    desc: 'One-click committee-ready PDF with all verifications, flagged issues, and compliance summary.',
-    code: '📄 Committee Packet\n✓ All verifications\n⚠ Issues flagged\n📊 Compliance summary',
+    desc: 'One-click committee-ready PDF with all verifications, their source dates, and flagged issues.',
+    code: '📄 Committee Packet\n✓ Verifications + source dates\n⚠ Issues flagged',
   },
 ];
 

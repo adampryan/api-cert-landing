@@ -1,8 +1,12 @@
 # API-Cert Landing Page Brief
 
 ## Product
-API-Cert — U.S. healthcare license verification API. Verifies RN, LPN, NP, PA, MD, DO licenses
-across all 50 states in under 100ms. Data from official government sources, updated daily.
+API-Cert — healthcare license verification operations tool. Reports what a state licensing board's
+published file or page said about an RN, LPN, NP, PA, MD, or DO license, and the date that file carried.
+Anything a board file can't answer is routed to the customer's staff (who verify at the board) or to the
+board for written confirmation. Board-direct physician coverage (MD/DO/PA) is 16 states; board-direct
+nurse coverage (RN/LPN/NP) is 15 states; 14 states have both. The NPPES/NPI registry is a nationwide
+baseline listing only, not a verification. OIG LEIE exclusion screening is included.
 
 ## Domain
 api-cert.com (Cloudflare, deploying to Cloudflare Pages)
@@ -25,28 +29,28 @@ Secondary: Developers building healthcare apps, hospital HR teams
 ## Sections (in order)
 
 ### 1. Hero
-- Headline: "Verify Any Healthcare License. Instantly."
-- Subhead: "API-Cert checks RN, LPN, NP, PA, MD, and DO licenses across all 50 states
-  in under 100ms — using official government data sources, updated daily."
+- Headline: "Healthcare Credentialing, Automated."
+- Subhead: "Board-published license status, with the date the board file carried. OIG exclusion
+  screening included. Anything a board file can't answer goes to your staff or the board."
 - Primary CTA: "Start Free Trial" → #pricing
 - Secondary CTA: "View Docs" → /docs
 - Visual: Animated JSON response block showing a real verify API call + response
   (fake but realistic data, dark terminal style)
 
 ### 2. Social Proof Bar
-- "Trusted data from:" then logos/text for: NPPES, OIG LEIE, SAM.gov, CMS, State Boards
+- "Data sources:" then logos/text for: NPPES (baseline listing), OIG LEIE, State Boards
 
 ### 3. How It Works (3 steps)
 1. Send a POST request with name, license type, state
-2. We query 50-state database + federal exclusion lists
-3. Get verified status, expiry, and disciplinary flags in <100ms
+2. We report what the board's published file said, plus OIG exclusion screening
+3. Get status, expiry, and disciplinary flags with the date the board file carried
 
 ### 4. Features Grid (2x3)
-- ✅ All 50 States — Every state nursing and provider board covered
-- ⚡ Sub-100ms — Queries cached locally, not scraped live
-- 🛡️ Exclusion Checks — OIG LEIE, SAM.gov, CMS Preclusion List
+- ✅ Board-Direct Coverage — Physicians (MD/DO/PA) in 16 states, nurses (RN/LPN/NP) in 15
+- ⚡ Dated Results — Board files loaded on a schedule; every result reports the date the file carried
+- 🛡️ Exclusion Screening — OIG LEIE
 - 📦 Bulk Verification — Upload CSV or send up to 100 in one API call
-- 🔄 Daily Updates — Fresh data from official sources every 24 hours
+- 🔄 Scheduled Loads — Board files loaded on a schedule, not live
 - 🔑 Simple Auth — One API key, standard REST, JSON responses
 
 ### 5. Code Example
@@ -61,11 +65,11 @@ Three cards:
 
 ### 7. FAQ
 - What license types do you cover? (RN, LPN, NP, PA, MD, DO)
-- How fresh is the data? (Daily ingestion from official sources)
-- Do you cover all 50 states? (Yes + DC, PR, territories)
+- How fresh is the data? (Loaded on a schedule; every result reports the date the file carried)
+- Which states do you cover? (16 physician / 15 nurse board-direct; NPI is a baseline listing only)
 - Is this HIPAA compliant? (We verify licenses, no PHI is stored)
 - Can I verify in bulk? (Yes, CSV upload or batch API up to 100)
-- What if a license isn't found? (Returns not_found with latency, NPPES fallback)
+- What if a license isn't found? (Returns not_found; NPPES baseline listing checked; routed to staff or the board)
 
 ### 8. Footer
 - api-cert.com | Built by OneWeek Labs
@@ -83,9 +87,8 @@ Three cards:
   "status": "ACTIVE",
   "expiration_date": "2027-06-30",
   "oig_excluded": false,
-  "sam_excluded": false,
   "disciplinary_flag": false,
-  "latency_ms": 4
+  "data_freshness": "2026-11-09"
 }
 ```
 

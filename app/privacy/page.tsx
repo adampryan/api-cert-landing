@@ -41,8 +41,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-white mb-3">Data We Process</h2>
             <p className="mb-3">
               API-Cert processes <strong className="text-white">publicly available license verification data</strong> sourced
-              from official state licensing boards, NPPES, OIG LEIE, SAM.gov, and the CMS Preclusion
-              List. All data processed by API-Cert is already part of the public record.
+              from official state licensing boards, NPPES, and OIG LEIE. All data processed by API-Cert is already part of the public record.
             </p>
             <p>
               <strong className="text-white">No Protected Health Information (PHI) is transmitted, processed, or stored</strong> by

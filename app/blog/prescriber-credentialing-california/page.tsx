@@ -303,22 +303,21 @@ export default function CaliforniaPresciberCredentialing() {
           </p>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert's 9-Point Automated Verification</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Verification</h2>
 
         <p>
-          API-Cert automates the entire California prescriber credentialing process with real-time verification across all required databases:
+          API-Cert reports what board files say and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>California state board integration:</strong> Real-time data from Medical Board, RN Board, and PA Board</li>
-          <li><strong>DEA verification:</strong> Current registration status, schedules, and expiration dates</li>
-          <li><strong>Federal exclusion screening:</strong> Simultaneous OIG, SAM, and OFAC database checks</li>
+          <li><strong>California licenses:</strong> California is not a board-direct state. API-Cert reports the NPI registry listing only, and routes the license check to your staff or the board</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry verification:</strong> Provider demographics, taxonomy, and enumeration details</li>
           <li><strong>Board certification lookup:</strong> ABMS, AOA, AANP, and NCCPA verification</li>
           <li><strong>Intelligent matching:</strong> Handles name variations, aliases, and cultural names automatically</li>
-          <li><strong>Sub-second response:</strong> Complete 9-point verification in under 500 milliseconds</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive audit trail:</strong> Complete documentation for compliance and accreditation</li>
-          <li><strong>Real-time updates:</strong> Always current data from authoritative sources</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -333,16 +332,11 @@ export default function CaliforniaPresciberCredentialing() {
   "status": "ACTIVE",
   "expiration_date": "2027-06-30",
   "disciplinary_flag": false,
-  "dea_number": "BT1234567",
-  "dea_expiration": "2026-12-31",
-  "dea_schedules": "II-V",
   "board_certified": true,
   "specialty": "Internal Medicine",
   "npi": "1234567890",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "ofac_flagged": false,
-  "latency_ms": 287
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
@@ -401,11 +395,11 @@ export default function CaliforniaPresciberCredentialing() {
         </p>
 
         <p>
-          Most importantly, automated systems ensure no database is overlooked and all verifications maintain the same rigorous standard—critical for regulatory compliance and patient safety.
+          Most importantly, a consistent process keeps every verification to the same standard, which matters for regulatory compliance and patient safety.
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Complete 9-point prescriber verification in under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Try API-Cert free at api-cert.com</Link>.
+          Board-file verification with the date each file carried. <Link href="/docs#register" className="text-emerald-brand hover:underline">Try API-Cert free at api-cert.com</Link>.
         </p>
       </article>
 

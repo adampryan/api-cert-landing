@@ -53,7 +53,7 @@ const articles: BlogArticle[] = [
   {
     slug: "prescriber-credentialing-california",
     title: "How to Verify a Physician License in California",
-    excerpt: "Complete guide to California prescriber credentialing verification including DEA registration, state medical licenses, OIG screening, and 9-point verification for MDs, DOs, NPs, and PAs.",
+    excerpt: "Complete guide to California prescriber credentialing verification including DEA registration, state medical licenses, and OIG screening for MDs, DOs, NPs, and PAs.",
     publishedDate: "2026-03-22",
     readTime: "11 min read", 
     state: "CA"
@@ -159,7 +159,7 @@ export default function BlogIndex() {
             Skip Manual Prescriber Verification
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            API-Cert automates complete 9-point prescriber verification in under a second.
+            API-Cert reports what state board files say, with the date each carried.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

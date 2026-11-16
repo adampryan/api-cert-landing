@@ -13,9 +13,8 @@ const jsonResponse = {
   expiration_date: "2028-03-15",
   disciplinary_flag: false,
   oig_excluded: false,
-  sam_excluded: false,
-  cms_precluded: false,
-  latency_ms: 6
+  source_name: "MA Board of Registration in Medicine",
+  data_as_of: "2026-11-09"
 };
 
 export default function Hero() {
@@ -71,8 +70,8 @@ export default function Hero() {
               <span className="text-[#059669]">Automated.</span>
             </h1>
             <p className="text-lg sm:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
-              9 automated checks + optional NPDB in seconds. AI-powered outreach for the rest.
-              One dashboard to manage it all.
+              Board-published license status, with the date the board file carried. OIG exclusion screening included.
+              Anything a board file can&apos;t answer goes to your staff or to the board. One dashboard to track it all.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
@@ -125,37 +124,16 @@ export default function Hero() {
                           <span className="text-green-400 font-bold">false</span>
                         </span>
                       )}
-                      {line.includes('"sam_excluded": false') && (
-                        <span className="bg-green-400/10 -mx-2 px-2 rounded">
-                          {line.replace('false', '')}
-                          <span className="text-green-400 font-bold">false</span>
-                        </span>
-                      )}
-                      {line.includes('"cms_precluded": false') && (
-                        <span className="bg-green-400/10 -mx-2 px-2 rounded">
-                          {line.replace('false', '')}
-                          <span className="text-green-400 font-bold">false</span>
-                        </span>
-                      )}
                       {line.includes('"disciplinary_flag": false') && (
                         <span>
                           {line.replace('false', '')}
                           <span className="text-green-400">false</span>
                         </span>
                       )}
-                      {line.includes('"latency_ms": 6') && (
-                        <span>
-                          {line.replace('6', '')}
-                          <span className="text-amber-400">6</span>
-                        </span>
-                      )}
                       {!line.includes('"verified"') &&
                        !line.includes('"status"') &&
                        !line.includes('"oig_excluded"') &&
-                       !line.includes('"sam_excluded"') &&
-                       !line.includes('"cms_precluded"') &&
-                       !line.includes('"disciplinary_flag"') &&
-                       !line.includes('"latency_ms"') && (
+                       !line.includes('"disciplinary_flag"') && (
                         <span>{line}</span>
                       )}
                     </div>
@@ -167,9 +145,9 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Latency badge */}
+            {/* Data-date badge */}
             <div className="absolute -bottom-4 -right-4 bg-green-500/10 border border-green-500/30 rounded-lg px-4 py-2">
-              <span className="text-green-400 font-mono text-sm">6ms response</span>
+              <span className="text-green-400 font-mono text-sm">Board file dated 2026-11-09</span>
             </div>
           </div>
         </div>

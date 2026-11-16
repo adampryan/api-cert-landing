@@ -108,7 +108,7 @@ export default function StatusPage() {
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h1 className="text-3xl font-bold mb-2">API Status</h1>
-        <p className="text-slate-400 mb-10">Real-time health and coverage for API-Cert services.</p>
+        <p className="text-slate-400 mb-10">Health and coverage for API-Cert services.</p>
 
         {loading ? (
           <div className="text-slate-400">Loading status...</div>
@@ -165,8 +165,8 @@ export default function StatusPage() {
               {[
                 { label: 'Provider Records', value: totalRecords },
                 { label: 'Direct Board Sources', value: `${directStates.length}` },
-                { label: 'Nationwide (NPPES)', value: '50 states' },
-                { label: 'Federal Databases', value: '7' },
+                { label: 'Nationwide (NPPES listing)', value: '50 states' },
+                { label: 'Exclusion Lists', value: '1' },
               ].map(stat => (
                 <div key={stat.label} className="rounded-lg border border-gray-700 bg-gray-800/50 p-4 text-center">
                   <div className="text-2xl font-bold text-emerald-400">{stat.value}</div>
@@ -178,7 +178,7 @@ export default function StatusPage() {
             {/* Direct Board Sources */}
             <h2 className="text-xl font-semibold mb-4">Direct Board Data Sources</h2>
             <p className="text-sm text-slate-400 mb-4">
-              States with primary source license data ingested directly from state boards. All other states use NPPES/NPI baseline data.
+              States with primary source license data ingested directly from state boards. All other states have only the NPPES/NPI baseline listing, which is not a verification.
             </p>
             <div className="rounded-xl border border-gray-700 overflow-hidden mb-12">
               <table className="w-full text-sm">
@@ -213,12 +213,7 @@ export default function StatusPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-12">
               {[
                 { name: 'OIG LEIE', desc: 'Exclusion screening' },
-                { name: 'SAM.gov', desc: 'Debarment & sanctions' },
-                { name: 'NPPES/NPI', desc: 'Provider identity & taxonomy' },
-                { name: 'CMS Preclusion List', desc: 'Medicare Part D / MA exclusions' },
-                { name: 'Medicare Opt-Out', desc: 'Providers opted out of Medicare' },
-                { name: 'OFAC/SDN', desc: 'Treasury sanctions list' },
-                { name: 'DEA Registration', desc: 'Controlled substance authority' },
+                { name: 'NPPES/NPI', desc: 'Baseline listing only, not a verification' },
               ].map(db => (
                 <div key={db.name} className="flex items-center gap-3 rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-3">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />

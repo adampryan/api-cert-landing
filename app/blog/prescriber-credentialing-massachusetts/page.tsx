@@ -309,15 +309,14 @@ export default function MassachusettsPresciberCredentialing() {
         </p>
 
         <ul>
-          <li><strong>Massachusetts board integration:</strong> Real-time data from all Massachusetts professional boards</li>
+          <li><strong>Massachusetts board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
           <li><strong>Multi-state verification:</strong> Automated checking across all New England state licensing boards</li>
-          <li><strong>Enhanced DEA verification:</strong> Registration status, schedules, and multi-location tracking</li>
-          <li><strong>Complete federal screening:</strong> Simultaneous OIG, SAM, and OFAC database verification</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry validation:</strong> Comprehensive provider demographics and practice information</li>
           <li><strong>Board certification lookup:</strong> ABMS, AOA, and specialty board verification</li>
           <li><strong>Academic affiliation tracking:</strong> Teaching hospital and medical school appointment verification</li>
           <li><strong>Interstate compact monitoring:</strong> Automatic compact eligibility and participation status</li>
-          <li><strong>Sub-second response:</strong> Complete multi-state verification in under 600 milliseconds</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive audit trail:</strong> Full documentation for academic medical center compliance</li>
         </ul>
 
@@ -344,9 +343,6 @@ export default function MassachusettsPresciberCredentialing() {
     }
   ],
   "disciplinary_flag": false,
-  "dea_number": "BJ8765432",
-  "dea_expiration": "2026-09-30", 
-  "dea_schedules": "II-V",
   "board_certified": true,
   "specialty": "Emergency Medicine",
   "academic_appointments": [
@@ -354,9 +350,7 @@ export default function MassachusettsPresciberCredentialing() {
   ],
   "npi": "8765432109",
   "oig_excluded": false,
-  "sam_excluded": false,
-  "ofac_flagged": false,
-  "latency_ms": 521
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
@@ -401,7 +395,6 @@ export default function MassachusettsPresciberCredentialing() {
           <li><strong>Interstate compact compliance:</strong> Monitor compact participation and home state requirements</li>
           <li><strong>Ongoing exclusion screening:</strong> Monthly federal database monitoring for compliance</li>
           <li><strong>Specialty board tracking:</strong> Monitor subspecialty certifications and maintenance requirements</li>
-          <li><strong>DEA multi-location verification:</strong> Track DEA registrations across all practice locations</li>
           <li><strong>Telemedicine licensing:</strong> Verify licenses in all states where patients are treated</li>
           <li><strong>Automated renewal tracking:</strong> Monitor expiration dates across multiple states and certifications</li>
           <li><strong>Research compliance verification:</strong> Confirm IRB training and protocol compliance for academic providers</li>

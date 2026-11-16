@@ -197,7 +197,7 @@ export default function ROICalculator() {
                     {Math.round(results.timeSavedDays)} days
                   </p>
                   <p className="text-sm text-purple-600 mt-1">
-                    From instant API responses vs. manual processing
+                    From API lookups vs. manual processing
                   </p>
                 </div>
               </div>
@@ -230,8 +230,8 @@ export default function ROICalculator() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-lg text-gray-900 mb-2">Instant Results</h4>
-              <p className="text-gray-600">Complete multi-point verification in under 1 second vs. days of manual work</p>
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">Board-File Results</h4>
+              <p className="text-gray-600">What the board's published file says, with the date it carried, vs. looking each license up by hand</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -239,8 +239,8 @@ export default function ROICalculator() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h4 className="font-semibold text-lg text-gray-900 mb-2">9 Automated Checks + Optional NPDB</h4>
-              <p className="text-gray-600">License status, OIG/SAM exclusions, DEA, Medicare opt-out, OFAC, and NPDB add-on</p>
+              <h4 className="font-semibold text-lg text-gray-900 mb-2">Board-File Checks + Optional NPDB</h4>
+              <p className="text-gray-600">License status, OIG exclusion screening, and NPDB add-on</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -249,7 +249,7 @@ export default function ROICalculator() {
                 </svg>
               </div>
               <h4 className="font-semibold text-lg text-gray-900 mb-2">Enterprise Security</h4>
-              <p className="text-gray-600">SOC 2 compliant with encrypted data and audit trails</p>
+              <p className="text-gray-600">Encrypted data and audit trails</p>
             </div>
           </div>
         </div>

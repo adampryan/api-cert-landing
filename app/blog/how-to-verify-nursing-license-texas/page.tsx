@@ -221,15 +221,15 @@ export default function TexasNursingLicenseVerification() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Automated Verification with API-Cert</h2>
 
         <p>
-          Manual verification through the Texas Board website works for occasional checks, but becomes impractical for high-volume credentialing operations. API-Cert streamlines the entire process:
+          Manual verification through the Texas Board website works for occasional checks, but becomes impractical for high-volume credentialing operations. API-Cert reports what the board&apos;s published file said and routes the rest to your staff:
         </p>
 
         <ul>
-          <li><strong>Real-time Texas integration:</strong> Direct access to Texas Board of Nursing data</li>
-          <li><strong>Multi-source verification:</strong> Simultaneously checks state board plus 5 federal databases</li>
-          <li><strong>Sub-second response times:</strong> Complete verification in under 20 milliseconds</li>
+          <li><strong>Texas board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
+          <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
+          <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Advanced name matching:</strong> Automatically handles name variations and aliases</li>
-          <li><strong>Live data:</strong> Always current information from source systems</li>
+          <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
           <li><strong>Compact state handling:</strong> Automatically detects and verifies NLC status</li>
         </ul>
 
@@ -247,8 +247,7 @@ export default function TexasNursingLicenseVerification() {
   "disciplinary_flag": false,
   "compact_eligible": true,
   "oig_excluded": false,
-  "sam_excluded": false, 
-  "latency_ms": 14
+  "data_freshness": "2026-11-09"
 }`}
           </pre>
         </div>
