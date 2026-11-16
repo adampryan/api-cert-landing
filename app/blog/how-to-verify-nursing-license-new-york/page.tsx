@@ -263,7 +263,7 @@ export default function NewYorkNursingLicenseVerification() {
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Smart name matching:</strong> Handles name variations and changes automatically</li>
           <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
-          <li><strong>Comprehensive results:</strong> Single API call returns complete credentialing picture</li>
+          <li><strong>Single call:</strong> One API call returns the board-file result and OIG screening</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -271,7 +271,7 @@ export default function NewYorkNursingLicenseVerification() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": false,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "NY",
   "full_name": "ELIZABETH MARIE JOHNSON",
   "evidence_level": "registry_listing",

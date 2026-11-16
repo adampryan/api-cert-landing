@@ -230,7 +230,6 @@ export default function TexasNursingLicenseVerification() {
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Advanced name matching:</strong> Automatically handles name variations and aliases</li>
           <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
-          <li><strong>Compact state handling:</strong> Automatically detects and verifies NLC status</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -238,14 +237,13 @@ export default function TexasNursingLicenseVerification() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "TX",
   "full_name": "JENNIFER LYNN MARTINEZ",
   "license_number": "RN-758394",
   "status": "ACTIVE",
   "expiration_date": "2027-12-31",
   "disciplinary_flag": false,
-  "compact_eligible": true,
   "oig_excluded": false,
   "data_freshness": "2026-11-09"
 }`}

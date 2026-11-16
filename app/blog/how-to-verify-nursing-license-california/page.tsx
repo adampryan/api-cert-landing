@@ -285,7 +285,6 @@ export default function CaliforniaNursingLicenseVerification() {
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Intelligent name matching:</strong> Handles cultural names, aliases, and variations automatically</li>
           <li><strong>Scheduled data loads:</strong> Board files are loaded on a schedule, not queried live</li>
-          <li><strong>Compact state detection:</strong> Automatically identifies and verifies NLC status</li>
           <li><strong>Audit trail:</strong> Complete documentation for compliance and record-keeping</li>
         </ul>
 
@@ -294,7 +293,7 @@ export default function CaliforniaNursingLicenseVerification() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": false,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "CA",
   "full_name": "PATRICIA LYNN GARCIA",
   "evidence_level": "registry_listing",

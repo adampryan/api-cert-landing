@@ -178,7 +178,7 @@ export default function MassachusettsNursingLicenseVerification() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "MA", 
   "full_name": "SARAH MICHELLE CHEN",
   "license_number": "RN-267891",
@@ -198,7 +198,7 @@ export default function MassachusettsNursingLicenseVerification() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Skip the manual process. Verify any nursing license in 6 checks and under a second. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
+          Skip the manual process. Check board-file license status and OIG exclusion in a single API call. <Link href="/docs#register" className="text-emerald-brand hover:underline">Sign up free at api-cert.com</Link>.
         </p>
       </article>
 

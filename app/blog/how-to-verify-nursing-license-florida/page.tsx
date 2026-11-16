@@ -250,14 +250,13 @@ export default function FloridaNursingLicenseVerification() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "FL",
   "full_name": "MARIA ELENA RODRIGUEZ",
   "license_number": "RN-4567891",
   "status": "ACTIVE", 
   "expiration_date": "2027-11-30",
   "disciplinary_flag": false,
-  "compact_eligible": true,
   "oig_excluded": false,
   "data_freshness": "2026-11-09"
 }`}
