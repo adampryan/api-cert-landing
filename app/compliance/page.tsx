@@ -25,10 +25,10 @@ const complianceSections: ComplianceSection[] = [
     items: [
       {
         name: "State Professional Licensing Boards",
-        description: "Board-direct coverage for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15 states, reported with the date each board file or page carried",
+        description: "Board-direct coverage for physicians (MD/DO/PA) in 17 states and nurses (RN/LPN/NP) in 15 states, reported with the date each board file or page carried",
         status: 'live',
         details: [
-          "Physician board-direct (MD/DO/PA), 16 states: AK, AL, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV",
+          "Physician board-direct (MD/DO/PA), 17 states: AK, AL, CA, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV",
           "Nurse board-direct (RN/LPN/NP), 15 states: AK, AL, CO, CT, DE, FL, IL, MA, ME, NH, NJ, RI, TX, VT, WA",
           "Both professions board-direct in 14 states",
           "Board files and pages are loaded on a schedule; each result reports the date the file carried",

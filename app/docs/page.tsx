@@ -213,7 +213,7 @@ export default function DocsPage() {
                       API <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-brand to-cyan-400">Documentation</span>
                     </h1>
                     <p className="text-lg text-slate-400 max-w-2xl leading-relaxed">
-                      Board-direct coverage for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15, plus OIG exclusion screening. The NPI registry is a nationwide baseline listing, not a verification.
+                      Board-direct coverage for physicians (MD/DO/PA) in 17 states and nurses (RN/LPN/NP) in 15, plus OIG exclusion screening. The NPI registry is a nationwide baseline listing, not a verification.
                       RN, LPN, NP, PA, MD, and DO — reported from official government sources with the date each file carried.
                     </p>
                   </div>

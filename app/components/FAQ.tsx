@@ -16,7 +16,7 @@ const categories = [
       },
       {
         q: 'Which states do you cover?',
-        a: 'Board-direct physician coverage (MD/DO/PA) is 16 states: AK, AL, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV. Board-direct nurse coverage (RN/LPN/NP) is 15 states: AK, AL, CO, CT, DE, FL, IL, MA, ME, NH, NJ, RI, TX, VT, WA. The national NPPES/NPI registry is a nationwide baseline listing only; being in it is not a verification. Anything we can\'t answer from a board file is routed to your staff to verify at the board, or to the board for written confirmation.',
+        a: 'Board-direct physician coverage (MD/DO/PA) is 17 states: AK, AL, CA, CO, CT, DE, FL, IL, MA, MD, NH, NJ, RI, TX, VT, WA, WV. Board-direct nurse coverage (RN/LPN/NP) is 15 states: AK, AL, CO, CT, DE, FL, IL, MA, ME, NH, NJ, RI, TX, VT, WA. The national NPPES/NPI registry is a nationwide baseline listing only; being in it is not a verification. Anything we can\'t answer from a board file is routed to your staff to verify at the board, or to the board for written confirmation.',
       },
     ],
   },

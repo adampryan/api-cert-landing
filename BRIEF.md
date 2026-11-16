@@ -4,7 +4,7 @@
 API-Cert — healthcare license verification operations tool. Reports what a state licensing board's
 published file or page said about an RN, LPN, NP, PA, MD, or DO license, and the date that file carried.
 Anything a board file can't answer is routed to the customer's staff (who verify at the board) or to the
-board for written confirmation. Board-direct physician coverage (MD/DO/PA) is 16 states; board-direct
+board for written confirmation. Board-direct physician coverage (MD/DO/PA) is 17 states; board-direct
 nurse coverage (RN/LPN/NP) is 15 states; 14 states have both. The NPPES/NPI registry is a nationwide
 baseline listing only, not a verification. OIG LEIE exclusion screening is included.
 
@@ -46,7 +46,7 @@ Secondary: Developers building healthcare apps, hospital HR teams
 3. Get status, expiry, and disciplinary flags with the date the board file carried
 
 ### 4. Features Grid (2x3)
-- ✅ Board-Direct Coverage — Physicians (MD/DO/PA) in 16 states, nurses (RN/LPN/NP) in 15
+- ✅ Board-Direct Coverage — Physicians (MD/DO/PA) in 17 states, nurses (RN/LPN/NP) in 15
 - ⚡ Dated Results — Board files loaded on a schedule; every result reports the date the file carried
 - 🛡️ Exclusion Screening — OIG LEIE
 - 📦 Bulk Verification — Upload CSV or send up to 100 in one API call
@@ -66,7 +66,7 @@ Three cards:
 ### 7. FAQ
 - What license types do you cover? (RN, LPN, NP, PA, MD, DO)
 - How fresh is the data? (Loaded on a schedule; every result reports the date the file carried)
-- Which states do you cover? (16 physician / 15 nurse board-direct; NPI is a baseline listing only)
+- Which states do you cover? (17 physician / 15 nurse board-direct; NPI is a baseline listing only)
 - Is this HIPAA compliant? (We verify licenses, no PHI is stored)
 - Can I verify in bulk? (Yes, CSV upload or batch API up to 100)
 - What if a license isn't found? (Returns not_found; NPPES baseline listing checked; routed to staff or the board)

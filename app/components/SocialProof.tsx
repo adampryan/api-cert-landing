@@ -40,7 +40,7 @@ const dataSources = ['NPPES (baseline listing)', 'OIG LEIE', 'MA Board', 'RI Boa
 // Coverage counts come from the live registry
 
 const metrics = [
-  { value: 16, prefix: '', suffix: '', label: 'States, Physician Board-Direct' },
+  { value: 17, prefix: '', suffix: '', label: 'States, Physician Board-Direct' },
   { value: 15, prefix: '', suffix: '', label: 'States, Nurse Board-Direct' },
   { value: 14, prefix: '', suffix: '', label: 'States, Both Professions' },
 ];

@@ -8,7 +8,7 @@ const features = [
   {
     icon: '⚡',
     title: 'Board-File Verification',
-    description: 'Reports what a state licensing board\'s published file or page said about a license, and the date it carried. Board-direct for physicians (MD/DO/PA) in 16 states and nurses (RN/LPN/NP) in 15, plus OIG LEIE exclusion screening. The NPI registry is a baseline listing only, not a verification.',
+    description: 'Reports what a state licensing board\'s published file or page said about a license, and the date it carried. Board-direct for physicians (MD/DO/PA) in 17 states and nurses (RN/LPN/NP) in 15, plus OIG LEIE exclusion screening. The NPI registry is a baseline listing only, not a verification.',
     span: 'lg:col-span-2', // double-wide
     extra: (
       <div className="flex flex-wrap gap-2 mt-4">
