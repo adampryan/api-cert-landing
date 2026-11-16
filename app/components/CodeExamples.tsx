@@ -12,7 +12,7 @@ const tabs: { key: TabKey; label: string }[] = [
 ];
 
 const codeExamples: Record<TabKey, string> = {
-  curl: `curl -X POST https://api.api-cert.com/v1/verify \\
+  curl: `curl -X POST https://api-cert.oneweeklabs.com/v1/verify \\
   -H "X-API-Key: sk_live_your_key" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -24,7 +24,7 @@ const codeExamples: Record<TabKey, string> = {
   python: `import requests
 
 response = requests.post(
-    "https://api.api-cert.com/v1/verify",
+    "https://api-cert.oneweeklabs.com/v1/verify",
     headers={
         "X-API-Key": "sk_live_your_key",
         "Content-Type": "application/json"
@@ -41,7 +41,7 @@ data = response.json()
 print(f"Status: {data['status']}")
 print(f"Excluded: {data['oig_excluded']}")`,
   node: `const response = await fetch(
-  "https://api.api-cert.com/v1/verify",
+  "https://api-cert.oneweeklabs.com/v1/verify",
   {
     method: "POST",
     headers: {

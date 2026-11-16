@@ -56,10 +56,10 @@ export default function StatusPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch('https://api.api-cert.com/health')
+      fetch('https://api-cert.oneweeklabs.com/health')
         .then(r => r.json())
         .catch(() => { setHealthError(true); return null; }),
-      fetch('https://api.api-cert.com/v1/states')
+      fetch('https://api-cert.oneweeklabs.com/v1/states')
         .then(r => r.json())
         .catch(() => null),
     ]).then(([h, s]) => {

@@ -137,7 +137,7 @@ export default function DocsPage() {
         <div className="flex items-center gap-4">
           <a href="/#pricing" className="text-sm text-slate-300 hover:text-white transition-colors hidden sm:inline">Pricing</a>
           <a
-            href="https://api.api-cert.com/portal/signup"
+            href="https://api-cert.oneweeklabs.com/portal/signup"
             className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors"
           >
             Get Free Key
@@ -246,7 +246,7 @@ export default function DocsPage() {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                     Code Examples
                   </a>
-                  <a href="https://api-cert-api.onrender.com/docs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:text-white border border-slate-700 transition-colors">
+                  <a href="https://api-cert.oneweeklabs.com/docs" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:text-white border border-slate-700 transition-colors">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                     Interactive Swagger
                   </a>
@@ -260,13 +260,12 @@ export default function DocsPage() {
               The API-Cert API reports what state board files say about healthcare professional licenses, with the date each file carried.
               All requests are made to the following base URL:
             </p>
-            <CodeBlock title="Base URL">{`https://api.api-cert.com`}</CodeBlock>
+            <CodeBlock title="Base URL">{`https://api-cert.oneweeklabs.com`}</CodeBlock>
             <div className="bg-slate-800/50 border border-slate-700 rounded-lg p-4 my-4">
               <p className="text-slate-300 text-sm">
                 <span className="text-amber-400 font-medium">Note:</span>{' '}
-                The production domain <code className="text-emerald-400">api.api-cert.com</code> currently
-                proxies to <code className="text-slate-400">api-cert-api.onrender.com</code>. Both work,
-                but use the canonical domain for production integrations.
+                The API is served at <code className="text-emerald-400">api-cert.oneweeklabs.com</code>.
+                Use that base URL for production integrations.
               </p>
             </div>
             <p className="text-slate-300 mb-4">To get started:</p>
@@ -300,7 +299,7 @@ export default function DocsPage() {
               { name: 'name', type: 'string', required: false, description: 'Your full name' },
               { name: 'company', type: 'string', required: false, description: 'Your organization' },
             ]} />
-            <CodeBlock title="Example Request">{`curl -X POST https://api.api-cert.com/v1/register \\
+            <CodeBlock title="Example Request">{`curl -X POST https://api-cert.oneweeklabs.com/v1/register \\
   -H "Content-Type: application/json" \\
   -d '{
     "email": "dev@yourcompany.com",
@@ -331,7 +330,7 @@ export default function DocsPage() {
               { name: 'first_name', type: 'string', required: false, description: "Provider's first name (improves accuracy)" },
               { name: 'license_number', type: 'string', required: false, description: 'License number if known (improves accuracy)' },
             ]} />
-            <CodeBlock title="Example Request">{`curl -X POST https://api.api-cert.com/v1/verify \\
+            <CodeBlock title="Example Request">{`curl -X POST https://api-cert.oneweeklabs.com/v1/verify \\
   -H "X-API-Key: your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -366,7 +365,7 @@ export default function DocsPage() {
             <ParamTable params={[
               { name: 'requests', type: 'array', required: true, description: 'Array of verification objects (max 100). Each object follows the same schema as /v1/verify.' },
             ]} />
-            <CodeBlock title="Example Request">{`curl -X POST https://api.api-cert.com/v1/verify/bulk \\
+            <CodeBlock title="Example Request">{`curl -X POST https://api-cert.oneweeklabs.com/v1/verify/bulk \\
   -H "X-API-Key: your_api_key_here" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -389,7 +388,7 @@ export default function DocsPage() {
               Returns the coverage matrix showing which license types are supported in each state,
               along with the data source and last update timestamp.
             </p>
-            <CodeBlock title="Example Request">{`curl https://api.api-cert.com/v1/states \\
+            <CodeBlock title="Example Request">{`curl https://api-cert.oneweeklabs.com/v1/states \\
   -H "X-API-Key: your_api_key_here"`}</CodeBlock>
             <CodeBlock title="Response — 200 OK">{`{
   "states": {
@@ -432,7 +431,7 @@ export default function DocsPage() {
               Returns your current billing period usage statistics including
               requests made, quota remaining, and rate limit status.
             </p>
-            <CodeBlock title="Example Request">{`curl https://api.api-cert.com/v1/usage \\
+            <CodeBlock title="Example Request">{`curl https://api-cert.oneweeklabs.com/v1/usage \\
   -H "X-API-Key: your_api_key_here"`}</CodeBlock>
             <CodeBlock title="Response — 200 OK">{`{
   "tier": "free",
@@ -452,14 +451,14 @@ export default function DocsPage() {
 
             <h3 className="text-lg font-semibold text-white mb-3">cURL</h3>
             <CodeBlock title="Register + Verify">{`# 1. Register for an API key
-curl -X POST https://api.api-cert.com/v1/register \\
+curl -X POST https://api-cert.oneweeklabs.com/v1/register \\
   -H "Content-Type: application/json" \\
   -d '{"email": "dev@yourcompany.com"}'
 
 # Save the api_key from the response, then:
 
 # 2. Verify a license
-curl -X POST https://api.api-cert.com/v1/verify \\
+curl -X POST https://api-cert.oneweeklabs.com/v1/verify \\
   -H "X-API-Key: YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -472,7 +471,7 @@ curl -X POST https://api.api-cert.com/v1/verify \\
             <h3 className="text-lg font-semibold text-white mb-3 mt-8">Python</h3>
             <CodeBlock title="python — requests">{`import requests
 
-BASE = "https://api.api-cert.com"
+BASE = "https://api-cert.oneweeklabs.com"
 
 # 1. Register
 reg = requests.post(f"{BASE}/v1/register", json={
@@ -495,7 +494,7 @@ print(f"OIG Excluded: {result['oig_excluded']}")  # False
 print(f"Data as of: {result['data_freshness']}") # 2026-11-09`}</CodeBlock>
 
             <h3 className="text-lg font-semibold text-white mb-3 mt-8">Node.js</h3>
-            <CodeBlock title="node — fetch">{`const BASE = "https://api.api-cert.com";
+            <CodeBlock title="node — fetch">{`const BASE = "https://api-cert.oneweeklabs.com";
 
 // 1. Register
 const reg = await fetch(\`\${BASE}/v1/register\`, {
@@ -666,7 +665,7 @@ console.log(\`OIG Excluded: \${result.oig_excluded}\`);`}</CodeBlock>
               <div className="mt-6">
                 <p className="text-slate-500 text-sm mb-2">Or register via the API:</p>
                 <code className="text-sm text-slate-400 font-mono bg-slate-800 px-4 py-2 rounded-lg inline-block">
-                  curl -X POST https://api.api-cert.com/v1/register -H &quot;Content-Type: application/json&quot; -d &apos;{'{'}&#34;email&#34;:&#34;you@co.com&#34;{'}'}&#39;
+                  curl -X POST https://api-cert.oneweeklabs.com/v1/register -H &quot;Content-Type: application/json&quot; -d &apos;{'{'}&#34;email&#34;:&#34;you@co.com&#34;{'}'}&#39;
                 </code>
               </div>
             </div>

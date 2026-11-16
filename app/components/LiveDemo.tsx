@@ -109,7 +109,7 @@ export default function LiveDemo() {
       if (formData.first_name.trim()) {
         params.set('first_name', formData.first_name.trim());
       }
-      const response = await fetch(`https://api.api-cert.com/v1/demo/verify?${params}`);
+      const response = await fetch(`https://api-cert.oneweeklabs.com/v1/demo/verify?${params}`);
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -141,7 +141,7 @@ export default function LiveDemo() {
       if (provider.first_name) {
         params.set('first_name', provider.first_name);
       }
-      const response = await fetch(`https://api.api-cert.com/v1/demo/verify?${params}`);
+      const response = await fetch(`https://api-cert.oneweeklabs.com/v1/demo/verify?${params}`);
 
       if (!response.ok) {
         throw new Error('Failed to load provider details');
@@ -273,7 +273,7 @@ export default function LiveDemo() {
           Get unlimited access to our verification API. Free tier includes 25 verifications per month.
         </p>
         <a
-          href="https://api.api-cert.com/portal/signup"
+          href="https://api-cert.oneweeklabs.com/portal/signup"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
         >
           Sign Up Free →
@@ -337,7 +337,7 @@ export default function LiveDemo() {
           Search, verify, and monitor providers programmatically. Free tier includes 25 verifications per month.
         </p>
         <a
-          href="https://api.api-cert.com/portal/signup"
+          href="https://api-cert.oneweeklabs.com/portal/signup"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
         >
           Sign Up Free →

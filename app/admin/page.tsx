@@ -87,14 +87,14 @@ export default function AdminDashboard() {
     setLoading(true);
     try {
       // Fetch health data
-      const healthResponse = await fetch('https://api.api-cert.com/health');
+      const healthResponse = await fetch('https://api-cert.oneweeklabs.com/health');
       if (healthResponse.ok) {
         const health = await healthResponse.json();
         setHealthData(health);
       }
 
       // Fetch states data
-      const statesResponse = await fetch('https://api.api-cert.com/v1/states');
+      const statesResponse = await fetch('https://api-cert.oneweeklabs.com/v1/states');
       if (statesResponse.ok) {
         const statesJson = await statesResponse.json();
         const statesArray = (statesJson.states || []).map((s: any) => ({
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
 
       // Fetch ingestion status
       try {
-        const ingestionResponse = await fetch('https://api.api-cert.com/v1/ingestion/status');
+        const ingestionResponse = await fetch('https://api-cert.oneweeklabs.com/v1/ingestion/status');
         if (ingestionResponse.ok) {
           const ingestionJson = await ingestionResponse.json();
           const runsArray = (ingestionJson.last_runs || []).map((r: any) => ({
@@ -137,7 +137,7 @@ export default function AdminDashboard() {
 
   const refreshStatesCache = async () => {
     try {
-      const response = await fetch('https://api.api-cert.com/v1/admin/refresh-states', {
+      const response = await fetch('https://api-cert.oneweeklabs.com/v1/admin/refresh-states', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

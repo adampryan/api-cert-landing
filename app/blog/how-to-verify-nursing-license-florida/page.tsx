@@ -23,7 +23,7 @@ export default function FloridaNursingLicenseVerification() {
             <Link href="/roi" className="text-sm text-slate-300 hover:text-white transition-colors">ROI Calculator</Link>
             <Link href="/#pricing" className="text-sm text-slate-300 hover:text-white transition-colors">Pricing</Link>
             <Link href="/docs" className="text-sm text-slate-300 hover:text-white transition-colors">Docs</Link>
-            <Link href="https://api.api-cert.com/portal/signup" className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors">Sign Up</Link>
+            <Link href="https://api-cert.oneweeklabs.com/portal/signup" className="text-sm bg-emerald-brand text-white px-4 py-2 rounded-lg hover:bg-teal-brand transition-colors">Sign Up</Link>
           </div>
         </div>
       </nav>
