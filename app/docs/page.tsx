@@ -492,7 +492,7 @@ resp = requests.post(f"{BASE}/v1/verify", headers=headers, json={
 result = resp.json()
 print(f"Status: {result['status']}")        # ACTIVE
 print(f"OIG Excluded: {result['oig_excluded']}")  # False
-print(f"Latency: {result['latency_ms']}ms") # 4`}</CodeBlock>
+print(f"Data as of: {result['data_freshness']}") # 2026-11-09`}</CodeBlock>
 
             <h3 className="text-lg font-semibold text-white mb-3 mt-8">Node.js</h3>
             <CodeBlock title="node — fetch">{`const BASE = "https://api.api-cert.com";
