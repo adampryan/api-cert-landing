@@ -317,21 +317,16 @@ export default function NewYorkPresciberCredentialing() {
           <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample API Response for New York Provider</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
-  "verified": true,
+  "verified": false,
   "provider_type": "NP",
   "state": "NY",
   "full_name": "MARIA ELENA RODRIGUEZ",
-  "license_number": "567890",
-  "status": "REGISTERED",
-  "expiration_date": "2027-07-31",
-  "disciplinary_flag": false,
-  "board_certified": true,
-  "specialty": "Adult Gerontology NP",
-  "istop_registered": true,
-  "collaborative_agreement": "CURRENT",
   "npi": "5678901234",
+  "evidence_level": "registry_listing",
+  "nppes_listed": true,
   "oig_excluded": false,
-  "data_freshness": "2026-11-09"
+  "message": "Not verified from a board file. We do not read a New York board file; this provider is listed in the national NPI registry, which is a baseline listing, not a license verification. Routed to your staff to verify at the board, or to the board for a written confirmation.",
+  "route": "staff_task"
 }`}
           </pre>
         </div>

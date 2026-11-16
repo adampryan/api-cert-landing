@@ -270,17 +270,15 @@ export default function NewYorkNursingLicenseVerification() {
           <h3 className="text-lg font-semibold text-emerald-800 mb-3">Example API Response for New York RN</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
-  "verified": true,
+  "verified": false,
   "provider_type": "RN",
   "state": "NY",
   "full_name": "ELIZABETH MARIE JOHNSON",
-  "license_number": "098765",
-  "status": "CURRENT",
-  "expiration_date": "2028-06-30",
-  "disciplinary_flag": false,
-  "compact_eligible": false,
+  "evidence_level": "registry_listing",
+  "nppes_listed": true,
   "oig_excluded": false,
-  "data_freshness": "2026-11-09"
+  "message": "Not verified from a board file. We do not read a New York nursing board file; this provider is listed in the national NPI registry, which is a baseline listing, not a license verification. Routed to your staff to verify at the board, or to the board for a written confirmation.",
+  "route": "staff_task"
 }`}
           </pre>
         </div>

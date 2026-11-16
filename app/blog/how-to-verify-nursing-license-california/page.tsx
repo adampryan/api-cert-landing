@@ -293,18 +293,15 @@ export default function CaliforniaNursingLicenseVerification() {
           <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample API Response for California RN</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
-  "verified": true,
+  "verified": false,
   "provider_type": "RN",
   "state": "CA",
   "full_name": "PATRICIA LYNN GARCIA",
-  "license_number": "RN-567890",
-  "status": "ACTIVE",
-  "expiration_date": "2027-09-30",
-  "disciplinary_flag": false,
-  "compact_eligible": true,
+  "evidence_level": "registry_listing",
+  "nppes_listed": true,
   "oig_excluded": false,
-  "nppes_verified": true,
-  "data_freshness": "2026-11-09"
+  "message": "Not verified from a board file. We do not read a California nursing board file; this provider is listed in the national NPI registry, which is a baseline listing, not a license verification. Routed to your staff to verify at the board, or to the board for a written confirmation.",
+  "route": "staff_task"
 }`}
           </pre>
         </div>
