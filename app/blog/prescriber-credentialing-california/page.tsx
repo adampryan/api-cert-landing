@@ -306,7 +306,7 @@ export default function CaliforniaPresciberCredentialing() {
         </p>
 
         <ul>
-          <li><strong>California licenses:</strong> California is not a board-direct state. API-Cert reports the NPI registry listing only, and routes the license check to your staff or the board</li>
+          <li><strong>California physician licenses:</strong> Read directly from the Medical Board of California&apos;s physician file &mdash; license status, expiration date, and any disciplinary action, with the date the file carried</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry verification:</strong> Provider demographics, taxonomy, and enumeration details</li>
           <li><strong>Intelligent matching:</strong> Handles name variations, aliases, and cultural names automatically</li>
@@ -319,16 +319,26 @@ export default function CaliforniaPresciberCredentialing() {
           <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample API Response for California Physician</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
-  "verified": false,
+  "verified": true,
   "license_type": "MD",
   "state": "CA",
   "full_name": "MICHAEL JAMES THOMPSON",
+  "license_number": "A64406",
   "npi": "1234567890",
-  "evidence_level": "registry_listing",
-  "nppes_listed": true,
+  "status": "ACTIVE",
+  "expiration_date": "2027-08-31",
+  "disciplinary_flag": false,
+  "source": {
+    "board_id": "ca-mbc",
+    "board_name": "Medical Board of California",
+    "evidence_level": "board_file",
+    "as_of": "2026-11-10"
+  },
+  "source_name": "ca_mbc",
   "oig_excluded": false,
-  "message": "Not verified from a board file. We do not read a California medical board file; this provider is listed in the national NPI registry, which is a baseline listing, not a license verification. Routed to your staff to verify at the board, or to the board for a written confirmation.",
-  "route": "staff_task"
+  "screening": {
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] }
+  }
 }`}
           </pre>
         </div>
