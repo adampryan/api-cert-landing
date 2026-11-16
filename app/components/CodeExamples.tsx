@@ -61,7 +61,7 @@ const data = await response.json();
 console.log(\`Status: \${data.status}\`);`,
   response: `{
   "verified": true,
-  "provider_type": "RN",
+  "license_type": "RN",
   "state": "MA",
   "full_name": "SARAH K. CHEN",
   "license_number": "RN-227415",

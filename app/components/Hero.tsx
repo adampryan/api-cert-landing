@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const jsonResponse = {
   verified: true,
-  provider_type: "MD",
+  license_type: "MD",
   state: "MA",
   full_name: "SARAH K. CHEN",
   license_number: "MD-227415",

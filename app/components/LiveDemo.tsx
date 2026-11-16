@@ -11,12 +11,6 @@ interface VerifyResponse {
   license_number: string | null;
   expiration_date: string | null;
   oig_excluded: boolean | null;
-  sam_excluded: boolean | null;
-  cms_precluded: boolean | null;
-  dea_number: string | null;
-  dea_status: string | null;
-  medicare_optout: boolean | null;
-  ofac_flagged: boolean | null;
   disciplinary_flag: boolean | null;
   latency_ms: number;
   source_name: string;

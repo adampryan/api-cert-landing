@@ -322,9 +322,8 @@ export default function DocsPage() {
               Verify a single healthcare professional&apos;s license. Returns what the state
               board&apos;s file said &mdash; status and expiration &mdash; with the date that file
               carried and the board it came from, a disciplinary flag, and OIG exclusion screening.
-              A per-list <code className="text-emerald-400">screening</code> object reports each
-              federal list separately; lists we don&apos;t currently maintain return{' '}
-              <code className="text-emerald-400">not_checked</code>.
+              The <code className="text-emerald-400">screening</code> object reports the OIG
+              result and the date of the list it was checked against.
             </p>
             <h3 className="text-lg font-semibold text-white mb-3">Request Body</h3>
             <ParamTable params={[
@@ -365,9 +364,7 @@ export default function DocsPage() {
   "stale": false,
   "oig_excluded": false,
   "screening": {
-    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] },
-    "sam": { "status": "not_checked" },
-    "cms_preclusion": { "status": "not_checked" }
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] }
   }
 }`}</CodeBlock>
 
