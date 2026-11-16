@@ -50,7 +50,7 @@ export default function CaliforniaPresciberCredentialing() {
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
-            California has over 150,000 active prescribing providers across physicians, nurse practitioners, and physician assistants. Comprehensive credentialing verification is mandatory for Medicare/Medicaid participation and healthcare compliance. This guide covers the complete 9-point verification process for California prescribers.
+            California has over 150,000 active prescribing providers across physicians, nurse practitioners, and physician assistants. Comprehensive credentialing verification is mandatory for Medicare/Medicaid participation and healthcare compliance. This guide covers the verification process for California prescribers.
           </p>
         </div>
       </section>

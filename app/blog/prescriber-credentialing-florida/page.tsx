@@ -50,7 +50,7 @@ export default function FloridaPresciberCredentialing() {
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
-            Florida has over 90,000 active prescribing providers serving one of the nation's largest populations. With strict opioid prescribing regulations and comprehensive federal oversight, complete credentialing verification is essential for compliance and patient safety. This guide covers the full 9-point verification process for Florida prescribers.
+            Florida has over 90,000 active prescribing providers serving one of the nation's largest populations. With strict opioid prescribing regulations and comprehensive federal oversight, complete credentialing verification is essential for compliance and patient safety. This guide covers the full verification process for Florida prescribers.
           </p>
         </div>
       </section>

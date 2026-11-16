@@ -50,7 +50,7 @@ export default function TexasPresciberCredentialing() {
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
-            Texas has over 180,000 active prescribing providers serving the nation's second-largest state. With complex multi-board regulatory oversight and extensive border state practice, comprehensive credentialing verification is essential for healthcare compliance. This guide covers the complete 9-point verification process for Texas prescribers.
+            Texas has over 180,000 active prescribing providers serving the nation's second-largest state. With complex multi-board regulatory oversight and extensive border state practice, comprehensive credentialing verification is essential for healthcare compliance. This guide covers the verification process for Texas prescribers.
           </p>
         </div>
       </section>

@@ -319,8 +319,12 @@ export default function DocsPage() {
             <SectionHeading id="verify">Verify License</SectionHeading>
             <EndpointHeader method="POST" path="/v1/verify" badge="Requires API key" />
             <p className="text-slate-300 mb-4">
-              Verify a single healthcare professional&apos;s license. Returns the license status,
-              expiration, and results of exclusion checks against federal databases.
+              Verify a single healthcare professional&apos;s license. Returns what the state
+              board&apos;s file said &mdash; status and expiration &mdash; with the date that file
+              carried and the board it came from, a disciplinary flag, and OIG exclusion screening.
+              A per-list <code className="text-emerald-400">screening</code> object reports each
+              federal list separately; lists we don&apos;t currently maintain return{' '}
+              <code className="text-emerald-400">not_checked</code>.
             </p>
             <h3 className="text-lg font-semibold text-white mb-3">Request Body</h3>
             <ParamTable params={[
@@ -340,18 +344,31 @@ export default function DocsPage() {
     "first_name": "Sarah"
   }'`}</CodeBlock>
             <CodeBlock title="Response — 200 OK">{`{
+  "request_id": "req_7f3a9c2e",
   "verified": true,
   "license_type": "RN",
   "state": "MA",
   "full_name": "SARAH J. CHEN",
   "license_number": "RN298741",
+  "npi": "1234567890",
   "status": "ACTIVE",
   "expiration_date": "2027-06-30",
-  "issue_date": "2019-08-15",
-  "oig_excluded": false,
   "disciplinary_flag": false,
-  "npi_number": "1234567890",
-  "data_freshness": "2026-11-09"
+  "source": {
+    "board_id": "ma-born",
+    "board_name": "Massachusetts Board of Registration in Nursing",
+    "evidence_level": "board_file",
+    "as_of": "2026-11-09"
+  },
+  "source_name": "ma_borim",
+  "data_freshness": "2026-11-09",
+  "stale": false,
+  "oig_excluded": false,
+  "screening": {
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] },
+    "sam": { "status": "not_checked" },
+    "cms_preclusion": { "status": "not_checked" }
+  }
 }`}</CodeBlock>
 
             {/* POST /v1/verify/bulk */}

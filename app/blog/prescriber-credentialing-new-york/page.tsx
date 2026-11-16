@@ -50,7 +50,7 @@ export default function NewYorkPresciberCredentialing() {
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
-            New York has over 120,000 active prescribing providers serving the nation's fourth-largest state population. With complex regulatory oversight and strict professional standards, comprehensive credentialing verification is essential for healthcare compliance. This guide covers the complete 9-point verification process for New York prescribers.
+            New York has over 120,000 active prescribing providers serving the nation's fourth-largest state population. With complex regulatory oversight and strict professional standards, comprehensive credentialing verification is essential for healthcare compliance. This guide covers the verification process for New York prescribers.
           </p>
         </div>
       </section>

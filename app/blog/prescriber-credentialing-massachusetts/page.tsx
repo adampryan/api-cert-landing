@@ -50,7 +50,7 @@ export default function MassachusettsPresciberCredentialing() {
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
-            Massachusetts has over 40,000 active prescribing providers serving major academic medical centers and healthcare systems. With proximity to other New England states, many providers hold multi-state licenses requiring comprehensive verification. This guide covers the complete 9-point credentialing process for Massachusetts prescribers.
+            Massachusetts has over 40,000 active prescribing providers serving major academic medical centers and healthcare systems. With proximity to other New England states, many providers hold multi-state licenses requiring comprehensive verification. This guide covers the complete credentialing process for Massachusetts prescribers.
           </p>
         </div>
       </section>
