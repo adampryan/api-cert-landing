@@ -305,52 +305,40 @@ export default function MassachusettsPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Massachusetts Verification</h2>
 
         <p>
-          API-Cert provides comprehensive multi-state prescriber verification with automated cross-state checking and academic institution integration:
+          API-Cert reports what Massachusetts board files say, with the date each carried, plus OIG exclusion screening. It does not check other states&apos; boards, board certification, academic appointments, or compact status:
         </p>
 
         <ul>
           <li><strong>Massachusetts board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
-          <li><strong>Multi-state verification:</strong> Automated checking across all New England state licensing boards</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
-          <li><strong>NPI registry validation:</strong> Comprehensive provider demographics and practice information</li>
-          <li><strong>Board certification lookup:</strong> ABMS, AOA, and specialty board verification</li>
-          <li><strong>Academic affiliation tracking:</strong> Teaching hospital and medical school appointment verification</li>
-          <li><strong>Interstate compact monitoring:</strong> Automatic compact eligibility and participation status</li>
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
-          <li><strong>Comprehensive audit trail:</strong> Full documentation for academic medical center compliance</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
-          <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample Multi-State API Response</h3>
+          <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample API Response</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "MD",
-  "primary_state": "MA",
+  "license_type": "MD",
+  "state": "MA",
   "full_name": "SARAH ELIZABETH JOHNSON",
-  "licenses": [
-    {
-      "state": "MA",
-      "license_number": "298765",
-      "status": "ACTIVE",
-      "expiration_date": "2027-06-30"
-    },
-    {
-      "state": "NH", 
-      "license_number": "12345-MD",
-      "status": "ACTIVE",
-      "expiration_date": "2027-12-31"
-    }
-  ],
-  "disciplinary_flag": false,
-  "board_certified": true,
-  "specialty": "Emergency Medicine",
-  "academic_appointments": [
-    "Harvard Medical School - Assistant Professor"
-  ],
+  "license_number": "298765",
   "npi": "8765432109",
+  "status": "ACTIVE",
+  "expiration_date": "2027-06-30",
+  "disciplinary_flag": false,
+  "source": {
+    "board_id": "ma-borim",
+    "board_name": "Massachusetts Board of Registration in Medicine",
+    "evidence_level": "board_file",
+    "as_of": "2026-11-09"
+  },
+  "data_freshness": "2026-11-09",
+  "stale": false,
   "oig_excluded": false,
-  "data_freshness": "2026-11-09"
+  "screening": {
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] }
+  }
 }`}
           </pre>
         </div>
@@ -375,7 +363,6 @@ export default function MassachusettsPresciberCredentialing() {
             <ul className="space-y-2 text-emerald-700">
               <li>• Multi-state API call cost: <strong>$0.65</strong></li>
               <li>• Staff review (4 min @ $30/hour): <strong>$2.00</strong></li>
-              <li>• Academic data access: <strong>$0.00</strong></li>
               <li>• Automated documentation: <strong>$0.00</strong></li>
               <li>• Error risk: <strong>$0.00</strong></li>
               <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$2.65</strong></li>
@@ -407,15 +394,15 @@ export default function MassachusettsPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations serving Massachusetts healthcare systems face unique challenges with multi-state license tracking and academic appointment verification. The 95.5% cost reduction through automation, combined with comprehensive multi-state monitoring and academic integration, delivers exceptional value for complex credentialing operations.
+          Organizations serving Massachusetts healthcare systems face unique challenges with multi-state license tracking and academic appointment verification. Automating the Massachusetts board-file check and OIG screening removes two of the manual lookups; the remaining steps stay with your staff.
         </p>
 
         <p>
-          Most importantly, automated systems ensure no state license or certification is overlooked, providing consistent comprehensive verification that meets the enhanced standards required by Massachusetts academic medical centers and major health systems.
+          Most importantly, a consistent process ensures the Massachusetts license status and federal exclusion check are never skipped, supporting the standards required by Massachusetts academic medical centers and major health systems.
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Automate your multi-state prescriber credentialing with comprehensive verification across all New England states. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
+          Automate your Massachusetts board-file and OIG checks. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
         </p>
       </article>
 

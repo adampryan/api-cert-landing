@@ -4,7 +4,7 @@ import Image from "next/image";
 import Footer from '../../components/Footer';
 
 export const metadata: Metadata = {
-  title: "Prescriber Credentialing in New York: DEA and License Verification | API-Cert",
+  title: "Prescriber Credentialing in New York: Licensing and Exclusion Screening | API-Cert",
   description: "Complete guide to New York prescriber verification including state licensing, DEA registration, and federal exclusion screening for physicians, NPs, and PAs.",
   keywords: "New York prescriber credentialing, physician license verification NY, DEA verification New York, NY State Education Department, NP credentialing NY"
 };
@@ -46,7 +46,7 @@ export default function NewYorkPresciberCredentialing() {
           </div>
           
           <h1 className="text-4xl lg:text-5xl font-bold text-charcoal mb-6">
-            Prescriber Credentialing in New York: DEA and License Verification
+            Prescriber Credentialing in New York: Licensing and Exclusion Screening
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -299,18 +299,14 @@ export default function NewYorkPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated New York Verification</h2>
 
         <p>
-          API-Cert provides comprehensive New York prescriber verification with integrated I-STOP and specialty requirement checking:
+          API-Cert reports OIG exclusion screening and the NPI registry listing for New York providers, and routes the license check to your staff. It does not check I-STOP, board certification, or collaborative agreements:
         </p>
 
         <ul>
           <li><strong>NYSED:</strong> New York is not a board-direct state; license checks are routed to your staff to verify at NYSED</li>
-          <li><strong>I-STOP system verification:</strong> Prescription monitoring program registration and compliance status</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
-          <li><strong>NPI registry validation:</strong> Provider demographics, taxonomy codes, and practice affiliations</li>
-          <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
-          <li><strong>Collaborative agreement tracking:</strong> NP and PA practice agreement verification</li>
+          <li><strong>NPI registry listing:</strong> Reported as a baseline listing, not a license verification</li>
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
-          <li><strong>Comprehensive audit trail:</strong> Full documentation for regulatory compliance and accreditation</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -318,7 +314,7 @@ export default function NewYorkPresciberCredentialing() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": false,
-  "provider_type": "NP",
+  "license_type": "NP",
   "state": "NY",
   "full_name": "MARIA ELENA RODRIGUEZ",
   "npi": "5678901234",
@@ -351,7 +347,6 @@ export default function NewYorkPresciberCredentialing() {
             <ul className="space-y-2 text-emerald-700">
               <li>• API call cost: <strong>$0.50</strong></li>
               <li>• Staff review (3 min @ $29/hour): <strong>$1.45</strong></li>
-              <li>• I-STOP integration: <strong>$0.00</strong></li>
               <li>• Automated documentation: <strong>$0.00</strong></li>
               <li>• Error risk: <strong>$0.00</strong></li>
               <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$1.95</strong></li>
@@ -383,15 +378,15 @@ export default function NewYorkPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations serving New York healthcare systems face unique compliance challenges that demand thorough verification and ongoing monitoring. The 96% cost reduction through automation, combined with comprehensive I-STOP integration and collaborative agreement tracking, provides exceptional value for New York credentialing operations.
+          Organizations serving New York healthcare systems face unique compliance challenges that demand thorough verification and ongoing monitoring. Automating OIG screening removes one of the manual lookups; the NYSED license check and the I-STOP, board certification, and collaborative agreement steps stay with your staff.
         </p>
 
         <p>
-          Most importantly, automated verification ensures compliance with New York's specific requirements while maintaining consistent comprehensive screening across all required databases and monitoring systems.
+          Most importantly, a consistent process ensures New York's specific requirements are each handled, whether by API-Cert or by your staff.
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Streamline your New York prescriber credentialing with automated I-STOP and comprehensive verification. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
+          Streamline your New York prescriber credentialing with automated OIG screening and routed license checks. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
         </p>
       </article>
 

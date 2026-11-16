@@ -306,14 +306,13 @@ export default function CaliforniaPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Verification</h2>
 
         <p>
-          API-Cert reports what board files say and routes the rest to your staff:
+          API-Cert reports what board files say and routes the rest to your staff. It does not check DEA registration or board certification:
         </p>
 
         <ul>
           <li><strong>California licenses:</strong> California is not a board-direct state. API-Cert reports the NPI registry listing only, and routes the license check to your staff or the board</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
           <li><strong>NPI registry verification:</strong> Provider demographics, taxonomy, and enumeration details</li>
-          <li><strong>Board certification lookup:</strong> ABMS, AOA, AANP, and NCCPA verification</li>
           <li><strong>Intelligent matching:</strong> Handles name variations, aliases, and cultural names automatically</li>
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
           <li><strong>Comprehensive audit trail:</strong> Complete documentation for compliance and accreditation</li>
@@ -325,7 +324,7 @@ export default function CaliforniaPresciberCredentialing() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": false,
-  "provider_type": "MD",
+  "license_type": "MD",
   "state": "CA",
   "full_name": "MICHAEL JAMES THOMPSON",
   "npi": "1234567890",

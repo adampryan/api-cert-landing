@@ -322,52 +322,40 @@ export default function TexasPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Texas Multi-State Verification</h2>
 
         <p>
-          API-Cert provides comprehensive multi-state prescriber verification with automated border state and telemedicine compliance checking:
+          API-Cert reports what Texas board files say, with the date each carried, plus OIG exclusion screening. It does not check other states&apos; boards, DEA, board certification, CAQH, or compact status:
         </p>
 
         <ul>
           <li><strong>Texas board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
-          <li><strong>Automated multi-state verification:</strong> Simultaneous checking across all border states and common practice locations</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
-          <li><strong>NPI registry validation:</strong> Multi-location practice verification and organizational affiliations</li>
-          <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
-          <li><strong>CAQH integration:</strong> ProView data verification and status checking</li>
-          <li><strong>Interstate compact monitoring:</strong> Automatic compact eligibility and participation status</li>
-          <li><strong>Border practice compliance:</strong> Special authorization and international practice verification</li>
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
-          <li><strong>Comprehensive audit trail:</strong> Full documentation for complex credentialing requirements</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
-          <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample Multi-State Texas API Response</h3>
+          <h3 className="text-lg font-semibold text-emerald-800 mb-3">Sample Texas API Response</h3>
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "MD",
-  "primary_state": "TX",
+  "license_type": "MD",
+  "state": "TX",
   "full_name": "CARLOS ANTONIO MARTINEZ",
-  "licenses": [
-    {
-      "state": "TX",
-      "license_number": "BP98765",
-      "status": "ACTIVE",
-      "expiration_date": "2027-05-31"
-    },
-    {
-      "state": "NM", 
-      "license_number": "10987",
-      "status": "ACTIVE",
-      "expiration_date": "2027-12-31"
-    }
-  ],
-  "disciplinary_flag": false,
-  "board_certified": true,
-  "specialty": "Family Medicine",
-  "caqh_status": "ACTIVE",
-  "interstate_compact": "ELIGIBLE",
+  "license_number": "BP98765",
   "npi": "9876543210",
+  "status": "ACTIVE",
+  "expiration_date": "2027-05-31",
+  "disciplinary_flag": false,
+  "source": {
+    "board_id": "tx-tmb",
+    "board_name": "Texas Medical Board",
+    "evidence_level": "board_file",
+    "as_of": "2026-11-09"
+  },
+  "data_freshness": "2026-11-09",
+  "stale": false,
   "oig_excluded": false,
-  "data_freshness": "2026-11-09"
+  "screening": {
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] }
+  }
 }`}
           </pre>
         </div>
@@ -392,7 +380,6 @@ export default function TexasPresciberCredentialing() {
             <ul className="space-y-2 text-emerald-700">
               <li>• Multi-state API call cost: <strong>$0.75</strong></li>
               <li>• Staff review (4 min @ $31/hour): <strong>$2.07</strong></li>
-              <li>• CAQH integration: <strong>$0.00</strong></li>
               <li>• Automated documentation: <strong>$0.00</strong></li>
               <li>• Error risk: <strong>$0.00</strong></li>
               <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$2.82</strong></li>
@@ -425,7 +412,7 @@ export default function TexasPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations serving Texas healthcare systems face unique challenges with multi-state practice verification and border region compliance requirements. The 96% cost reduction through automation, combined with comprehensive multi-state monitoring and CAQH integration, delivers exceptional value for complex Texas credentialing operations.
+          Organizations serving Texas healthcare systems face unique challenges with multi-state practice verification and border region compliance requirements. Automating the Texas board-file check and OIG screening removes two of the manual lookups; the remaining steps stay with your staff.
         </p>
 
         <p>
@@ -433,7 +420,7 @@ export default function TexasPresciberCredentialing() {
         </p>
 
         <p className="text-lg font-medium mt-6">
-          Automate your Texas multi-state prescriber credentialing with comprehensive border state and telemedicine compliance. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
+          Automate your Texas board-file and OIG checks. <Link href="/docs#register" className="text-emerald-brand hover:underline">Start your free trial at api-cert.com</Link>.
         </p>
       </article>
 

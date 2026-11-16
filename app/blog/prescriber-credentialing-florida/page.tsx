@@ -4,7 +4,7 @@ import Image from "next/image";
 import Footer from '../../components/Footer';
 
 export const metadata: Metadata = {
-  title: "Prescriber Credentialing in Florida: DEA, License, and OIG Verification | API-Cert",
+  title: "Prescriber Credentialing in Florida: License and OIG Verification | API-Cert",
   description: "Complete Florida prescriber verification guide covering physician, NP, and PA credentialing including DEA registration, state board licenses, and federal exclusion screening.",
   keywords: "Florida prescriber credentialing, physician license verification FL, DEA verification Florida, Florida Board of Medicine, NP credentialing Florida"
 };
@@ -46,7 +46,7 @@ export default function FloridaPresciberCredentialing() {
           </div>
           
           <h1 className="text-4xl lg:text-5xl font-bold text-charcoal mb-6">
-            Prescriber Credentialing in Florida: DEA, License, and OIG Verification
+            Prescriber Credentialing in Florida: License and OIG Verification
           </h1>
           
           <p className="text-xl text-gray-600 leading-relaxed">
@@ -294,18 +294,14 @@ export default function FloridaPresciberCredentialing() {
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Florida Verification</h2>
 
         <p>
-          API-Cert reports what Florida board files say, with the date each carried, and routes the rest to your staff or the board:
+          API-Cert reports what Florida board files say, with the date each carried, plus OIG exclusion screening, and routes the rest to your staff or the board. It does not check DEA registration, board certification, or the PDMP:
         </p>
 
         <ul>
           <li><strong>Florida board files:</strong> Board-direct coverage, loaded on a schedule, with the date each file carried reported on every result</li>
           <li><strong>OIG exclusion screening:</strong> Screened against the OIG LEIE exclusion list</li>
-          <li><strong>NPI registry validation:</strong> Provider demographics, taxonomy codes, and practice information</li>
-          <li><strong>Board certification lookup:</strong> ABMS, AOA, ANCC, and NCCPA verification</li>
-          <li><strong>PDMP registration status:</strong> Florida prescription monitoring program compliance</li>
           <li><strong>Intelligent name matching:</strong> Handles aliases, maiden names, and cultural variations</li>
           <li><strong>Dated results:</strong> Every result reports the date the board file or page carried</li>
-          <li><strong>Comprehensive documentation:</strong> Full audit trail for regulatory compliance</li>
         </ul>
 
         <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-8">
@@ -313,19 +309,26 @@ export default function FloridaPresciberCredentialing() {
           <pre className="bg-charcoal text-gray-300 p-4 rounded-lg text-sm font-mono overflow-x-auto">
 {`{
   "verified": true,
-  "provider_type": "MD",
+  "license_type": "MD",
   "state": "FL",
   "full_name": "ROBERT CHARLES MARTINEZ",
   "license_number": "ME98765",
+  "npi": "9876543210",
   "status": "ACTIVE",
   "expiration_date": "2027-03-31",
   "disciplinary_flag": false,
-  "board_certified": true,
-  "specialty": "Family Medicine",
-  "npi": "9876543210",
+  "source": {
+    "board_id": "fl-doh",
+    "board_name": "Florida Department of Health",
+    "evidence_level": "board_file",
+    "as_of": "2026-11-09"
+  },
+  "data_freshness": "2026-11-09",
+  "stale": false,
   "oig_excluded": false,
-  "pdmp_registered": true,
-  "data_freshness": "2026-11-09"
+  "screening": {
+    "oig": { "status": "clear", "list_as_of": "2026-11-14", "matches": [] }
+  }
 }`}
           </pre>
         </div>
@@ -380,11 +383,11 @@ export default function FloridaPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations processing regular credentialing face significant efficiency challenges with manual verification. The 95% cost reduction through automation, combined with elimination of human error and comprehensive audit trails, provides compelling benefits for Florida healthcare operations.
+          Organizations processing regular credentialing face significant efficiency challenges with manual verification. The 95% cost reduction through automation, combined with elimination of transcription error on the checks it performs, provides compelling benefits for Florida healthcare operations.
         </p>
 
         <p>
-          Most importantly, automated verification ensures consistent, comprehensive screening that meets Florida's enhanced regulatory requirements while protecting patient safety and organizational compliance.
+          Most importantly, a consistent process ensures the license status and federal exclusion checks are never skipped, supporting Florida's regulatory requirements and patient safety.
         </p>
 
         <p className="text-lg font-medium mt-6">

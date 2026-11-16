@@ -28,7 +28,7 @@ const articles: BlogArticle[] = [
   },
   {
     slug: "prescriber-credentialing-new-york",
-    title: "Prescriber Credentialing in New York: DEA and License Verification",
+    title: "Prescriber Credentialing in New York: Licensing and Exclusion Screening",
     excerpt: "Complete guide to New York prescriber verification including I-STOP compliance, state licensing, DEA registration, and federal exclusion screening for healthcare providers.",
     publishedDate: "2026-03-22",
     readTime: "11 min read",
@@ -44,7 +44,7 @@ const articles: BlogArticle[] = [
   },
   {
     slug: "prescriber-credentialing-florida", 
-    title: "Prescriber Credentialing in Florida: DEA, License, and OIG Verification",
+    title: "Prescriber Credentialing in Florida: License and OIG Verification",
     excerpt: "Complete Florida prescriber verification guide covering enhanced opioid oversight, PDMP compliance, state board licensing, and federal exclusion screening requirements.",
     publishedDate: "2026-03-22",
     readTime: "10 min read",
