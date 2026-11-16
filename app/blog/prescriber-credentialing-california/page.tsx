@@ -277,14 +277,14 @@ export default function CaliforniaPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time and Cost Analysis</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time Analysis</h2>
 
         <p>
           Comprehensive prescriber verification requires checking multiple databases and can be time-intensive:
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual 9-Point Verification Breakdown</h3>
+          <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Verification Breakdown</h3>
           <ul className="space-y-2 text-gray-700">
             <li>• California medical/nursing/PA board verification: <strong>8 minutes</strong></li>
             <li>• DEA registration verification: <strong>5 minutes</strong></li>
@@ -297,10 +297,6 @@ export default function CaliforniaPresciberCredentialing() {
             <li>• Quality review and follow-up: <strong>5 minutes</strong></li>
             <li className="border-t border-gray-300 pt-2 font-semibold">Total time per provider: <strong>45 minutes</strong></li>
           </ul>
-          
-          <p className="text-gray-600 mt-4 text-sm">
-            Cost calculation: 45 minutes × $28/hour (credentialing specialist) = <strong>$21.00 per verification</strong>
-          </p>
         </div>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Verification</h2>
@@ -337,36 +333,6 @@ export default function CaliforniaPresciberCredentialing() {
           </pre>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">ROI Analysis: Manual vs. Automated</h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Verification Cost</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Staff time (45 min @ $28/hour): <strong>$21.00</strong></li>
-              <li>• Database access fees: <strong>$3.50</strong></li>
-              <li>• Error risk and rework: <strong>$8.00</strong></li>
-              <li>• Documentation overhead: <strong>$4.00</strong></li>
-              <li className="border-t border-gray-300 pt-2 font-semibold">Total per verification: <strong>$36.50</strong></li>
-            </ul>
-          </div>
-
-          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-emerald-800 mb-4">API-Cert Automated Cost</h3>
-            <ul className="space-y-2 text-emerald-700">
-              <li>• API call cost: <strong>$0.45</strong></li>
-              <li>• Staff review (3 min @ $28/hour): <strong>$1.40</strong></li>
-              <li>• Automated documentation: <strong>$0.00</strong></li>
-              <li>• Error risk: <strong>$0.00</strong></li>
-              <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$1.85</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <p className="text-lg font-medium text-center mt-6">
-          <strong>Savings per verification: $34.65 (95% cost reduction)</strong>
-        </p>
-
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">California Prescriber Verification Best Practices</h2>
 
         <ul>
@@ -387,7 +353,7 @@ export default function CaliforniaPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations processing regular credentialing face significant efficiency and cost challenges with manual verification. The 95% cost reduction and elimination of human error through automated verification delivers compelling ROI while ensuring consistent, comprehensive provider screening.
+          Organizations processing regular credentialing face significant efficiency challenges with manual verification. Automating the checks that can be automated, with consistent screening of every provider, reduces transcription error and keeps the remaining work with your staff.
         </p>
 
         <p>

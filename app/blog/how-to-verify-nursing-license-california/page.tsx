@@ -305,38 +305,6 @@ export default function CaliforniaNursingLicenseVerification() {
           </pre>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Cost Analysis: Manual vs. Automated</h2>
-
-        <p>
-          Consider the true cost of manual verification:
-        </p>
-
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
-          <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Verification Cost (Per Provider)</h3>
-          <ul className="space-y-2 text-gray-700">
-            <li>• Staff time (20 minutes @ $25/hour): <strong>$8.33</strong></li>
-            <li>• Database access fees: <strong>$2.00</strong></li>
-            <li>• Documentation and filing: <strong>$3.00</strong></li>
-            <li>• Error risk and rework: <strong>$5.00</strong></li>
-            <li className="border-t border-gray-300 pt-2 font-semibold">Total per verification: <strong>$18.33</strong></li>
-          </ul>
-        </div>
-
-        <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6 my-6">
-          <h3 className="text-lg font-semibold text-emerald-800 mb-4">API-Cert Automated Cost (Per Provider)</h3>
-          <ul className="space-y-2 text-emerald-700">
-            <li>• API call cost: <strong>$0.25</strong></li>
-            <li>• Staff review time (2 minutes @ $25/hour): <strong>$0.83</strong></li>
-            <li>• Automated documentation: <strong>$0.00</strong></li>
-            <li>• Error risk: <strong>$0.00</strong></li>
-            <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$1.08</strong></li>
-          </ul>
-        </div>
-
-        <p className="text-lg font-medium">
-          <strong>Savings per verification: $17.25 (94% cost reduction)</strong>
-        </p>
-
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Best Practices for California Verifications</h2>
 
         <ul>
@@ -355,7 +323,7 @@ export default function CaliforniaNursingLicenseVerification() {
         </p>
 
         <p>
-          The cost savings and efficiency gains from automated verification are compelling, especially for organizations processing dozens or hundreds of verifications monthly. More importantly, automated systems reduce human error and ensure consistent, comprehensive screening across all providers.
+          Automating the checks that can be automated helps organizations processing dozens or hundreds of verifications monthly. Automated systems reduce human error and ensure consistent, comprehensive screening across all providers.
         </p>
 
         <p className="text-lg font-medium mt-6">

@@ -122,7 +122,7 @@ export default function FloridaPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Complete 9-Point Verification Process</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">The Credentialing Verification Process</h2>
 
         <h3 className="text-xl font-semibold text-charcoal mb-3">Step 1: Florida State Professional License</h3>
         
@@ -268,7 +268,7 @@ export default function FloridaPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time and Cost Analysis</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time Analysis</h2>
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Complete Florida Prescriber Verification</h3>
@@ -285,10 +285,6 @@ export default function FloridaPresciberCredentialing() {
             <li>• Quality review and follow-up: <strong>5 minutes</strong></li>
             <li className="border-t border-gray-300 pt-2 font-semibold">Total time per provider: <strong>48 minutes</strong></li>
           </ul>
-          
-          <p className="text-gray-600 mt-4 text-sm">
-            Cost calculation: 48 minutes × $27/hour (credentialing specialist) = <strong>$21.60 per verification</strong>
-          </p>
         </div>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Florida Verification</h2>
@@ -333,36 +329,6 @@ export default function FloridaPresciberCredentialing() {
           </pre>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Cost Comparison: Manual vs. Automated</h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Verification Cost</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Staff time (48 min @ $27/hour): <strong>$21.60</strong></li>
-              <li>• Database access fees: <strong>$3.00</strong></li>
-              <li>• Documentation overhead: <strong>$4.50</strong></li>
-              <li>• Error risk and rework: <strong>$7.50</strong></li>
-              <li className="border-t border-gray-300 pt-2 font-semibold">Total per verification: <strong>$36.60</strong></li>
-            </ul>
-          </div>
-
-          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-emerald-800 mb-4">API-Cert Automated Cost</h3>
-            <ul className="space-y-2 text-emerald-700">
-              <li>• API call cost: <strong>$0.40</strong></li>
-              <li>• Staff review (3 min @ $27/hour): <strong>$1.35</strong></li>
-              <li>• Automated documentation: <strong>$0.00</strong></li>
-              <li>• Error risk: <strong>$0.00</strong></li>
-              <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$1.75</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <p className="text-lg font-medium text-center mt-6">
-          <strong>Savings per verification: $34.85 (95% cost reduction)</strong>
-        </p>
-
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Florida Prescriber Credentialing Best Practices</h2>
 
         <ul>
@@ -383,7 +349,7 @@ export default function FloridaPresciberCredentialing() {
         </p>
 
         <p>
-          Organizations processing regular credentialing face significant efficiency challenges with manual verification. The 95% cost reduction through automation, combined with elimination of transcription error on the checks it performs, provides compelling benefits for Florida healthcare operations.
+          Organizations processing regular credentialing face significant efficiency challenges with manual verification. Automating the checks that can be automated reduces transcription error on those checks and keeps the remaining work with your staff.
         </p>
 
         <p>

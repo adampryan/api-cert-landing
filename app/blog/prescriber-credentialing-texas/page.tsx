@@ -122,7 +122,7 @@ export default function TexasPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Comprehensive 9-Point Verification Process</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">The Credentialing Verification Process</h2>
 
         <h3 className="text-xl font-semibold text-charcoal mb-3">Step 1: Texas State Professional Licenses</h3>
         
@@ -294,7 +294,7 @@ export default function TexasPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time and Cost Analysis</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time Analysis</h2>
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Complete Texas Multi-State Verification</h3>
@@ -313,10 +313,6 @@ export default function TexasPresciberCredentialing() {
             <li>• Quality review and follow-up: <strong>6 minutes</strong></li>
             <li className="border-t border-gray-300 pt-2 font-semibold">Total time per provider: <strong>75 minutes</strong></li>
           </ul>
-          
-          <p className="text-gray-600 mt-4 text-sm">
-            Cost calculation: 75 minutes × $31/hour (senior credentialing specialist) = <strong>$38.75 per verification</strong>
-          </p>
         </div>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated Texas Multi-State Verification</h2>
@@ -359,37 +355,6 @@ export default function TexasPresciberCredentialing() {
 }`}
           </pre>
         </div>
-
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">ROI Analysis: Manual vs. Automated</h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Multi-State Verification Cost</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Staff time (75 min @ $31/hour): <strong>$38.75</strong></li>
-              <li>• Multi-state database access fees: <strong>$6.50</strong></li>
-              <li>• CAQH and specialty database costs: <strong>$3.50</strong></li>
-              <li>• Documentation overhead: <strong>$7.00</strong></li>
-              <li>• Error risk and rework: <strong>$12.00</strong></li>
-              <li className="border-t border-gray-300 pt-2 font-semibold">Total per verification: <strong>$67.75</strong></li>
-            </ul>
-          </div>
-
-          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-emerald-800 mb-4">API-Cert Automated Cost</h3>
-            <ul className="space-y-2 text-emerald-700">
-              <li>• Multi-state API call cost: <strong>$0.75</strong></li>
-              <li>• Staff review (4 min @ $31/hour): <strong>$2.07</strong></li>
-              <li>• Automated documentation: <strong>$0.00</strong></li>
-              <li>• Error risk: <strong>$0.00</strong></li>
-              <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$2.82</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <p className="text-lg font-medium text-center mt-6">
-          <strong>Savings per verification: $64.93 (96% cost reduction)</strong>
-        </p>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Texas Prescriber Credentialing Best Practices</h2>
 

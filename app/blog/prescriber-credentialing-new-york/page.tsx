@@ -121,7 +121,7 @@ export default function NewYorkPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Step-by-Step 9-Point Verification Process</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Step-by-Step Credentialing Verification</h2>
 
         <h3 className="text-xl font-semibold text-charcoal mb-3">Step 1: New York State Professional License</h3>
         
@@ -271,7 +271,7 @@ export default function NewYorkPresciberCredentialing() {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time and Cost Analysis</h2>
+        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Manual Verification Time Analysis</h2>
 
         <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-4">Complete New York Prescriber Verification</h3>
@@ -290,10 +290,6 @@ export default function NewYorkPresciberCredentialing() {
             <li>• Quality review and follow-up: <strong>5 minutes</strong></li>
             <li className="border-t border-gray-300 pt-2 font-semibold">Total time per provider: <strong>60 minutes</strong></li>
           </ul>
-          
-          <p className="text-gray-600 mt-4 text-sm">
-            Cost calculation: 60 minutes × $29/hour (credentialing specialist) = <strong>$29.00 per verification</strong>
-          </p>
         </div>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">API-Cert Automated New York Verification</h2>
@@ -326,37 +322,6 @@ export default function NewYorkPresciberCredentialing() {
 }`}
           </pre>
         </div>
-
-        <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">Cost Comparison: Manual vs. Automated</h2>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-800 mb-4">Manual Verification Cost</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li>• Staff time (60 min @ $29/hour): <strong>$29.00</strong></li>
-              <li>• Database access fees: <strong>$3.50</strong></li>
-              <li>• I-STOP system access: <strong>$1.50</strong></li>
-              <li>• Documentation overhead: <strong>$5.00</strong></li>
-              <li>• Error risk and rework: <strong>$8.00</strong></li>
-              <li className="border-t border-gray-300 pt-2 font-semibold">Total per verification: <strong>$47.00</strong></li>
-            </ul>
-          </div>
-
-          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-emerald-800 mb-4">API-Cert Automated Cost</h3>
-            <ul className="space-y-2 text-emerald-700">
-              <li>• API call cost: <strong>$0.50</strong></li>
-              <li>• Staff review (3 min @ $29/hour): <strong>$1.45</strong></li>
-              <li>• Automated documentation: <strong>$0.00</strong></li>
-              <li>• Error risk: <strong>$0.00</strong></li>
-              <li className="border-t border-emerald-300 pt-2 font-semibold">Total per verification: <strong>$1.95</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <p className="text-lg font-medium text-center mt-6">
-          <strong>Savings per verification: $45.05 (96% cost reduction)</strong>
-        </p>
 
         <h2 className="text-2xl font-bold text-charcoal mb-4 mt-8">New York Prescriber Credentialing Best Practices</h2>
 
